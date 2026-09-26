@@ -6,7 +6,12 @@ Times are stored as integer minutes since the start of the simulation
 """
 
 from dataclasses import dataclass
+from enum import Enum
 
+class Status(Enum):
+    ASSIGNED = "assigned"
+    UNASSIGNED = "unassigned"
+    DEFERRED = "deferred"
 
 @dataclass
 class Donation:
@@ -17,14 +22,7 @@ class Donation:
     ready_time: int        # minute the donation can be picked up
     expiry_time: int       # minute the food is not safe for consumption
     pickup_area: str
-    arrival_order: int     # ?
-
-    def remaining_shelf_life(self, current_time: int) -> int:
-        return self.expiry_time - current_time
-
-    def is_expired(self, current_time: int) -> bool:
-        return current_time >= self.expiry_time
-
+    arrival_order: int     # order in which the donation is reported
 
 @dataclass
 class Recipient:
@@ -33,16 +31,7 @@ class Recipient:
     accepted_food_types: set[str]
     capacity: int          # maximum amount of food the recipient can accept
     closing_time: int      # minute the recipient is no longer accepting donations
-    pickup_area: str
-
-    def is_closing(self, current_time: int) -> bool:
-        return current_time >= self.closing_time
-
-    def is_full(self, current_time: int) -> bool:
-        return self.capacity <= 0
-
-    def accepts_food_type(self, food_type: str) -> bool:
-        return food_type in self.accepted_food_types
+    dropoff_area: str
 
 @dataclass
 class Volunteer:
@@ -51,11 +40,7 @@ class Volunteer:
     maximum_pickups: int      # maximum number of donations the volunteer can pick up
     availability_start: int   # minute the volunteer is available
     availability_end: int     # minute the volunteer is no longer available
-    area: str
-
-    def is_available(self, current_time: int) -> bool:
-        return self.availability_start <= current_time < self.availability_end
-
+    pickup_area: str
     
 @dataclass
 class Assignment:
@@ -65,4 +50,4 @@ class Assignment:
     scheduled_time_start: int       # minute the assignment is scheduled to start
     scheduled_time_end: int         # minute the assignment is scheduled to end
     decision_reason: str
-    status: str
+    status: Status
