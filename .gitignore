@@ -1,5 +1,12 @@
 /output
-*/__pycache__/
+
+# Generated data: ignore everything in data/ except the README and the generator
+/data/*
+!/data/README.md
+!/data/scripts/
+/data/scripts/__pycache__/
+
+__pycache__/
 *.pyc
 .pytest_cache/
 .venv/
