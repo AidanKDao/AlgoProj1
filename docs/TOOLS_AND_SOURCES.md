@@ -46,6 +46,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `rescueroute/loader.py` (load_donations/recipients/volunteers), `tests/test_loader.py`.
 - **Modifications:** Pending human review. Checked against every dataset in `data/scenarios/` and `data/scale/` (CSV and JSON load identically); `tests/test_loader.py` passes.
 
+### 2026-10-05: Shared feasibility check and capacity tracking
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Write the shared donation-recipient-volunteer feasibility check (Data & Matching Lead role), with the unsettled rules as switchable options that default to off.
+- **Output used:** `rescueroute/feasibility.py` (Rules, CapacityTracker, check_pair, find_match, assigned_reason, unassigned_reason), `tests/test_feasibility.py`.
+- **Modifications:** Pending human review. Open rules (area match, maximum pickups, volunteer window, travel/shelf-life buffer from proposal 001) are off by default and not treated as settled. `tests/test_feasibility.py` passes.
+
 ## Pre-existing AI-generated code
 - `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 
