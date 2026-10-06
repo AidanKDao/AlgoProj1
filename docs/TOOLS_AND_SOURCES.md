@@ -67,6 +67,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `rescueroute/loader.py` (comments and a file-organization note in the docstring only; no logic changes).
 - **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
 
+### 2026-10-06: Explanatory comments in feasibility.py
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Walk through feasibility.py for a Python beginner and add comments so the team can follow it.
+- **Output used:** `rescueroute/feasibility.py` (comments, a file-organization note, and a docstring on `Rules`; no logic changes).
+- **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
+
 ## Pre-existing AI-generated code
 - `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 
