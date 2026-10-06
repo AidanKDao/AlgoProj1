@@ -33,7 +33,7 @@ python main.py
 - [x] Repository created
 - [x] Data model established
 - [x] Input validation implemented
-- [ ] FIFO baseline implemented
+- [x] FIFO baseline implemented
 - [x] Sample input data included
 - [ ] Initial automated tests included
 - [x] Team roles documented
