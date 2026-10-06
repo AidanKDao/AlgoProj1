@@ -39,6 +39,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `AGENTS.md` (AI-use section: entry template, checklist, "everything counts" rule, source read-status rule; open-decisions section: pointer to `docs/project_logic/` and the do-not-implement-proposals rule).
 - **Modifications:** Pending human review.
 
+### 2026-10-05: Loader and validation
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Implement CSV/JSON loading and validation (Data & Matching Lead role) matching the interface assumed in `tests/helpers.py`.
+- **Output used:** `rescueroute/loader.py` (load_donations/recipients/volunteers), `tests/test_loader.py`.
+- **Modifications:** Pending human review. Checked against every dataset in `data/scenarios/` and `data/scale/` (CSV and JSON load identically); `tests/test_loader.py` passes.
+
 ## Pre-existing AI-generated code
 - `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 
