@@ -71,7 +71,7 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Walk through feasibility.py for a Python beginner and add comments so the team can follow it.
-- **Output used:** `rescueroute/feasibility.py` (comments, a file-organization note, and a docstring on `Rules`; no logic changes).
+- **Output used:** `rescueroute/feasibility.py` (comments, a file-organization note, a docstring on `Rules`, and a summary comment above each function; no logic changes).
 - **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
 
 ## Pre-existing AI-generated code

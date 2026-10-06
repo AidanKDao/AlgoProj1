@@ -66,6 +66,8 @@ class CapacityTracker:
 
 
 # schedule is a plain function (not indented inside a class, no `self`).
+# schedule: works out WHEN a pickup would happen. Takes one donation, one volunteer and the
+# rules, and returns a pair (start minute, arrival minute) used by the timing checks below.
 def schedule(donation: Donation, volunteer: Volunteer, rules: Rules) -> tuple[int, int]:
     """Return (pickup start, delivery arrival) in minutes."""
     start = donation.ready_time
@@ -79,6 +81,8 @@ def schedule(donation: Donation, volunteer: Volunteer, rules: Rules) -> tuple[in
 # Each check looks at ONE rule. Returning None means "this rule passes"; returning a
 # sentence means "this rule fails, and here is why". check_pair strings them together.
 
+# _expired_reason: checks the food will still be good when it arrives. Returns None if it
+# will, or a sentence explaining that it will have expired.
 def _expired_reason(donation: Donation, arrival: int, rules: Rules) -> str | None:
     # Fails if the food would arrive with less than min_minutes_left before it expires.
     if arrival + rules.min_minutes_left > donation.expiry_time:
@@ -91,6 +95,8 @@ def _expired_reason(donation: Donation, arrival: int, rules: Rules) -> str | Non
     return None
 
 
+# _food_reason: checks the recipient accepts this type of food. Returns None if it does,
+# or a sentence naming the food type they do not accept.
 def _food_reason(donation: Donation, recipient: Recipient) -> str | None:
     # Set membership: is this food type in the recipient's accepted set?
     if donation.food_type not in recipient.accepted_food_types:
@@ -98,6 +104,8 @@ def _food_reason(donation: Donation, recipient: Recipient) -> str | None:
     return None
 
 
+# _recipient_capacity_reason: checks the recipient still has room for the whole quantity.
+# Returns None if there is room, or a sentence saying how much room is left.
 def _recipient_capacity_reason(donation, recipient, tracker) -> str | None:
     # Reads the tracker's live number, not recipient.capacity, so earlier assignments count
     remaining = tracker.recipient_remaining[recipient.recipient_id]
@@ -107,6 +115,8 @@ def _recipient_capacity_reason(donation, recipient, tracker) -> str | None:
     return None
 
 
+# _vehicle_reason: checks the volunteer's vehicle can carry the whole quantity in one trip.
+# Returns None if it can, or a sentence giving the vehicle size.
 def _vehicle_reason(donation: Donation, volunteer: Volunteer) -> str | None:
     # The vehicle limit is per trip, so this compares against vehicle_capacity directly
     if donation.quantity > volunteer.vehicle_capacity:
@@ -115,6 +125,8 @@ def _vehicle_reason(donation: Donation, volunteer: Volunteer) -> str | None:
     return None
 
 
+# _area_reason: checks donation, volunteer and recipient are all in the same area. Does
+# nothing (returns None) unless the area rule is switched on in Rules.
 def _area_reason(donation, recipient, volunteer, rules) -> str | None:
     # Only applies when the rule is switched on. a == b == c checks all three are equal.
     if rules.require_area_match and not (
@@ -125,6 +137,8 @@ def _area_reason(donation, recipient, volunteer, rules) -> str | None:
     return None
 
 
+# _pickups_reason: checks the volunteer has not already used up their maximum number of
+# pickups. Does nothing unless the pickup rule is switched on in Rules.
 def _pickups_reason(volunteer, tracker, rules) -> str | None:
     # Fails once the volunteer's pickup count in the tracker has reached their maximum
     if rules.enforce_maximum_pickups and \
@@ -134,6 +148,8 @@ def _pickups_reason(volunteer, tracker, rules) -> str | None:
     return None
 
 
+# _closing_and_window_reason: checks the recipient is still open when the food arrives, and
+# (if the window rule is on) that the volunteer is still available. Returns None or a sentence.
 def _closing_and_window_reason(recipient, volunteer, arrival, rules) -> str | None:
     # Two timing checks on the arrival minute: recipient still open, volunteer still available
     if arrival > recipient.closing_time:
@@ -144,6 +160,8 @@ def _closing_and_window_reason(recipient, volunteer, arrival, rules) -> str | No
     return None
 
 
+# check_pair: the main feasibility question for ONE donation, recipient and volunteer. Runs every
+# check above in order and returns the first problem found, or None if the match is feasible.
 def check_pair(donation, recipient, volunteer, tracker, rules) -> str | None:
     """None if this donation-recipient-volunteer match is feasible, else why not."""
     _, arrival = schedule(donation, volunteer, rules)   # _ means "ignore the start value"
@@ -160,6 +178,9 @@ def check_pair(donation, recipient, volunteer, tracker, rules) -> str | None:
 
 # ---------- finding a match and explaining ----------
 
+# find_match: looks for a recipient and volunteer for ONE donation. Tries each pair in input
+# order, using check_pair, and returns the first feasible one (with its start and arrival
+# times), or None if no pair works.
 def find_match(donation, recipients, volunteers, tracker, rules):
     """First feasible (recipient, volunteer, start, arrival), in dict (input) order, or None."""
     # Two nested loops: every recipient, and for each one every volunteer, in input order.
@@ -172,6 +193,8 @@ def find_match(donation, recipients, volunteers, tracker, rules):
     return None
 
 
+# assigned_reason: builds the human-readable sentence explaining why a donation WAS assigned.
+# It only builds text; it does not decide anything or update the tracker.
 def assigned_reason(donation, recipient, volunteer, rules, start: int, arrival: int) -> str:
     return (f"Donation {donation.donation_id} was assigned to {recipient.organization_name} with volunteer "
             f"{volunteer.volunteer_id} because it expires in {donation.expiry_time - start} minutes "
@@ -180,6 +203,8 @@ def assigned_reason(donation, recipient, volunteer, rules, start: int, arrival: 
             f"({donation.quantity} units), and the volunteer's vehicle can carry the quantity.")
 
 
+# unassigned_reason: builds the sentence explaining why a donation could NOT be assigned. It
+# narrows the candidates one requirement at a time so the message names the real cause.
 def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     """Explain why no feasible match exists, naming the first requirement nobody could meet."""
     prefix = f"Donation {donation.donation_id} could not be assigned because "
