@@ -53,6 +53,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `rescueroute/feasibility.py` (Rules, CapacityTracker, check_pair, find_match, assigned_reason, unassigned_reason), `tests/test_feasibility.py`.
 - **Modifications:** Pending human review. Open rules (area match, maximum pickups, volunteer window, travel/shelf-life buffer from proposal 001) are off by default and not treated as settled. `tests/test_feasibility.py` passes.
 
+### 2026-10-05: Enforce maximum pickups and volunteer window by default
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Teammates confirmed volunteer maximum pickups and availability window are enforced; update the feasibility defaults to match.
+- **Output used:** `rescueroute/feasibility.py` (defaults and docstring), `tests/test_feasibility.py` (tests now assert on-by-default), `AGENTS.md` (open-decisions entry).
+- **Modifications:** Pending human review. Area matching, travel time and shelf-life buffer remain unsettled and off.
+
 ## Pre-existing AI-generated code
 - `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 

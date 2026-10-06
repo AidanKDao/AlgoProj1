@@ -59,8 +59,8 @@ class TestSettledChecks(unittest.TestCase):
         self.assertEqual(CapacityTracker({"R-1": r}, {"V-1": v}).recipient_remaining["R-1"], 100)
 
 
-class TestOpenRulesSwitchedOn(unittest.TestCase):
-    """These rules are unsettled; the tests show each switch does what its name says."""
+class TestOptionalRules(unittest.TestCase):
+    """Each switch does what its name says. Area match and travel time are still unsettled (off by default)."""
 
     def test_proposal_001_values_reject_ten_minutes_left(self):
         donations, recipients, volunteers, _ = load_scenario("expired_donation")
@@ -80,14 +80,14 @@ class TestOpenRulesSwitchedOn(unittest.TestCase):
         d, r, v, t = make(quantity=5)
         t.record(d, "R-1", "V-1")
         t.record(d, "R-1", "V-1")                  # volunteer's maximum is 2
-        self.assertIsNone(check_pair(d, r, v, t, Rules()))
-        self.assertIn("maximum", check_pair(d, r, v, t, Rules(enforce_maximum_pickups=True)))
+        self.assertIn("maximum", check_pair(d, r, v, t, Rules()))      # enforced by default
+        self.assertIsNone(check_pair(d, r, v, t, Rules(enforce_maximum_pickups=False)))
 
     def test_volunteer_window(self):
         d, r, v, t = make(ready=470, expiry=900)
-        rules = Rules(travel_minutes=30, enforce_volunteer_window=True)
+        rules = Rules(travel_minutes=30)                                # window enforced by default
         self.assertIn("available", check_pair(d, r, v, t, rules))
-        self.assertIsNone(check_pair(d, r, v, t, Rules(travel_minutes=30)))
+        self.assertIsNone(check_pair(d, r, v, t, Rules(travel_minutes=30, enforce_volunteer_window=False)))
 
 
 class TestExplanations(unittest.TestCase):

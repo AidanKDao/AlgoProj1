@@ -4,12 +4,12 @@ Shared feasibility rules and capacity tracking for both scheduling strategies.
 AI-assisted: Claude Code (claude-sonnet-5-5), requested by Kaleb Robles, see docs/TOOLS_AND_SOURCES.md
 
 FIFO and greedy must call the same code here so they differ only in processing order.
-Rules that the team has not settled yet (docs/project_logic/, AGENTS.md "Open decisions")
-live in the Rules dataclass and are OFF by default:
-    require_area_match, enforce_maximum_pickups, enforce_volunteer_window,
-    travel_minutes / min_minutes_left (proposal 001 suggests 30 and 15).
-Settled checks that always run: food type, recipient capacity, vehicle capacity,
-donation not expired on arrival, recipient still open on arrival.
+Settled checks that run by default: food type, recipient capacity, vehicle capacity,
+donation not expired on arrival, recipient still open on arrival, volunteer
+maximum_pickups, and volunteer availability window (the last two confirmed by the team).
+Rules the team has not settled yet (docs/project_logic/, AGENTS.md "Open decisions")
+live in the Rules dataclass and are OFF or placeholder by default:
+    require_area_match, travel_minutes / min_minutes_left (proposal 001 suggests 30 and 15).
 """
 
 from dataclasses import dataclass
@@ -22,8 +22,8 @@ class Rules:
     travel_minutes: int = 0               # minutes from pickup to delivery
     min_minutes_left: int = 1             # food must arrive at least this long before expiry
     require_area_match: bool = False      # donation pickup area == volunteer area == recipient area
-    enforce_maximum_pickups: bool = False
-    enforce_volunteer_window: bool = False
+    enforce_maximum_pickups: bool = True
+    enforce_volunteer_window: bool = True
 
 
 class CapacityTracker:

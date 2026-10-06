@@ -78,7 +78,7 @@ Proposed answers, with research and their effect on each scenario, live in `docs
 
 - **Pickup timing / near-expiry donations.** Proposed in `docs/project_logic/001-near-expiry-and-pickup-timing.md`.
 - **Exact greedy rule.** The README must state it precisely. Brief's example: least remaining shelf life first; tie → larger quantity; tie → earlier arrival.
-- **Feasibility details.** Whether area must match between donation, volunteer, and recipient, how scheduled time is computed (`scheduled_time_start/end` on `Assignment`), whether volunteer `maximum_pickups` and availability window are enforced per pickup, and whether recipient capacity is a single total or per-time.
+- **Feasibility details.** Whether area must match between donation, volunteer, and recipient (teammates lean toward same-area matching as simplest; a distance table is a stretch feature; not decided), how scheduled time is computed (`scheduled_time_start/end` on `Assignment`), and whether recipient capacity is a single total or per-time. *Settled (team confirmed 2026-10-05):* volunteer `maximum_pickups` and availability window are enforced per pickup (`enforce_maximum_pickups` / `enforce_volunteer_window` default to on in `rescueroute/feasibility.py`).
 - **"Urgent" definition** for the urgent rescue rate (e.g. earliest-expiring N% of donations).
 - **Output format** of the comparison report.
 
