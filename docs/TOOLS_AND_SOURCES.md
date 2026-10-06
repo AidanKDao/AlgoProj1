@@ -60,6 +60,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `rescueroute/feasibility.py` (defaults and docstring), `tests/test_feasibility.py` (tests now assert on-by-default), `AGENTS.md` (open-decisions entry).
 - **Modifications:** Pending human review. Area matching, travel time and shelf-life buffer remain unsettled and off.
 
+### 2026-10-06: Explanatory comments in loader.py
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Walk through loader.py line by line for a Python beginner, then add comments to each chunk so the team can follow it.
+- **Output used:** `rescueroute/loader.py` (comments and a file-organization note in the docstring only; no logic changes).
+- **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
+
 ## Pre-existing AI-generated code
 - `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 
