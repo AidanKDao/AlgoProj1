@@ -13,12 +13,13 @@ We need to answer: How can we prioritize time-sensitive food donations and assig
 - Calculates metrics that compare the two strategies
 - Includes automated tests for normal and edge cases
 
-## Team Roles
-
-- Project Owner: Coordinates project goals, requirements, and team progress
-- Development Team: Implements the scheduling algorithms, validation, and data processing
-- Testing Team: Creates test cases and verifies FIFO and scheduling behavior
-- Documentation Team: Maintains project documentation, setup instructions, and checkpoint evidence
+## Team Role Statement
+Our team is split into the following roles:
+- Algorithm & Optimization Lead: Dominic Dionne (FIFO scheduler, greedy rule, priority selection, complexity analysis, strategy
+comparison.)
+- Data & Matching Lead: Kaleb (Input files, validation, compatibility checks, capacity rules, data structures, test data.)
+- Product & Quality Lead: Saheil (Explainable output, metrics, tests, README, demo materials, interface or CLI polish.)
+- Pending 4th role...
 
 ## Running the Project
 
@@ -26,12 +27,13 @@ From the project root directory, run:
 
 ```bash
 python main.py
+```
 
 ## Week 1 Checkpoint
-- Repository created
-- Data model established
-- Input validation implemented
-- FIFO baseline implemented
-- Sample input data included
-- Initial automated tests included
-- Team roles documented
+- [x] Repository created
+- [x] Data model established
+- [x] Input validation implemented
+- [ ] FIFO baseline implemented
+- [x] Sample input data included
+- [ ] Initial automated tests included
+- [x] Team roles documented
