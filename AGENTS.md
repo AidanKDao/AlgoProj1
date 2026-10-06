@@ -74,6 +74,9 @@ Run `python data/scripts/generate_data.py` once after cloning to create the samp
 
 ## Open decisions (not yet fixed; confirm with the user before assuming)
 
+Proposed answers, with research and their effect on each scenario, live in `docs/project_logic/` (see its README for the index and status legend). **Do not implement a rule marked *Proposed* as settled behavior.** It needs team confirmation first. Once a rule is *Accepted*, move it into the relevant section above and update the file's status.
+
+- **Pickup timing / near-expiry donations.** Proposed in `docs/project_logic/001-near-expiry-and-pickup-timing.md`.
 - **Exact greedy rule.** The README must state it precisely. Brief's example: least remaining shelf life first; tie → larger quantity; tie → earlier arrival.
 - **Feasibility details.** Whether area must match between donation, volunteer, and recipient, how scheduled time is computed (`scheduled_time_start/end` on `Assignment`), whether volunteer `maximum_pickups` and availability window are enforced per pickup, and whether recipient capacity is a single total or per-time.
 - **"Urgent" definition** for the urgent rescue rate (e.g. earliest-expiring N% of donations).
@@ -89,16 +92,31 @@ Course policy: AI tools (ChatGPT, Copilot, Claude, Codex, etc.) are permitted **
 
 Every agent working in this repo must follow these rules:
 
-1. **Log every AI contribution** in `docs/TOOLS_AND_SOURCES.md` (create it if missing; the README's "Tools & Sources" section summarizes or links to it). Append one entry per contribution, with:
-   - **Date**
-   - **Human requester**: the team member who gave the prompt. Take it from `git config user.name` / the user's stated name. If it is unclear, **ask**; never guess or leave it blank.
-   - **Tool/model**: e.g. "Codex (model name)" or "Claude Code (claude-sonnet-5-5)"; use whatever tool you actually are
-   - **Prompt summary**: what was asked
-   - **Output used**: which files/functions were created or changed
-   - **Modifications**: how the output was edited, reviewed, or tested by a human afterwards (leave "pending human review" if not yet done)
+1. **Log every AI contribution** in `docs/TOOLS_AND_SOURCES.md` (create it if missing; the README's "Tools & Sources" section summarizes or links to it). **Everything counts**, not just code: tests, docs, data, config, research, decision files, and files later deleted. Append one entry per contribution under "AI contributions", newest last, using this template exactly:
+
+   ```markdown
+   ### YYYY-MM-DD: <short title of the work>
+   - **Human requester:** <team member's name>
+   - **Tool/model:** <tool> (<exact model ID>), e.g. Claude Code (claude-opus-5-5), Codex (<model>)
+   - **Prompt summary:** <what was asked, in a sentence or two>
+   - **Output used:** <files/functions created, changed, or deleted>
+   - **Modifications:** <how a human edited, reviewed, or tested it; "Pending human review." if not yet>
+   ```
+
+   - **Human requester:** the team member who gave the prompt. Take it from the user's stated name or `git config user.name`. If it is unclear, **ask**; never guess or leave it blank.
+   - **Tool/model:** name whatever tool you actually are, with the exact model ID.
+   - **Modifications:** when a human later edits or tests the output, they (or their agent) update this line rather than adding a new entry.
+   - If you used outside sources, add them under "Outside sources" too (see rule 4).
+
+   **Checklist before you finish any task:**
+   - [ ] Log entry added (or an existing entry updated) in `docs/TOOLS_AND_SOURCES.md`
+   - [ ] Requester confirmed, not guessed
+   - [ ] AI-assisted code/doc files marked (rule 2)
+   - [ ] Sources listed with their read status (rule 4)
+   - [ ] Your final message to the user mentions the log entry
 2. **Mark AI-generated code in the source.** Add a short note to the module docstring or above the function, e.g. `# AI-assisted: <tool name>, requested by <name>, see docs/TOOLS_AND_SOURCES.md`. Don't mark files with no AI contribution.
 3. **Attribute in commits.** Commit messages for AI-assisted work include the requester and the tool, e.g. a trailer `Requested-by: <name>` plus a `Co-Authored-By` line naming the tool (follow your tool's own convention). Never commit AI work under a name that hides its origin.
-4. **Cite outside sources too.** Any tutorial, StackOverflow answer, library, or dataset used goes in the same file with its URL.
+4. **Cite outside sources too.** Any tutorial, StackOverflow answer, library, dataset, or web page used goes under "Outside sources" in the same file with its URL, what it was used for, and its **read status**: *read* (you opened and read the original) or *search-result summary only* (you saw only a search snippet or summary). Never present a summary-only source as if it were read.
 5. **Do the log update in the same change as the work**, not later. If you create or edit code, the log entry is part of the task and you should mention it in your final summary.
 6. Students must understand every line they submit. Explain your code clearly, and don't add code that nobody on the team could justify.
 
