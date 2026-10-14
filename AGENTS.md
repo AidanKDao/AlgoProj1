@@ -72,15 +72,24 @@ Run `python data/scripts/generate_data.py` once after cloning to create the samp
 - Validation failures should be reported clearly (which record, which field, why), not crash with a bare traceback.
 - Match existing style: dataclasses with trailing field comments, type hints, a short module docstring.
 
+## Settled rules (accepted 2026-10-14, full detail in `docs/project_logic/002-scheduling-feasibility-and-metrics-rules.md`)
+
+- **Timing:** a trip takes 15 minutes, +15 if the volunteer's area differs from the donation's pickup area, +15 more if the pickup area differs from the recipient's dropoff area (15, 30, or 45 total). Food must arrive with at least 15 minutes of shelf life left. Arrival must also be no later than the recipient's closing time and the volunteer's `availability_end`.
+- **Areas:** any area is allowed; areas only add time. Volunteers start every trip from their home `pickup_area`.
+- **Volunteer schedule:** a volunteer is busy from trip start to delivery arrival. Each volunteer keeps a list of booked trips; a new trip starts at `max(ready_time, availability_start)` and moves to the earliest free gap. `maximum_pickups` and the availability window are enforced.
+- **Capacity:** recipient capacity is one total for the whole run; vehicle capacity is a limit per trip.
+- **Match selection:** both strategies take the first feasible recipient and volunteer pair, in input order.
+- **Greedy:** earliest `expiry_time` first. Tie-breakers not yet decided; use `arrival_order` until they are.
+- **Deferred:** not a final status. A donation is deferred when a later-arriving donation was processed before it; its explanation gets a sentence naming the donation processed immediately before it.
+- **Metrics:** urgent = earliest-expiring 25% by `expiry_time`; recipient utilization = assigned qty ÷ total capacity of all recipients; volunteer utilization = assigned qty ÷ sum of `vehicle_capacity × maximum_pickups`; food at risk = total unassigned quantity (expired counted once).
+- **Validation:** keep the first record with an ID; drop and report later duplicates and invalid rows; keep running.
+- **CLI and report:** takes a dataset folder, runs both strategies by default, prints to the terminal, optional `--out` saves the report. Each strategy's decisions are listed in the order that strategy processed them, including side by side.
+
 ## Open decisions (not yet fixed; confirm with the user before assuming)
 
-Proposed answers, with research and their effect on each scenario, live in `docs/project_logic/` (see its README for the index and status legend). **Do not implement a rule marked *Proposed* as settled behavior.** It needs team confirmation first. Once a rule is *Accepted*, move it into the relevant section above and update the file's status.
+Proposed answers, with research and their effect on each scenario, live in `docs/project_logic/` (see its README for the index and status legend). **Do not implement a rule marked *Proposed* as settled behavior.** It needs team confirmation first. Once a rule is *Accepted*, move it into "Settled rules" above and update the file's status.
 
-- **Pickup timing / near-expiry donations.** Proposed in `docs/project_logic/001-near-expiry-and-pickup-timing.md`.
-- **Exact greedy rule.** The README must state it precisely. Brief's example: least remaining shelf life first; tie → larger quantity; tie → earlier arrival.
-- **Feasibility details.** Whether area must match between donation, volunteer, and recipient (teammates lean toward same-area matching as simplest; a distance table is a stretch feature; not decided), how scheduled time is computed (`scheduled_time_start/end` on `Assignment`), and whether recipient capacity is a single total or per-time. *Settled (team confirmed 2026-10-05):* volunteer `maximum_pickups` and availability window are enforced per pickup (`enforce_maximum_pickups` / `enforce_volunteer_window` default to on in `rescueroute/feasibility.py`).
-- **"Urgent" definition** for the urgent rescue rate (e.g. earliest-expiring N% of donations).
-- **Output format** of the comparison report.
+- **Greedy tie-breakers** after earliest `expiry_time`. The brief's example: larger quantity, then earlier arrival.
 
 ## Final deliverables (README must cover)
 

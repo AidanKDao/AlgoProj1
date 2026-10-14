@@ -2,7 +2,7 @@
 
 AI-assisted: Claude Code (claude-opus-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
 
-**Status: Proposed.** This is not yet agreed by the team. Do not implement it as settled behavior.
+**Status: Superseded by [002](002-scheduling-feasibility-and-metrics-rules.md)** (2026-10-14). The team kept this file's approach (travel time plus a minimum shelf-life buffer) but chose 15-minute trips, a cross-area penalty, and a busy-until volunteer model. Do not implement the values below; follow 002. The research is kept for reference.
 
 ## The question
 

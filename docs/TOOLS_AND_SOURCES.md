@@ -88,6 +88,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `tests/test_loader.py`, `tests/test_feasibility.py` (comments and a docstring note on the assert methods only; no change to what the tests check).
 - **Modifications:** Pending human review. All 18 tests in the two files still pass.
 
+### 2026-10-14: Accepted scheduling, feasibility, and metrics rules
+- **Human requester:** Dominic Dionne
+- **Tool/model:** Claude Code (claude-opus-5-5)
+- **Prompt summary:** Create a source of truth for open questions in the repo using answers provided by Dominic Dionne, then search the repo for any questions Dominic Dionne did not answer and bring them up.
+- **Output used:** `docs/project_logic/002-scheduling-feasibility-and-metrics-rules.md`, `docs/project_logic/README.md`, `docs/project_logic/001-near-expiry-and-pickup-timing.md`, `AGENTS.md`
+- **Modifications:** Every decision was made by and description was verified by Dominic Dionne.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.
