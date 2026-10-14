@@ -20,10 +20,7 @@ This folder records how RescueRoute handles questions the project brief leaves o
 | # | Question | Status |
 |---|---|---|
 | [001](001-near-expiry-and-pickup-timing.md) | When is a donation too close to expiry to rescue, and how is pickup/delivery time computed? | Superseded by 002 |
-| [002](002-scheduling-feasibility-and-metrics-rules.md) | Timing, areas, volunteer schedule, capacity, greedy rule, deferred explanations, metrics, validation, and report format | Accepted |
-
-### Not yet written (other open decisions from `AGENTS.md`)
-- What are the greedy tie-breakers after earliest expiry?
+| [002](002-scheduling-feasibility-and-metrics-rules.md) | Timing, areas, volunteer schedule, capacity, greedy rule and tie-breakers, deferred explanations, metrics, validation, and report format | Accepted |
 
 ## Adding a file
 

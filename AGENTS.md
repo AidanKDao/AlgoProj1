@@ -79,8 +79,8 @@ Run `python data/scripts/generate_data.py` once after cloning to create the samp
 - **Volunteer schedule:** a volunteer is busy from trip start to delivery arrival. Each volunteer keeps a list of booked trips; a new trip starts at `max(ready_time, availability_start)` and moves to the earliest free gap. `maximum_pickups` and the availability window are enforced.
 - **Capacity:** recipient capacity is one total for the whole run; vehicle capacity is a limit per trip.
 - **Match selection:** both strategies take the first feasible recipient and volunteer pair, in input order.
-- **Greedy:** earliest `expiry_time` first. Tie-breakers not yet decided; use `arrival_order` until they are.
-- **Deferred:** not a final status. A donation is deferred when a later-arriving donation was processed before it; its explanation gets a sentence naming the donation processed immediately before it.
+- **Greedy:** sort once by earliest `expiry_time` → fewest compatible recipients → larger quantity → earlier `arrival_order`. Compatible = accepts the food type and starting capacity ≥ quantity (computed once before the run).
+- **Deferred:** not a final status. A donation is deferred when a later-arriving donation was processed before it; its explanation gets a sentence naming the donation processed immediately before it (skipping donations with zero compatible recipients) and the sort level that decided the order.
 - **Metrics:** urgent = earliest-expiring 25% by `expiry_time`; recipient utilization = assigned qty ÷ total capacity of all recipients; volunteer utilization = assigned qty ÷ sum of `vehicle_capacity × maximum_pickups`; food at risk = total unassigned quantity (expired counted once).
 - **Validation:** keep the first record with an ID; drop and report later duplicates and invalid rows; keep running.
 - **CLI and report:** takes a dataset folder, runs both strategies by default, prints to the terminal, optional `--out` saves the report. Each strategy's decisions are listed in the order that strategy processed them, including side by side.
@@ -89,7 +89,7 @@ Run `python data/scripts/generate_data.py` once after cloning to create the samp
 
 Proposed answers, with research and their effect on each scenario, live in `docs/project_logic/` (see its README for the index and status legend). **Do not implement a rule marked *Proposed* as settled behavior.** It needs team confirmation first. Once a rule is *Accepted*, move it into "Settled rules" above and update the file's status.
 
-- **Greedy tie-breakers** after earliest `expiry_time`. The brief's example: larger quantity, then earlier arrival.
+- None currently.
 
 ## Final deliverables (README must cover)
 

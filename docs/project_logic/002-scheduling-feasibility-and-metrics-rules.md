@@ -2,9 +2,7 @@
 
 AI-assisted: Claude Code (claude-opus-5-5), requested by Dom, see docs/TOOLS_AND_SOURCES.md
 
-**Status: Accepted** (2026-10-14, decided by Dom, Algorithm & Optimization Lead). Code and tests should follow these rules. This file supersedes [001](001-near-expiry-and-pickup-timing.md): it keeps 001's structure (travel time plus a minimum shelf-life buffer) but changes the numbers and the volunteer timing model.
-
-The one rule still open is the greedy tie-breaker order (see "Greedy rule").
+**Status: Accepted** (2026-10-14, decided by Dom, Algorithm & Optimization Lead). Code and tests should follow these rules. Greedy tie-breakers were settled later the same day. This file supersedes [001](001-near-expiry-and-pickup-timing.md): it keeps 001's structure (travel time plus a minimum shelf-life buffer) but changes the numbers and the volunteer timing model.
 
 ## Timing
 
@@ -63,14 +61,27 @@ The assignment stores `scheduled_time_start = start` and `scheduled_time_end = a
 
 ## Greedy rule
 
-- Primary key: **earliest `expiry_time` first** (the absolute deadline, not `expiry_time - ready_time`).
-- Tie-breakers: **not yet decided.** Until they are, break ties by `arrival_order` so the output is deterministic.
+Donations are sorted once, before the run, by:
+
+1. **Earliest `expiry_time`** (the absolute deadline, not `expiry_time - ready_time`). Urgency, as the brief requires.
+2. **Fewest compatible recipients.** Among equally urgent donations, the hardest to place goes first, so it is not crowded out by donations that have alternatives.
+3. **Larger quantity.** Among equally urgent and equally constrained donations, rescue more food.
+4. **Earlier `arrival_order`.** First come, first served; makes the order fully defined.
+
+**Compatible recipients** for a donation = recipients whose `accepted_food_types` include its `food_type` **and** whose starting `capacity` is at least its `quantity`. Both come straight from the input, so the count is computed once before sorting and never changes. Area and timing are not part of it (areas only add time, and timing depends on volunteer schedules).
+
+**Cost:** counting is one O(D·R) pass before the O(D log D) sort. Matching stays O(D·R·V), so the overall bound is unchanged.
 
 ## Deferred explanations
 
 - Deferred is **not a final status**. Every donation gets exactly one `Assignment`, `ASSIGNED` or `UNASSIGNED`.
 - A donation is **deferred** when a donation that arrived after it was processed before it.
-- Its `decision_reason` gets an extra sentence naming the donation **processed immediately before it**, e.g. "Donation D-1014 was considered after D-1002 because D-1002 had less remaining shelf life under the urgency-first greedy rule."
+- Its `decision_reason` gets an extra sentence naming the donation **processed immediately before it**, skipping donations with **zero compatible recipients** (they could never be assigned, so naming them would be misleading). If every earlier-processed donation has zero, no deferral sentence is added.
+- The sentence names the sort level that decided the order:
+  - "...was considered after D-1002 because D-1002 expires sooner (minute 90 vs 120)."
+  - "...because both expire at minute 120 and D-1002 has fewer compatible recipients (1 vs 4)."
+  - "...because both expire at minute 120 with 2 compatible recipients each, and D-1002 is larger (40 vs 15 units)."
+  - "...because both expire at minute 120 with 2 compatible recipients and 40 units each, and D-1002 arrived first."
 
 ## Metrics
 
@@ -107,6 +118,6 @@ All scenarios are single-area, so **no scenario yet tests the cross-area penalty
 ## What changes in the code
 
 - `rescueroute/feasibility.py`: `travel_minutes` 0 → 15, `min_minutes_left` 1 → 15; trip duration depends on areas; `CapacityTracker` keeps each volunteer's booked trips; `schedule` finds the earliest free gap; `unassigned_reason` needs a "volunteer busy" explanation.
-- `rescueroute/strategies/greedy.py`: sort by `expiry_time` then `arrival_order`; add deferred sentences.
+- `rescueroute/strategies/greedy.py`: count compatible recipients per donation, sort by the four-level key, add deferred sentences.
 - Metrics and `main.py`: follow the definitions above.
 - `tests/test_week1.py`: `test_expired_donation_is_not_assigned` can now assert D-1002 is unassigned.
