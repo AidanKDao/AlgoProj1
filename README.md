@@ -46,9 +46,6 @@ python main.py
 - [ ] Metrics
 - [ ] Updated README
 
-Greedy demo; comparison report; 10 tests; updated
-README.
-
 ## Week 3 Checkpoints
 
 - [ ] Polish code
