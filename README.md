@@ -40,14 +40,11 @@ python main.py
 
 ## Week 2 Checkpoints
 
-- [ ] Implement greedy strategy
+- [X] Implement greedy strategy
 - [ ] FIFO vs greedy comparison
 - [ ] 10 tests 
 - [ ] Metrics
 - [ ] Updated README
-
-Greedy demo; comparison report; 10 tests; updated
-README.
 
 ## Week 3 Checkpoints
 

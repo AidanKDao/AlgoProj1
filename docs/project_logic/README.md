@@ -13,18 +13,14 @@ This folder records how RescueRoute handles questions the project brief leaves o
 | **Proposed** | Draft for team discussion. Code must **not** treat it as settled behavior yet. |
 | **Accepted** | Agreed by the team. Code and tests should follow it, and `AGENTS.md` should list it as a settled rule. |
 | **Rejected** | Kept for the record, with the reason. |
+| **Superseded** | Replaced by a later file, which is linked. Kept for its research. |
 
 ## Index
 
 | # | Question | Status |
 |---|---|---|
-| [001](001-near-expiry-and-pickup-timing.md) | When is a donation too close to expiry to rescue, and how is pickup/delivery time computed? | Proposed |
-
-### Not yet written (other open decisions from `AGENTS.md`)
-- Must the donation, volunteer, and recipient areas match?
-- How is the "urgent" set defined for the urgent rescue rate?
-- What is the exact greedy priority rule and its tie-breakers?
-- What format should the FIFO-vs-greedy comparison report use?
+| [001](001-near-expiry-and-pickup-timing.md) | When is a donation too close to expiry to rescue, and how is pickup/delivery time computed? | Superseded by 002 |
+| [002](002-scheduling-feasibility-and-metrics-rules.md) | Timing, areas, volunteer schedule, capacity, greedy rule and tie-breakers, deferred explanations, metrics, validation, and report format | Accepted |
 
 ## Adding a file
 
