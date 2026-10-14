@@ -16,6 +16,7 @@ All times are integer minutes since the start of the simulation
 (minute 0 = 8:00 AM, minute 720 = 8:00 PM).
 
 This is AI generated code intended to provide a realistic simulation of a food rescue routing system input.
+AI-assisted: Claude Code (claude-opus-5-5), requested by Dominic Dionne, see docs/TOOLS_AND_SOURCES.md
 """
 
 import csv

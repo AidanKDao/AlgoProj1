@@ -4,6 +4,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 
 ## AI contributions
 
+### 2026-09-26: Sample data generator and dataset catalogue
+- **Human requester:** Dominic Dionne
+- **Tool/model:** Claude Code (claude-opus-5-5)
+- **Prompt summary:** Write a script that produces food-rescue input data in both CSV and JSON, covering seeded random datasets at increasing scale.
+- **Output used:** `data/scripts/generate_data.py` , `data/README.md`
+- **Modifications:** Reviewed and run by Dominic Dionne; the generated files were checked.
+
 ### 2026-10-05: Agent instruction files
 - **Human requester:** AidanDao
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
@@ -80,9 +87,6 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Prompt summary:** Walk through the test files and add a comment above every function so the team can follow what each test checks.
 - **Output used:** `tests/test_loader.py`, `tests/test_feasibility.py` (comments and a docstring note on the assert methods only; no change to what the tests check).
 - **Modifications:** Pending human review. All 18 tests in the two files still pass.
-
-## Pre-existing AI-generated code
-- `data/scripts/generate_data.py` is marked in its docstring as AI generated and attributed to "Dom". The tool/model and date are not recorded here yet; Dom should add an entry using the template in `AGENTS.md`.
 
 ## Outside sources
 
