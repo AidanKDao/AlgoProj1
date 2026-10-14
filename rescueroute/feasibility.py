@@ -9,7 +9,7 @@ donation not expired on arrival, recipient still open on arrival, volunteer
 maximum_pickups, and volunteer availability window (the last two confirmed by the team).
 Rules the team has not settled yet (docs/project_logic/, AGENTS.md "Open decisions")
 live in the Rules dataclass and are OFF or placeholder by default:
-    require_area_match, travel_minutes / min_minutes_left (proposal 001 suggests 30 and 15).
+    require_area_match, travel_minutes / min_minutes_left (proposal 002 decided 15 / 15).
 
 How the file is organized (top to bottom):
     1. Rules              the settings bundle (which rules are on, travel time)
@@ -33,11 +33,12 @@ class Rules:
     """Settings for the feasibility checks. Rules() uses the defaults; Rules(travel_minutes=30)
     changes just one. Strategies pass the same Rules object to every call so FIFO and
     greedy follow identical rules."""
-    travel_minutes: int = 0               # minutes from pickup to delivery
-    min_minutes_left: int = 1             # food must arrive at least this long before expiry
-    require_area_match: bool = False      # donation pickup area == volunteer area == recipient area
-    enforce_maximum_pickups: bool = True      # a volunteer cannot exceed their maximum_pickups
-    enforce_volunteer_window: bool = True     # delivery must fit in the volunteer's availability
+    travel_minutes: int = 15                # minutes from pickup to delivery
+    min_minutes_left: int = 15              # food must arrive at least this long before expiry
+    cross_area_minutes: int = 15            # donation pickup area != volunteer area != recipient area
+    require_area_match: bool = False        # donation pickup area == volunteer area == recipient area
+    enforce_maximum_pickups: bool = True    # a volunteer cannot exceed their maximum_pickups
+    enforce_volunteer_window: bool = True   # delivery must fit in the volunteer's availability
 
 
 class CapacityTracker:
@@ -68,13 +69,30 @@ class CapacityTracker:
 # schedule is a plain function (not indented inside a class, no `self`).
 # schedule: works out WHEN a pickup would happen. Takes one donation, one volunteer and the
 # rules, and returns a pair (start minute, arrival minute) used by the timing checks below.
-def schedule(donation: Donation, volunteer: Volunteer, rules: Rules) -> tuple[int, int]:
+def schedule(donation: Donation, volunteer: Volunteer, recipient: Recipient, rules: Rules) -> tuple[int, int]:
     """Return (pickup start, delivery arrival) in minutes."""
     start = donation.ready_time
     if rules.enforce_volunteer_window:
         # max picks the larger number: the volunteer cannot start before they are available
         start = max(start, volunteer.availability_start)
-    return start, start + rules.travel_minutes
+
+    # This holds the travel time in minutes from volunteer dispatch to recipient arrival
+    time_to_recipient = rules.travel_minutes
+
+    # If the area rule is on, the travel time is constant
+    if rules.require_area_match:
+        return start, start + time_to_recipient
+
+    # Add extra time for volunteer to travel from home to pickup if across areas
+    if donation.pickup_area != volunteer.pickup_area:
+        time_to_recipient += rules.cross_area_minutes
+
+    # Add extra time for volunteer to travel from pickup to recipient if across areas
+    if donation.pickup_area != recipient.dropoff_area:
+        time_to_recipient += rules.cross_area_minutes
+
+    # Note that we assume the volunteer goes from recipient to home with no additional travel time.
+    return start, start + time_to_recipient
 
 
 # ---------- individual checks: each returns None if OK, else a reason ----------
@@ -164,7 +182,7 @@ def _closing_and_window_reason(recipient, volunteer, arrival, rules) -> str | No
 # check above in order and returns the first problem found, or None if the match is feasible.
 def check_pair(donation, recipient, volunteer, tracker, rules) -> str | None:
     """None if this donation-recipient-volunteer match is feasible, else why not."""
-    _, arrival = schedule(donation, volunteer, rules)   # _ means "ignore the start value"
+    _, arrival = schedule(donation, volunteer, recipient, rules)   # _ means "ignore the start value"
     # `a or b or c` returns the first one that is not None, so this returns the FIRST failing
     # reason, or None if every check passes. The order here decides which reason the user sees.
     return (_expired_reason(donation, arrival, rules)
@@ -188,7 +206,7 @@ def find_match(donation, recipients, volunteers, tracker, rules):
     for recipient in recipients.values():
         for volunteer in volunteers.values():
             if check_pair(donation, recipient, volunteer, tracker, rules) is None:
-                start, arrival = schedule(donation, volunteer, rules)
+                start, arrival = schedule(donation, volunteer, recipient, rules)
                 return recipient, volunteer, start, arrival
     return None
 
@@ -213,8 +231,19 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     if not volunteers:
         return prefix + "there are no volunteers."
 
-    best_start = donation.ready_time      # earliest any pickup could start
-    expired = _expired_reason(donation, best_start + rules.travel_minutes, rules)
+    # Find earliest possible arrival time for this donation
+    #
+    # TODO: could move expired check below food and capcity checks and 
+    # loop over only recipients and volunteers that pass those checks.
+    earliest_arrival = None
+    for recipient in recipients.values():
+        for volunteer in volunteers.values():
+            _, arrival = schedule(donation, volunteer, recipient, rules)
+            if earliest_arrival is None or arrival < earliest_arrival:
+                earliest_arrival = arrival
+
+    # Check if the donation would be expired on arrival
+    expired = _expired_reason(donation, earliest_arrival, rules)
     if expired:
         return prefix + expired + "."
 
