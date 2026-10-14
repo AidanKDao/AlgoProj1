@@ -37,3 +37,24 @@ python main.py
 - [x] Sample input data included
 - [x] Initial automated tests included
 - [x] Team roles documented
+
+## Week 2 Checkpoints
+
+- [ ] Implement greedy strategy
+- [ ] FIFO vs greedy comparison
+- [ ] 10 tests 
+- [ ] Metrics
+- [ ] Updated README
+
+Greedy demo; comparison report; 10 tests; updated
+README.
+
+## Week 3 Checkpoints
+
+- [ ] Polish code
+- [ ] Finalize tests
+- [ ] Finalize documentation
+- [ ] Demo materials
+- [ ] Prepare presentation (Live or video demo)
+- [ ] Final report
+- [ ] Contribution statements
