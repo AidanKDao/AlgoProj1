@@ -75,8 +75,10 @@ Donations are sorted once, before the run, by:
 ## Deferred explanations
 
 - Deferred is **not a final status**. Every donation gets exactly one `Assignment`, `ASSIGNED` or `UNASSIGNED`.
-- A donation is **deferred** when a donation that arrived after it was processed before it.
-- Its `decision_reason` gets an extra sentence naming the donation **processed immediately before it**, skipping donations with **zero compatible recipients** (they could never be assigned, so naming them would be misleading). If every earlier-processed donation has zero, no deferral sentence is added.
+- A donation is **deferred** when a donation that arrived after it was processed before it (it was "jumped").
+- **Only deferred donations that end up `UNASSIGNED` get a deferral sentence.** A donation that was jumped but still assigned lost nothing, so its normal assigned explanation is enough. This meets the brief: every donation gets an assigned or unassigned explanation (§5), and the starvation case shows which donation was deferred and why (§8). The brief does not require a sentence for every reordering.
+- The sentence names the **closest jumper**: of the donations processed before it that arrived after it, the one processed most recently. Donations with **zero compatible recipients** are skipped (they could never be assigned, so naming them would be misleading). If no jumper remains, no deferral sentence is added.
+- Example (`starvation`): D-1001 is unassigned; its closest jumper is D-1005, so its explanation ends "...was considered after D-1005 because D-1005 expires sooner (minute 120 vs 2880)."
 - The sentence names the sort level that decided the order:
   - "...was considered after D-1002 because D-1002 expires sooner (minute 90 vs 120)."
   - "...because both expire at minute 120 and D-1002 has fewer compatible recipients (1 vs 4)."
@@ -118,6 +120,6 @@ All scenarios are single-area, so **no scenario yet tests the cross-area penalty
 ## What changes in the code
 
 - `rescueroute/feasibility.py`: `travel_minutes` 0 → 15, `min_minutes_left` 1 → 15; trip duration depends on areas; `CapacityTracker` keeps each volunteer's booked trips; `schedule` finds the earliest free gap; `unassigned_reason` needs a "volunteer busy" explanation.
-- `rescueroute/strategies/greedy.py`: count compatible recipients per donation, sort by the four-level key, add deferred sentences.
+- `rescueroute/strategies/greedy.py`: count compatible recipients per donation, sort by the four-level key, add deferral sentences to unassigned deferred donations.
 - Metrics and `main.py`: follow the definitions above.
 - `tests/test_week1.py`: `test_expired_donation_is_not_assigned` can now assert D-1002 is unassigned.
