@@ -17,6 +17,10 @@ Assumed interface:
         -> list[Assignment], exactly one per donation, in arrival order.
         Unassigned donations have status Status.UNASSIGNED and recipient_id/volunteer_id
         of None; every Assignment has a non-empty decision_reason.
+    rescueroute.strategies.greedy.run_greedy(donations, recipients, volunteers)
+        -> list[Assignment], exactly one per donation, in arrival order.
+        Unassigned donations have status Status.UNASSIGNED and recipient_id/volunteer_id
+        of None; every Assignment has a non-empty decision_reason.
 """
 
 import subprocess
@@ -53,3 +57,10 @@ def run_fifo_scenario(name: str, ext: str = "csv"):
 
     donations, recipients, volunteers, _ = load_scenario(name, ext)
     return {a.donation_id: a for a in run_fifo(donations, recipients, volunteers)}
+
+def run_greedy_scenario(name: str, ext: str = "csv"):
+    """Load a scenario and run Greedy on it. Returns {donation_id: Assignment}."""
+    from rescueroute.strategies.greedy import run_greedy
+
+    donations, recipients, volunteers, _ = load_scenario(name, ext)
+    return {a.donation_id: a for a in run_greedy(donations, recipients, volunteers)}
