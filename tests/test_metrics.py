@@ -3,7 +3,7 @@
 These tests verify that our metrics are calculated correctly
 before we use them to compare FIFO and Greedy.
 
-AI-assisted: Claude Code, requested by AidanDao (tests for the new metrics and
+AI-assisted: Claude Code, requested by AidanKDao (tests for the new metrics and
 the updated calculate_metrics signature), see docs/TOOLS_AND_SOURCES.md
 """
 

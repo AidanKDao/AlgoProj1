@@ -2,7 +2,7 @@
 Week 2 tests: the rest of the required cases from the project brief, run against both
 strategies, plus the wording of greedy's deferral sentences.
 
-AI-assisted: Claude Code (claude-opus-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
+AI-assisted: Claude Code (claude-opus-5-5), requested by AidanKDao, see docs/TOOLS_AND_SOURCES.md
 
 Run from the repo root:  python -m unittest discover -s tests -t .
 
@@ -13,6 +13,7 @@ is added.
 
 import unittest
 
+from rescueroute.metrics import calculate_metrics
 from rescueroute.models import Donation, Recipient, Volunteer, Status
 from rescueroute.strategies.fifo import run_fifo
 from rescueroute.strategies.greedy import run_greedy
@@ -75,6 +76,56 @@ class TestRequiredCases(unittest.TestCase):
         fifo = run_fifo_scenario("starvation")
         self.assertEqual(assigned_ids(fifo), {"D-1001", "D-1002", "D-1003", "D-1004"})
         self.assertNotIn("considered after", fifo["D-1005"].decision_reason)
+
+    def test_fifo_and_greedy_differ(self):
+        """Required case: the same input gives FIFO and greedy different results.
+
+        Scenario `fifo_vs_greedy_differ` (data/scripts/generate_data.py):
+          D-1001  produce         30 units, expires minute 600, arrived first
+          D-1002  prepared_meals  30 units, expires minute 90,  arrived second
+          R-201   accepts meals and produce, capacity 30  (listed first)
+          R-202   accepts produce only,      capacity 50
+          Two volunteers with room for both trips, so recipient capacity is the only
+          thing that can go wrong.
+
+        Why the strategies split:
+          * FIFO handles D-1001 first. R-201 is the first feasible recipient in input
+            order, so the produce takes all 30 units of the only recipient that accepts
+            meals. FIFO never looks ahead, so D-1002 finds R-201 full and has nowhere
+            else to go.
+          * Greedy sorts by earliest expiry, so D-1002 (minute 90) is handled first and
+            takes R-201. D-1001 can wait, and R-202 still accepts produce.
+        Both strategies use the same feasibility check, so the only difference here is
+        the processing order, which is what the comparison is meant to show."""
+        fifo = run_fifo_scenario("fifo_vs_greedy_differ")
+        greedy = run_greedy_scenario("fifo_vs_greedy_differ")
+
+        # FIFO: produce arrived first and fills R-201; the meals are left out.
+        self.assertEqual(assigned_ids(fifo), {"D-1001"})
+        self.assertEqual(fifo["D-1001"].recipient_id, "R-201")
+        self.assertEqual(fifo["D-1002"].status, Status.UNASSIGNED)
+        self.assertIn("capacity", fifo["D-1002"].decision_reason.lower())
+
+        # Greedy: the short-shelf-life meals go first and take R-201, then the
+        # produce moves on to R-202. Nothing is lost.
+        self.assertEqual(assigned_ids(greedy), {"D-1001", "D-1002"})
+        self.assertEqual(greedy["D-1002"].recipient_id, "R-201")
+        self.assertEqual(greedy["D-1001"].recipient_id, "R-202")
+
+        # The difference should show up in the metrics too, since that is how the
+        # comparison report will present it. The same donation dict and the same
+        # recipient/volunteer data go into both runs.
+        donations, recipients, volunteers, _ = load_scenario("fifo_vs_greedy_differ")
+        fifo_metrics = calculate_metrics(donations, fifo.values(), recipients, volunteers)
+        greedy_metrics = calculate_metrics(donations, greedy.values(), recipients, volunteers)
+
+        self.assertEqual((fifo_metrics["assigned"], greedy_metrics["assigned"]), (1, 2))
+        self.assertEqual((fifo_metrics["rescued_food"], greedy_metrics["rescued_food"]), (30, 60))
+        # The 30 units of meals expire at minute 90, so under FIFO they are food at risk.
+        self.assertEqual((fifo_metrics["food_at_risk"], greedy_metrics["food_at_risk"]), (30, 0))
+        # With 2 donations the urgent group is 1 (the meals), so it is 0% vs 100%.
+        self.assertEqual((fifo_metrics["urgent_rescue_rate"],
+                          greedy_metrics["urgent_rescue_rate"]), (0.0, 100.0))
 
 
 # ---------- greedy deferral sentences, on small hand-built inputs ----------

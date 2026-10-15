@@ -8,7 +8,7 @@ The greedy rule is:
     4. Earliest arrival order
 
 Deferral explanations follow docs/project_logic/002.
-AI-assisted (deferral wording and jumper search): Claude Code (claude-opus-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
+AI-assisted (deferral wording and jumper search): Claude Code (claude-opus-5-5), requested by AidanKDao, see docs/TOOLS_AND_SOURCES.md
 """
 
 from rescueroute.models import Assignment, Status

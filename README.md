@@ -103,7 +103,7 @@ Run the complete test suite:
 python3 -m unittest discover -s tests -t . -v
 ```
 
-At the Week 2 checkpoint, all 43 automated tests passed.
+At the Week 2 checkpoint, all 44 automated tests passed.
 
 The tests cover input validation, matching feasibility, scheduling behavior, performance metrics, and strategy comparison.
 
@@ -206,7 +206,7 @@ AlgoProj1/
 
 - [x] Implement greedy strategy
 - [x] FIFO vs. Greedy comparison
-- [ ] All 10 required tests (43 passing; the "FIFO and greedy differ" test is still missing)
+- [x] All 10 required tests (44 passing)
 - [x] Performance metrics
 - [x] Updated README documentation
 
@@ -232,7 +232,7 @@ Implemented the greedy strategy and developed performance metrics to compare FIF
 
 Created a reusable comparison program and added automated tests.
 
-All 43 tests passed during local Week 2 verification.
+All 44 tests passed during local Week 2 verification.
 
 ### Week 3 — Finalization
 

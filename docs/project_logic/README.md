@@ -1,6 +1,6 @@
 # Project Logic
 
-AI-assisted: Claude Code (claude-opus-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
+AI-assisted: Claude Code (claude-opus-5-5), requested by AidanKDao, see docs/TOOLS_AND_SOURCES.md
 
 This folder records how RescueRoute handles questions the project brief leaves open, such as *"a donation expires in 10 minutes: can it still be rescued?"* Each file covers one question: what the confusion is, what real food-rescue practice suggests, the rule we propose, the alternatives, and how each one changes the scenario datasets in `data/scenarios/`.
 

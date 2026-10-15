@@ -4,7 +4,7 @@
 This module measures how well FIFO and Greedy perform.
 Both strategies use the same calculations for a fair comparison.
 
-AI-assisted: Claude Code, requested by AidanDao (urgent rescue rate, utilization
+AI-assisted: Claude Code, requested by AidanKDao (urgent rescue rate, utilization
 and food at risk), see docs/TOOLS_AND_SOURCES.md
 """
 

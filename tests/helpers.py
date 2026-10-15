@@ -1,7 +1,7 @@
 """
 Shared helpers for the RescueRoute tests.
 
-AI-assisted: Claude Code (claude-sonnet-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
+AI-assisted: Claude Code (claude-sonnet-5-5), requested by AidanKDao, see docs/TOOLS_AND_SOURCES.md
 
 The loader and FIFO scheduler are written by teammates and do not exist yet, so
 this file is the ONE place that states the interface the tests assume. If the

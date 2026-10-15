@@ -1,7 +1,7 @@
 """
 Week 1 tests: five required cases, run against the FIFO baseline and the loader.
 
-AI-assisted: Claude Code (claude-sonnet-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
+AI-assisted: Claude Code (claude-sonnet-5-5), requested by AidanKDao, see docs/TOOLS_AND_SOURCES.md
 
 Run from the repo root:  python -m unittest discover -s tests -t .
 
