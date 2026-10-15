@@ -39,14 +39,18 @@ def compare_strategies(folder):
     # Step 3: Run FIFO and calculate its performance metrics.
     # FIFO processes donations based on arrival order.
     fifo_assignments = run_fifo(donations, recipients, volunteers)
-    fifo_metrics = calculate_metrics(donations, fifo_assignments)
+    fifo_metrics = calculate_metrics(
+        donations, fifo_assignments, recipients, volunteers
+    )
 
     # Step 4: Run Greedy and calculate its performance metrics.
     # Greedy prioritizes donations using the team's greedy rules.
     # Each strategy creates its own capacity tracker, so the
     # results from FIFO do not affect Greedy.
     greedy_assignments = run_greedy(donations, recipients, volunteers)
-    greedy_metrics = calculate_metrics(donations, greedy_assignments)
+    greedy_metrics = calculate_metrics(
+        donations, greedy_assignments, recipients, volunteers
+    )
 
     # Step 5: Display results side by side.
     print("\nRESCUEROUTE - FIFO VS GREEDY")
@@ -63,6 +67,12 @@ def compare_strategies(folder):
         "rescued_food": "Food rescued",
         "assignment_rate": "Assignment rate (%)",
         "food_rescue_rate": "Food rescue rate (%)",
+        "food_at_risk": "Food at risk",
+        "urgent_donations": "Urgent donations",
+        "urgent_assigned": "Urgent assigned",
+        "urgent_rescue_rate": "Urgent rescue rate (%)",
+        "recipient_utilization": "Recipient utilization (%)",
+        "volunteer_utilization": "Volunteer utilization (%)",
     }
 
     for key, label in labels.items():
@@ -85,6 +95,11 @@ def compare_strategies(folder):
     print("\nCOMPARISON SUMMARY")
     print(f"Difference in assigned donations: {assignment_difference:+d}")
     print(f"Difference in food rescued: {rescued_difference:+d} units")
+    urgent_difference = (
+        greedy_metrics["urgent_rescue_rate"]
+        - fifo_metrics["urgent_rescue_rate"]
+    )
+    print(f"Difference in urgent rescue rate: {urgent_difference:+.2f} points")
 
     if rescued_difference > 0:
         print("Greedy rescued more food on this dataset.")

@@ -116,6 +116,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** Deleted `docs/HANDOFF.md`. Committed the greedy deferral wording fix (`rescueroute/strategies/greedy.py`), the new tests (`tests/test_week2.py`, `tests/test_week1.py`, `tests/helpers.py`) and this log, all written in the entry above. Corrected that entry (32 tests pass, not 33; README was not changed). `README.md` and `fifo.py` were left out of the commit because they differ only in line endings. No new code was written.
 - **Modifications:** Pending human review. Re-ran the full suite before committing: 32 tests, OK.
 
+### 2026-10-15: Merge Soheil's branch and add the missing required metrics
+- **Human requester:** AidanDao
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Merge the greedy/test branch and Soheil's `soheil-week2-metrics` branch into `main`, then add the required metrics his `metrics.py` did not have (food at risk, urgent rescue rate, recipient and volunteer utilization).
+- **Output used:** Merged both branches into `main` (merge commit `dc8c6e0`; Soheil's code is his own, not AI output). New work on `AidanKDao/feat/required-metrics`: `rescueroute/metrics.py` (`calculate_metrics` now also takes `recipients` and `volunteers` and returns `food_at_risk`, `urgent_donations`, `urgent_assigned`, `urgent_rescue_rate`, `recipient_utilization`, `volunteer_utilization`; urgent = earliest-expiring 25% rounded up, ties by arrival order, per 002), `compare_strategies.py` (passes recipients/volunteers, prints the new rows and an urgent-rate difference), `tests/test_metrics.py` (existing three tests adapted, six new tests), `tests/test_compare_strategies.py` (four new assertions), `README.md` (metric definitions, results table, test counts; the "10 tests" box is now unticked because the "FIFO and greedy differ" test is still missing).
+- **Modifications:** Pending human review. All 43 tests pass; comparison on `data/scale/small` shows urgent rescue rate 85.71% (FIFO) vs 100% (greedy).
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.

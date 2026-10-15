@@ -103,7 +103,7 @@ Run the complete test suite:
 python3 -m unittest discover -s tests -t . -v
 ```
 
-At the Week 2 checkpoint, all 29 automated tests passed.
+At the Week 2 checkpoint, all 43 automated tests passed.
 
 The tests cover input validation, matching feasibility, scheduling behavior, performance metrics, and strategy comparison.
 
@@ -118,6 +118,10 @@ To evaluate both strategies fairly, we calculate:
 - **Food Rescued:** Total food units successfully assigned.
 - **Assignment Rate:** Percentage of donations successfully assigned.
 - **Food Rescue Rate:** Percentage of available food units successfully assigned.
+- **Food at Risk:** Total quantity of donations left unassigned (expired donations are counted once, here).
+- **Urgent Rescue Rate:** Percentage of urgent donations assigned. Urgent donations are the earliest-expiring 25% by expiry time, rounded up, with ties broken by arrival order.
+- **Recipient Utilization:** Assigned quantity divided by the total capacity of all recipients.
+- **Volunteer Utilization:** Assigned quantity divided by the sum of vehicle capacity times maximum pickups over all volunteers.
 
 These metrics allow us to compare how efficiently FIFO and Greedy allocate available resources.
 
@@ -134,6 +138,10 @@ The following results were obtained using the generated small dataset containing
 | Food Rescued | 814 | 839 |
 | Assignment Rate | 76.00% | 80.00% |
 | Food Rescue Rate | 75.09% | 77.40% |
+| Food at Risk | 270 | 245 |
+| Urgent Rescue Rate (7 urgent donations) | 85.71% | 100.00% |
+| Recipient Utilization | 87.53% | 90.22% |
+| Volunteer Utilization | 44.73% | 46.10% |
 
 ### Results Summary
 
@@ -198,7 +206,7 @@ AlgoProj1/
 
 - [x] Implement greedy strategy
 - [x] FIFO vs. Greedy comparison
-- [x] At least 10 automated tests (29 passing)
+- [ ] All 10 required tests (43 passing; the "FIFO and greedy differ" test is still missing)
 - [x] Performance metrics
 - [x] Updated README documentation
 
@@ -224,7 +232,7 @@ Implemented the greedy strategy and developed performance metrics to compare FIF
 
 Created a reusable comparison program and added automated tests.
 
-All 29 tests passed during local Week 2 verification.
+All 43 tests passed during local Week 2 verification.
 
 ### Week 3 — Finalization
 

@@ -64,6 +64,10 @@ class TestStrategyComparison(unittest.TestCase):
             self.assertIn("Food rescued", printed_output)
             self.assertIn("Assignment rate", printed_output)
             self.assertIn("COMPARISON SUMMARY", printed_output)
+            self.assertIn("Food at risk", printed_output)
+            self.assertIn("Urgent rescue rate", printed_output)
+            self.assertIn("Recipient utilization", printed_output)
+            self.assertIn("Volunteer utilization", printed_output)
 
             # Both should rescue the single valid donation.
             self.assertIn(
