@@ -56,9 +56,12 @@ class TestWeek1(unittest.TestCase):
         self.assertIn("expir", expired.decision_reason.lower())
 
         self.assertEqual(result["D-1003"].status, Status.ASSIGNED)
-        # D-1002 (10 minutes left) is deliberately not asserted: whether that is
-        # enough time depends on the team's pickup-time rule. It still needs an explanation.
-        self.assertTrue(result["D-1002"].decision_reason)
+
+        # D-1002 expires at minute 10, but the earliest delivery is minute 15 and food must
+        # arrive with 15 minutes left (docs/project_logic/002), so it cannot be rescued.
+        nearly_expired = result["D-1002"]
+        self.assertEqual(nearly_expired.status, Status.UNASSIGNED)
+        self.assertIn("expir", nearly_expired.decision_reason.lower())
 
     def test_no_compatible_food_type(self):
         """No recipient accepts dairy, so the donation is unassigned with an explanation."""

@@ -18,7 +18,7 @@ Assumed interface:
         Unassigned donations have status Status.UNASSIGNED and recipient_id/volunteer_id
         of None; every Assignment has a non-empty decision_reason.
     rescueroute.strategies.greedy.run_greedy(donations, recipients, volunteers)
-        -> list[Assignment], exactly one per donation, in arrival order.
+        -> list[Assignment], exactly one per donation, in the order greedy processed them.
         Unassigned donations have status Status.UNASSIGNED and recipient_id/volunteer_id
         of None; every Assignment has a non-empty decision_reason.
 """

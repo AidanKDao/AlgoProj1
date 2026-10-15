@@ -6,6 +6,9 @@ The greedy rule is:
     2. Fewest compatible recipients
     3. Largest payload
     4. Earliest arrival order
+
+Deferral explanations follow docs/project_logic/002.
+AI-assisted (deferral wording and jumper search): Claude Code (claude-opus-5-5), requested by AidanDao, see docs/TOOLS_AND_SOURCES.md
 """
 
 from rescueroute.models import Assignment, Status
@@ -18,19 +21,30 @@ from rescueroute.feasibility import (
 )
 
 def deferral_reason(jumper, deferred, counts):
-    """Explain why the deferred donation was considered after the 'jumper' donation under the greedy rule"""
-    # The greedy rule is:
+    """Explain why the deferred donation was considered after the 'jumper' donation under the greedy rule.
+
+    Only levels 1-3 of the greedy rule can decide this. The jumper arrived AFTER the deferred
+    donation, so if the two tied on levels 1-3, level 4 (earlier arrival) would have put the
+    deferred donation first and there would be no jump to explain.
+    """
+    start = f"Donation {deferred.donation_id} was considered after {jumper.donation_id} because "
+    jumper_count = counts[jumper.donation_id]
+    deferred_count = counts[deferred.donation_id]
+
     # 1. Soonest expiring
     if jumper.expiry_time < deferred.expiry_time:
-        return f"Donation {deferred.donation_id} was deferred in favor of Donation {jumper.donation_id} by the greedy rule prioritizing soonest expiration. (Expiry times: {jumper.expiry_time} < {deferred.expiry_time})"
+        return start + (f"{jumper.donation_id} expires sooner "
+                        f"(minute {jumper.expiry_time} vs {deferred.expiry_time}).")
 
-    # 2. Fewest compatible recipients
-    if counts[jumper.donation_id] < counts[deferred.donation_id]:
-        return f"Donation {deferred.donation_id} was deferred in favor of Donation {jumper.donation_id} by the greedy rule prioritizing fewest compatible recipients. (Compatible recipients: {counts[jumper.donation_id]} < {counts[deferred.donation_id]})"
+    # 2. Fewest compatible recipients (both expire at the same minute)
+    if jumper_count < deferred_count:
+        return start + (f"both expire at minute {deferred.expiry_time} and {jumper.donation_id} "
+                        f"has fewer compatible recipients ({jumper_count} vs {deferred_count}).")
 
-    # 3. Largest payload
-    if jumper.quantity > deferred.quantity:
-        return f"Donation {deferred.donation_id} was deferred in favor of Donation {jumper.donation_id} by the greedy rule prioritizing largest payload. (Payloads: {jumper.quantity} > {deferred.quantity})"
+    # 3. Larger quantity. This is the only level left (see the docstring above).
+    return start + (f"both expire at minute {deferred.expiry_time} with {deferred_count} compatible "
+                    f"recipient(s) each, and {jumper.donation_id} is larger "
+                    f"({jumper.quantity} vs {deferred.quantity} units).")
 
 def run_greedy(donations, recipients, volunteers):
     """
@@ -186,8 +200,9 @@ def run_greedy(donations, recipients, volunteers):
 
         # Find the donation that caused the deferral
         for jumper_candidate in reversed(assignments[:i]):
-            # The donation must be assigned to be the cause of deferral
-            if jumper_candidate.status != Status.ASSIGNED:
+            # Skip donations with zero compatible recipients: they could never be assigned,
+            # so naming them as the reason would be misleading (docs/project_logic/002)
+            if compatible_recipients_count[jumper_candidate.donation_id] == 0:
                 continue
 
             # The jumper must have a later arrival order to defer the deferred candidate
