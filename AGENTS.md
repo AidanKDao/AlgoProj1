@@ -81,7 +81,7 @@ Run `python data/scripts/generate_data.py` once after cloning to create the samp
 - **Match selection:** both strategies take the first feasible recipient and volunteer pair, in input order.
 - **Greedy:** sort once by earliest `expiry_time` → fewest compatible recipients → larger quantity → earlier `arrival_order`. Compatible = accepts the food type and starting capacity ≥ quantity (computed once before the run).
 - **Deferred:** not a final status. A donation is deferred when a later-arriving donation was processed before it. Only deferred donations that end up unassigned get a deferral sentence, naming the closest jumper (the most recently processed donation that arrived after it, skipping donations with zero compatible recipients) and the sort level that decided the order.
-- **Metrics:** urgent = earliest-expiring 25% by `expiry_time`; recipient utilization = assigned qty ÷ total capacity of all recipients; volunteer utilization = assigned qty ÷ sum of `vehicle_capacity × maximum_pickups`; food at risk = total unassigned quantity (expired counted once).
+- **Metrics:** urgent = earliest-expiring 25% by `expiry_time`, count rounded up, ties by `arrival_order`; recipient utilization = assigned qty ÷ total capacity of all recipients; volunteer utilization = assigned qty ÷ sum of `vehicle_capacity × maximum_pickups`; food at risk = total unassigned quantity (expired counted once).
 - **Validation:** keep the first record with an ID; drop and report later duplicates and invalid rows; keep running.
 - **CLI and report:** takes a dataset folder, runs both strategies by default, prints to the terminal, optional `--out` saves the report. Each strategy's decisions are listed in the order that strategy processed them, including side by side.
 

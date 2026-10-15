@@ -89,7 +89,7 @@ Donations are sorted once, before the run, by:
 
 | Metric | Definition |
 |---|---|
-| Urgent donations | The earliest-expiring 25% of donations by `expiry_time` |
+| Urgent donations | The earliest-expiring 25% of donations by `expiry_time`. The count is rounded **up** (`ceil(0.25 × donations)`), so any dataset with donations has at least one urgent donation; rounding down would give 0 for fewer than 4 donations and make the rate meaningless. Donations with the same `expiry_time` are ranked by `arrival_order`, so the urgent group is the same on every run. (Clarified 2026-10-15, implemented in `rescueroute/metrics.py`.) |
 | Urgent rescue rate | Urgent donations assigned ÷ urgent donations |
 | Recipient capacity utilization | Assigned quantity ÷ total `capacity` of **all** recipients |
 | Volunteer capacity utilization | Assigned quantity ÷ sum of `vehicle_capacity × maximum_pickups` over all volunteers |
