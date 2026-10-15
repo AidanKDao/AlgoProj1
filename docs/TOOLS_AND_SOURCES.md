@@ -100,35 +100,42 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Tool/model:** Claude Code (claude-opus-5-5)
 - **Prompt summary:** Check that the greedy rule Dominic described (earliest expiry, then fewest compatible recipients, then larger quantity, then earlier arrival) is implemented, align greedy's deferral explanations with `docs/project_logic/002`, and write the rest of the 10 required tests, on a separate branch.
 - **Output used:** `rescueroute/strategies/greedy.py` (`deferral_reason` wording now matches 002; the closest-jumper search skips donations with zero compatible recipients instead of unassigned ones; the sort key was already correct and is unchanged), `tests/test_week2.py` (new: vehicle capacity, competing capacity, empty inputs, starvation, and deferral sentences for each greedy level), `tests/test_week1.py` (expired test now asserts D-1002 is unassigned), `tests/helpers.py` (docstring: greedy returns results in processing order). The README 10-tests checkpoint was not ticked, because the "FIFO and greedy differ" test is Soheil's and is not in yet.
-- **Modifications:** Pending human review. All 32 tests pass.
+- **Modifications:** Reviewed by AidanKDao (2026-10-16): read the `greedy.py` changes (the `deferral_reason` wording and the closest-jumper skip rule) and confirmed they match 002. No human edits. All 32 tests passed when the agent ran them; `tests/test_week2.py` and the `test_week1.py` change have not been read line by line by a human.
 
 ### 2026-10-15: Handoff document for the Claude CLI
 - **Human requester:** AidanKDao
 - **Tool/model:** Claude Code (claude-opus-5-5)
 - **Prompt summary:** Write a handoff of this session so work can continue in the Claude CLI.
 - **Output used:** `docs/HANDOFF.md` (temporary, not part of the submission; deleted on 2026-10-15, never committed)
-- **Modifications:** Pending human review.
+- **Modifications:** Read by the next session's agent (Claude Code, claude-sonnet-5-5), then deleted at AidanKDao's request on 2026-10-15. Never committed and not part of the submission. AidanKDao did not read it; only the agent did.
 
 ### 2026-10-15: Commit of the greedy and test work, handoff cleanup
 - **Human requester:** AidanKDao
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Read the handoff and `AGENTS.md` then delete the handoff; commit the previous session's work; summarize it in the logs; draft instructions for Soheil's agent.
 - **Output used:** Deleted `docs/HANDOFF.md`. Committed the greedy deferral wording fix (`rescueroute/strategies/greedy.py`), the new tests (`tests/test_week2.py`, `tests/test_week1.py`, `tests/helpers.py`) and this log, all written in the entry above. Corrected that entry (32 tests pass, not 33; README was not changed). `README.md` and `fifo.py` were left out of the commit because they differ only in line endings. No new code was written.
-- **Modifications:** Pending human review. Re-ran the full suite before committing: 32 tests, OK.
+- **Modifications:** Reviewed by AidanKDao (2026-10-16): checked the contents of commit `b220c0f` against this entry and they match. The agent re-ran the full suite before committing: 32 tests, OK.
 
 ### 2026-10-15: Merge Soheil's branch and add the missing required metrics
 - **Human requester:** AidanKDao
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Merge the greedy/test branch and Soheil's `soheil-week2-metrics` branch into `main`, then add the required metrics his `metrics.py` did not have (food at risk, urgent rescue rate, recipient and volunteer utilization).
 - **Output used:** Merged both branches into `main` (merge commit `dc8c6e0`; Soheil's code is his own, not AI output). New work on `AidanKDao/feat/required-metrics`: `rescueroute/metrics.py` (`calculate_metrics` now also takes `recipients` and `volunteers` and returns `food_at_risk`, `urgent_donations`, `urgent_assigned`, `urgent_rescue_rate`, `recipient_utilization`, `volunteer_utilization`; urgent = earliest-expiring 25% rounded up, ties by arrival order, per 002), `compare_strategies.py` (passes recipients/volunteers, prints the new rows and an urgent-rate difference), `tests/test_metrics.py` (existing three tests adapted, six new tests), `tests/test_compare_strategies.py` (four new assertions), `README.md` (metric definitions, results table, test counts; the "10 tests" box is now unticked because the "FIFO and greedy differ" test is still missing).
-- **Modifications:** Pending human review. All 43 tests pass; comparison on `data/scale/small` shows urgent rescue rate 85.71% (FIFO) vs 100% (greedy).
+- **Modifications:** Reviewed by AidanKDao (2026-10-16): checked that Soheil's files arrived intact in the merge, ran `compare_strategies.py`, and ran the metric tests. Went through the urgent-donation calculation in `metrics.py` line by line with the agent (without having read the file first) and can explain it; the other three metrics were not walked through. No human edits. 43 tests passed at the time (44 now); `data/scale/small` shows urgent rescue rate 85.71% (FIFO) vs 100% (greedy).
 
 ### 2026-10-15: "FIFO and greedy differ" test
 - **Human requester:** AidanKDao
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Add the last required test, where FIFO and greedy give different results on the same input, with comments explaining the reasoning.
 - **Output used:** `tests/test_week2.py` (new `test_fifo_and_greedy_differ`, using the existing `fifo_vs_greedy_differ` scenario; it checks the assignments, the explanation wording, and the metrics difference), `README.md` (ticked the "10 required tests" box, test count now 44). No scenario data was changed. Also added the urgent-donation rounding rule (round up, ties by arrival order) to `docs/project_logic/002` and the Metrics line in `AGENTS.md`, and changed the requester name from `AidanDao` to `AidanKDao` across the log and file markers.
-- **Modifications:** Pending human review. All 44 tests pass. The rounding clarification in 002 was confirmed with Dom by AidanKDao.
+- **Modifications:** Reviewed by AidanKDao (2026-10-16): read `test_fifo_and_greedy_differ` and its comments, looked at the `fifo_vs_greedy_differ` scenario data, and went through why FIFO assigns 1 donation and greedy assigns 2 with the agent; can explain it. No human edits. The rounding clarification in 002 was confirmed with Dom by AidanKDao. The agent ran the suite (44 tests pass); the requester-name rename and the README tick were not separately reviewed by a human.
+
+### 2026-10-16: Team handoff for tomorrow's work
+- **Human requester:** AidanKDao
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Write a handoff that tells the teammates' agents what is left on the project, to be read and then deleted.
+- **Output used:** `docs/HANDOFF.md` (temporary, not part of the submission; the last teammate to finish deletes it). A plain-text message for the teammates was also drafted in chat and is not stored in the repo.
+- **Modifications:** Reviewed by AidanKDao (2026-10-16): read `docs/HANDOFF.md` and checked the suggested task split against what the team agreed. The split did not match, so the agent removed all suggested owners; the tasks are now unassigned and the team decides. The chat message to teammates needs the same change before it is sent.
 
 ## Outside sources
 
