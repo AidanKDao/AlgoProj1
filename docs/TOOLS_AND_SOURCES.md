@@ -51,42 +51,42 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Implement CSV/JSON loading and validation (Data & Matching Lead role) matching the interface assumed in `tests/helpers.py`.
 - **Output used:** `rescueroute/loader.py` (load_donations/recipients/volunteers), `tests/test_loader.py`.
-- **Modifications:** Pending human review. Checked against every dataset in `data/scenarios/` and `data/scale/` (CSV and JSON load identically); `tests/test_loader.py` passes.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-05). Checked against every dataset in `data/scenarios/` and `data/scale/` (CSV and JSON load identically); `tests/test_loader.py` passes.
 
 ### 2026-10-05: Shared feasibility check and capacity tracking
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Write the shared donation-recipient-volunteer feasibility check (Data & Matching Lead role), with the unsettled rules as switchable options that default to off.
 - **Output used:** `rescueroute/feasibility.py` (Rules, CapacityTracker, check_pair, find_match, assigned_reason, unassigned_reason), `tests/test_feasibility.py`.
-- **Modifications:** Pending human review. Open rules (area match, maximum pickups, volunteer window, travel/shelf-life buffer from proposal 001) are off by default and not treated as settled. `tests/test_feasibility.py` passes.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-05). Open rules (area match, maximum pickups, volunteer window, travel/shelf-life buffer from proposal 001) are off by default and not treated as settled. `tests/test_feasibility.py` passes.
 
 ### 2026-10-05: Enforce maximum pickups and volunteer window by default
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Teammates confirmed volunteer maximum pickups and availability window are enforced; update the feasibility defaults to match.
 - **Output used:** `rescueroute/feasibility.py` (defaults and docstring), `tests/test_feasibility.py` (tests now assert on-by-default), `AGENTS.md` (open-decisions entry).
-- **Modifications:** Pending human review. Area matching, travel time and shelf-life buffer remain unsettled and off.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-05). Area matching, travel time and shelf-life buffer remain unsettled and off.
 
 ### 2026-10-06: Explanatory comments in loader.py
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Walk through loader.py line by line for a Python beginner, then add comments to each chunk so the team can follow it.
 - **Output used:** `rescueroute/loader.py` (comments and a file-organization note in the docstring only; no logic changes).
-- **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-06). `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
 
 ### 2026-10-06: Explanatory comments in feasibility.py
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Walk through feasibility.py for a Python beginner and add comments so the team can follow it.
 - **Output used:** `rescueroute/feasibility.py` (comments, a file-organization note, a docstring on `Rules`, and a summary comment above each function; no logic changes).
-- **Modifications:** Pending human review. `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-06). `tests/test_loader.py` and `tests/test_feasibility.py` still pass.
 
 ### 2026-10-06: Explanatory comments in test_loader.py and test_feasibility.py
 - **Human requester:** Kaleb Robles
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Walk through the test files and add a comment above every function so the team can follow what each test checks.
 - **Output used:** `tests/test_loader.py`, `tests/test_feasibility.py` (comments and a docstring note on the assert methods only; no change to what the tests check).
-- **Modifications:** Pending human review. All 18 tests in the two files still pass.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-06). All 18 tests in the two files still pass.
 
 ### 2026-10-14: Accepted scheduling, feasibility, and metrics rules
 - **Human requester:** Dominic Dionne
@@ -142,7 +142,7 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Implement the settled "Volunteer schedule" rule from docs/project_logic/002 (HANDOFF item 2): a volunteer is busy during booked trips, a new trip moves to the earliest free gap, and unassigned explanations mention a busy volunteer.
 - **Output used:** `rescueroute/feasibility.py` (`CapacityTracker.volunteer_trips`, optional `start`/`arrival` on `record`, gap search in `schedule`, `_busy_note` in `unassigned_reason`); `rescueroute/strategies/fifo.py` and `greedy.py` (pass `start` and `arrival` to `tracker.record`, two lines each); `data/scripts/generate_data.py` (scenarios `volunteer_busy`, `volunteer_gap_filling`, `cross_area_trip`); `tests/test_volunteer_schedule.py`; `data/README.md` (scenario table); `README.md` (Week 2 comparison table and summary numbers).
-- **Modifications:** Pending human review. Full suite (52 tests) passes. Small-dataset comparison changed: greedy now rescues 816 units (was 839), FIFO unchanged at 814. The two-line edits in the strategy files touch Dominic's and Aidan's code and need their review.
+- **Modifications:** Reviewed by Kaleb Robles (2026-10-15). Full suite (52 tests) passes. Small-dataset comparison changed: greedy now rescues 816 units (was 839), FIFO unchanged at 814. The two-line edits in the strategy files touch Dominic's and Aidan's code and need their review.
 
 ## Outside sources
 
