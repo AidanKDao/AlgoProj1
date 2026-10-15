@@ -14,7 +14,7 @@ live in the Rules dataclass and are OFF or placeholder by default:
 How the file is organized (top to bottom):
     1. Rules              the settings bundle (which rules are on, travel time)
     2. CapacityTracker    the running tally of capacity used during one run
-    3. schedule           works out when a pickup starts and when it arrives
+    3. schedule           works out when a pickup starts and arrives, avoiding the volunteer's booked trips
     4. _..._reason checks one small function per rule; each returns None (OK) or a reason
     5. check_pair         runs all the checks for one donation-recipient-volunteer trio
     6. find_match         tries recipients and volunteers in order until one passes
@@ -57,20 +57,37 @@ class CapacityTracker:
         # One entry per volunteer ID (vid), all starting at 0.
         self.volunteer_pickups = {vid: 0 for vid in volunteers}    # pickups given so far
         self.volunteer_quantity = {vid: 0 for vid in volunteers}   # units carried so far
+        # Booked trips per volunteer, as (start, end) minute pairs kept in start order.
+        # A volunteer is busy from start until end (half-open: a trip ending at minute 15
+        # lets the next one start at minute 15). schedule() reads this to avoid overlaps.
+        self.volunteer_trips = {vid: [] for vid in volunteers}
 
     # The strategy must call this after every successful match. This file never calls it,
     # so without that call capacity would never go down. Returns nothing (-> None).
-    def record(self, donation: Donation, recipient_id: str, volunteer_id: str) -> None:
+    # start and arrival are the trip times returned by find_match. When they are given, the
+    # trip is booked so the volunteer is busy during it. They default to None so callers
+    # that only care about quantities and pickup counts still work.
+    def record(self, donation: Donation, recipient_id: str, volunteer_id: str,
+               start: int | None = None, arrival: int | None = None) -> None:
         self.recipient_remaining[recipient_id] -= donation.quantity   # -= means subtract from itself
         self.volunteer_pickups[volunteer_id] += 1
         self.volunteer_quantity[volunteer_id] += donation.quantity
+        if start is not None and arrival is not None:
+            self.volunteer_trips[volunteer_id].append((start, arrival))
+            self.volunteer_trips[volunteer_id].sort()   # keep in start order for schedule()
 
 
 # schedule is a plain function (not indented inside a class, no `self`).
 # schedule: works out WHEN a pickup would happen. Takes one donation, one volunteer and the
 # rules, and returns a pair (start minute, arrival minute) used by the timing checks below.
-def schedule(donation: Donation, volunteer: Volunteer, recipient: Recipient, rules: Rules) -> tuple[int, int]:
-    """Return (pickup start, delivery arrival) in minutes."""
+def schedule(donation: Donation, volunteer: Volunteer, recipient: Recipient, rules: Rules,
+             tracker: "CapacityTracker | None" = None) -> tuple[int, int]:
+    """Return (pickup start, delivery arrival) in minutes.
+
+    If a tracker is given, the start is pushed later so the trip does not overlap any trip
+    already booked for this volunteer (rule 002, "Volunteer schedule"). Without a tracker
+    the volunteer is treated as free, which gives the earliest possible times.
+    """
     start = donation.ready_time
     if rules.enforce_volunteer_window:
         # max picks the larger number: the volunteer cannot start before they are available
@@ -79,19 +96,26 @@ def schedule(donation: Donation, volunteer: Volunteer, recipient: Recipient, rul
     # This holds the travel time in minutes from volunteer dispatch to recipient arrival
     time_to_recipient = rules.travel_minutes
 
-    # If the area rule is on, the travel time is constant
-    if rules.require_area_match:
-        return start, start + time_to_recipient
+    # If the area rule is off, add extra time for each leg that crosses areas
+    if not rules.require_area_match:
+        # Extra time for volunteer to travel from home to pickup if across areas
+        if donation.pickup_area != volunteer.pickup_area:
+            time_to_recipient += rules.cross_area_minutes
 
-    # Add extra time for volunteer to travel from home to pickup if across areas
-    if donation.pickup_area != volunteer.pickup_area:
-        time_to_recipient += rules.cross_area_minutes
-
-    # Add extra time for volunteer to travel from pickup to recipient if across areas
-    if donation.pickup_area != recipient.dropoff_area:
-        time_to_recipient += rules.cross_area_minutes
+        # Extra time for volunteer to travel from pickup to recipient if across areas
+        if donation.pickup_area != recipient.dropoff_area:
+            time_to_recipient += rules.cross_area_minutes
 
     # Note that we assume the volunteer goes from recipient to home with no additional travel time.
+
+    # Gap search: go through the volunteer's booked trips in start order. If the new trip
+    # [start, start + length) would overlap a booked trip (a, b), move the start to b, the
+    # minute that trip ends, and keep checking the later trips.
+    if tracker is not None:
+        for booked_start, booked_end in tracker.volunteer_trips[volunteer.volunteer_id]:
+            if start < booked_end and booked_start < start + time_to_recipient:
+                start = booked_end
+
     return start, start + time_to_recipient
 
 
@@ -182,7 +206,7 @@ def _closing_and_window_reason(recipient, volunteer, arrival, rules) -> str | No
 # check above in order and returns the first problem found, or None if the match is feasible.
 def check_pair(donation, recipient, volunteer, tracker, rules) -> str | None:
     """None if this donation-recipient-volunteer match is feasible, else why not."""
-    _, arrival = schedule(donation, volunteer, recipient, rules)   # _ means "ignore the start value"
+    _, arrival = schedule(donation, volunteer, recipient, rules, tracker)   # _ means "ignore the start value"
     # `a or b or c` returns the first one that is not None, so this returns the FIRST failing
     # reason, or None if every check passes. The order here decides which reason the user sees.
     return (_expired_reason(donation, arrival, rules)
@@ -206,7 +230,7 @@ def find_match(donation, recipients, volunteers, tracker, rules):
     for recipient in recipients.values():
         for volunteer in volunteers.values():
             if check_pair(donation, recipient, volunteer, tracker, rules) is None:
-                start, arrival = schedule(donation, volunteer, recipient, rules)
+                start, arrival = schedule(donation, volunteer, recipient, rules, tracker)
                 return recipient, volunteer, start, arrival
     return None
 
@@ -219,6 +243,17 @@ def assigned_reason(donation, recipient, volunteer, rules, start: int, arrival: 
             f"(at minute {donation.expiry_time}) and arrives at minute {arrival}, "
             f"{recipient.organization_name} accepts {donation.food_type}, capacity is available "
             f"({donation.quantity} units), and the volunteer's vehicle can carry the quantity.")
+
+
+# _busy_note: if earlier trips pushed this volunteer's start later than it would be on a free
+# schedule, return a short sentence saying so. Returns "" when the volunteer is not delayed.
+def _busy_note(donation, recipient, volunteer, tracker, rules) -> str:
+    free_start, _ = schedule(donation, volunteer, recipient, rules)
+    start, _ = schedule(donation, volunteer, recipient, rules, tracker)
+    if start > free_start:
+        return (f" (volunteer {volunteer.volunteer_id} is busy with earlier trips, so the earliest "
+                f"start is minute {start} instead of minute {free_start})")
+    return ""
 
 
 # unassigned_reason: builds the sentence explaining why a donation could NOT be assigned. It
@@ -265,5 +300,6 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
 
     # Everything above passed on its own, so a combination or timing rule blocked it.
     # A set comprehension collects each distinct reason once; sorted() makes the order stable.
-    reasons = {check_pair(donation, r, v, tracker, rules) for r in ok_cap for v in ok_vehicle}
+    reasons = {check_pair(donation, r, v, tracker, rules) + _busy_note(donation, r, v, tracker, rules)
+               for r in ok_cap for v in ok_vehicle}
     return prefix + "; ".join(sorted(reasons)) + "."

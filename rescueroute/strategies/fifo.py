@@ -135,7 +135,9 @@ def run_fifo(donations, recipients, volunteers):
         tracker.record(
             donation,
             recipient.recipient_id,
-            volunteer.volunteer_id
+            volunteer.volunteer_id,
+            start,
+            arrival
         )
 
         # Create the successful Assignment result.

@@ -137,6 +137,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `docs/HANDOFF.md` (temporary, not part of the submission; the last teammate to finish deletes it). A plain-text message for the teammates was also drafted in chat and is not stored in the repo.
 - **Modifications:** Reviewed by AidanKDao (2026-10-16): read `docs/HANDOFF.md` and checked the suggested task split against what the team agreed. The split did not match, so the agent removed all suggested owners; the tasks are now unassigned and the team decides. The chat message to teammates needs the same change before it is sent.
 
+### 2026-10-15: Busy-volunteer schedule with gap filling
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Implement the settled "Volunteer schedule" rule from docs/project_logic/002 (HANDOFF item 2): a volunteer is busy during booked trips, a new trip moves to the earliest free gap, and unassigned explanations mention a busy volunteer.
+- **Output used:** `rescueroute/feasibility.py` (`CapacityTracker.volunteer_trips`, optional `start`/`arrival` on `record`, gap search in `schedule`, `_busy_note` in `unassigned_reason`); `rescueroute/strategies/fifo.py` and `greedy.py` (pass `start` and `arrival` to `tracker.record`, two lines each); `data/scripts/generate_data.py` (scenarios `volunteer_busy`, `volunteer_gap_filling`, `cross_area_trip`); `tests/test_volunteer_schedule.py`; `data/README.md` (scenario table); `README.md` (Week 2 comparison table and summary numbers).
+- **Modifications:** Pending human review. Full suite (52 tests) passes. Small-dataset comparison changed: greedy now rescues 816 units (was 839), FIFO unchanged at 814. The two-line edits in the strategy files touch Dominic's and Aidan's code and need their review.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.

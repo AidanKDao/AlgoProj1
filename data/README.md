@@ -40,6 +40,9 @@ Every dataset folder contains the same six files:
 | `competing_capacity` | Two 40-unit donations, recipient holds 50 → only one assigned |
 | `fifo_vs_greedy_differ` | FIFO assigns 1 donation, greedy assigns 2 (explained in the script) |
 | `starvation` | Canned goods (D-1001) arrive first but keep getting deferred by urgent meals under greedy |
+| `volunteer_busy` | One volunteer: FIFO books D-1001 first, so D-1002 starts too late and is unassigned (volunteer busy); greedy places D-1002 first and assigns both |
+| `volunteer_gap_filling` | Greedy books D-1001 at 300-315, D-1002 then uses the free time at 0-15, D-1003 is pushed to start at 315 |
+| `cross_area_trip` | North volunteers, south donations, east recipient: trips take 45 minutes; D-1001 (expires 60) is assigned, D-1002 (expires 59) is not |
 | `empty` | Header-only CSVs and `[]` JSON files |
 
 ## Format

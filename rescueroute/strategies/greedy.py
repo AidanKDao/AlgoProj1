@@ -159,7 +159,9 @@ def run_greedy(donations, recipients, volunteers):
         tracker.record(
             donation,
             recipient.recipient_id,
-            volunteer.volunteer_id
+            volunteer.volunteer_id,
+            start,
+            arrival
         )
 
         # Create the successful Assignment result.

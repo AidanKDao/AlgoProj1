@@ -127,7 +127,7 @@ These metrics allow us to compare how efficiently FIFO and Greedy allocate avail
 
 ## Week 2 Comparison Results
 
-The following results were obtained using the generated small dataset containing 25 donations.
+The following results were obtained using the generated small dataset containing 25 donations, with volunteers booked one trip at a time (a volunteer cannot take overlapping trips).
 
 | Metric | FIFO | Greedy |
 |---|---:|---:|
@@ -135,22 +135,22 @@ The following results were obtained using the generated small dataset containing
 | Assigned Donations | 19 | 20 |
 | Unassigned Donations | 6 | 5 |
 | Total Food Units | 1084 | 1084 |
-| Food Rescued | 814 | 839 |
+| Food Rescued | 814 | 816 |
 | Assignment Rate | 76.00% | 80.00% |
-| Food Rescue Rate | 75.09% | 77.40% |
-| Food at Risk | 270 | 245 |
+| Food Rescue Rate | 75.09% | 75.28% |
+| Food at Risk | 270 | 268 |
 | Urgent Rescue Rate (7 urgent donations) | 85.71% | 100.00% |
-| Recipient Utilization | 87.53% | 90.22% |
-| Volunteer Utilization | 44.73% | 46.10% |
+| Recipient Utilization | 87.53% | 87.74% |
+| Volunteer Utilization | 44.73% | 44.84% |
 
 ### Results Summary
 
 On this dataset, Greedy performed better than FIFO.
 
 - Greedy assigned 1 additional donation.
-- Greedy rescued 25 additional food units.
+- Greedy rescued 2 additional food units.
 - Assignment rate improved by 4 percentage points.
-- Food rescue rate improved by 2.31 percentage points.
+- Food rescue rate improved by 0.19 percentage points.
 
 These results suggest that prioritizing time-sensitive donations can improve resource allocation.
 

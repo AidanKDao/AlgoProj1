@@ -209,6 +209,40 @@ SCENARIOS = {
         [r("R-201", "Central Soup Kitchen", {"prepared_meals", "canned_goods"}, 200, 720, "central")],
         [v("V-301", 40, 4, 0, 720, "central")],
     ),
+    # One volunteer cannot be in two places at once (rule 002, "Volunteer schedule").
+    # Every trip takes 15 minutes (same area) and the food needs 15 minutes of shelf life
+    # left on arrival.
+    #   FIFO:   D-1001 books V-301 from minute 0 to 15. D-1002 would start at 15, arrive at
+    #           30, and needs expiry >= 45, but it expires at 40 -> unassigned (volunteer busy).
+    #   Greedy: D-1002 expires sooner, goes first (0 to 15); D-1001 follows (15 to 30). Both assigned.
+    "volunteer_busy": (
+        [d("D-1001", "FreshMart", "produce", 10, 0, 600, "central"),
+         d("D-1002", "Campus Dining Hall", "prepared_meals", 10, 0, 40, "central")],
+        [r("R-201", "Community Shelter", {"prepared_meals", "produce"}, 200, 720, "central")],
+        [v("V-301", 40, 4, 0, 720, "central")],
+    ),
+    # Gap filling and pushing. Greedy handles donations out of time order:
+    #   D-1001 (expires 360) is placed first and books minutes 300 to 315.
+    #   D-1002 (ready 0) then uses the free time before it: starts 0, arrives 15.
+    #   D-1003 (ready 305) overlaps the booked trip, so it moves to start at 315.
+    "volunteer_gap_filling": (
+        [d("D-1001", "Sunrise Bakery", "bakery", 10, 300, 360, "central"),
+         d("D-1002", "FreshMart", "produce", 10, 0, 600, "central"),
+         d("D-1003", "Corner Cafe", "bakery", 10, 305, 700, "central")],
+        [r("R-201", "Community Shelter", {"bakery", "produce"}, 200, 720, "central")],
+        [v("V-301", 40, 4, 0, 720, "central")],
+    ),
+    # Cross-area trips add 15 minutes per leg that crosses areas. Both volunteers live in the
+    # north; the donations are in the south and go to an east recipient, so each trip is
+    # 15 + 15 + 15 = 45 minutes and the food needs expiry >= 60.
+    #   D-1001 (expires 60) is assigned; D-1002 (expires 59) is too tight -> unassigned.
+    "cross_area_trip": (
+        [d("D-1001", "Valley Produce Wholesale", "produce", 10, 0, 60, "south"),
+         d("D-1002", "Southside Market", "produce", 10, 0, 59, "south")],
+        [r("R-201", "Eastside Food Pantry", {"produce"}, 200, 720, "east")],
+        [v("V-301", 40, 3, 0, 720, "north"),
+         v("V-302", 40, 3, 0, 720, "north")],
+    ),
     # Headers only / empty lists.
     "empty": ([], [], []),
 }
