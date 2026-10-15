@@ -11,7 +11,6 @@ from enum import Enum
 class Status(Enum):
     ASSIGNED = "assigned"
     UNASSIGNED = "unassigned"
-    DEFERRED = "deferred"
 
 @dataclass
 class Donation:
