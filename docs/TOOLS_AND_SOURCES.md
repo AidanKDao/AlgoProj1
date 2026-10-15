@@ -151,6 +151,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `main.py`, `rescueroute/report.py` (report text: validation errors first, every donation's explanation in each strategy's processing order, metrics table and differences, optional `--out`), `tests/test_main.py` (10 tests), `README.md` (run instructions, architecture, data model, precise greedy rule, complexity analysis, results on larger datasets, limitations, tools and sources, team contributions, test count and structure), `docs/DEMO_SCRIPT.md` (written, but kept local and not committed). Timings and dataset results in the README come from runs of `python3 main.py` on the generated datasets.
 - **Modifications:** Pending human review. Full suite (62 tests) passes. `compare_strategies.py` was left unchanged (it still reads only `donations.csv`; `main.py` accepts CSV or JSON folders). The README text was not reviewed by Dominic or Soheil, who own the greedy rule and metrics.
 
+### 2026-10-15: Remove unused Status.DEFERRED
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Clean up HANDOFF item 6: `Status.DEFERRED` in `models.py` is unused, and rule 002 says deferred is not a final status.
+- **Output used:** `rescueroute/models.py` (deleted the `DEFERRED` member of `Status`). A search found no other use in the code, tests, or scripts.
+- **Modifications:** Pending human review. Full suite passes after the change.
+
 
 ### 2026-10-15: Retroactive log of Week 1 documentation
 - **Human requester:** Soheil Douzandeh
