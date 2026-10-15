@@ -78,22 +78,24 @@ This generates sample CSV and JSON datasets for testing.
 
 Generated datasets are ignored by Git, so this command should be run after cloning the repository.
 
-### 2. Compare FIFO vs. Greedy
+### 2. Run the Report (FIFO vs. Greedy)
 
-Run the comparison using the small dataset:
-
-```bash
-python3 compare_strategies.py
-```
-
-To compare larger datasets:
+Run both strategies on the small dataset and print the full report:
 
 ```bash
-python3 compare_strategies.py data/scale/medium
-python3 compare_strategies.py data/scale/large
+python3 main.py
 ```
 
-The comparison program loads the same data for both algorithms, runs each strategy independently, and displays their performance metrics side by side.
+Choose another dataset folder, such as a hand-built scenario or a larger dataset, and optionally save the report:
+
+```bash
+python3 main.py data/scenarios/starvation
+python3 main.py data/scale/medium --out report.txt
+```
+
+The report prints, in this order: validation errors (invalid records are skipped and the run continues), then **every donation's explanation for each strategy in the order that strategy processed it**, then the metrics table and the FIFO-vs-greedy differences. Both strategies run on the same loaded data and the same feasibility rules.
+
+`python3 compare_strategies.py [folder]` prints only the metrics table.
 
 ### 3. Run Automated Tests
 
@@ -103,7 +105,7 @@ Run the complete test suite:
 python3 -m unittest discover -s tests -t . -v
 ```
 
-At the Week 2 checkpoint, all 44 automated tests passed.
+All 62 automated tests currently pass (44 at the Week 2 checkpoint).
 
 The tests cover input validation, matching feasibility, scheduling behavior, performance metrics, and strategy comparison.
 
@@ -156,6 +158,113 @@ These results suggest that prioritizing time-sensitive donations can improve res
 
 However, Greedy is not guaranteed to outperform FIFO on every dataset. Additional testing with different scenarios and dataset sizes is needed to evaluate overall performance.
 
+## Architecture
+
+```text
+CSV / JSON files --> loader.py --> models (Donation, Recipient, Volunteer)
+                                         |
+                      feasibility.py (shared rules + CapacityTracker)
+                         |                                  |
+                  strategies/fifo.py                strategies/greedy.py
+                         |                                  |
+                         +---------- list of Assignment ----+
+                                         |
+                       metrics.py --> report.py --> main.py (terminal / --out file)
+```
+
+- **`models.py`**: dataclasses `Donation`, `Recipient`, `Volunteer`, `Assignment` and the `Status` enum.
+- **`loader.py`**: reads CSV or JSON, converts values, assigns `arrival_order` from row order, and reports every problem with its row, ID, field and reason. Invalid records are skipped.
+- **`feasibility.py`**: the one shared rule book. `check_pair` answers "can this donation go to this recipient with this volunteer?", `find_match` returns the first feasible pair, and `CapacityTracker` holds the state that changes during a run (recipient capacity left, volunteer pickups and booked trips). It also writes the human-readable explanations.
+- **`strategies/`**: `run_fifo` and `run_greedy`. They differ **only in the order they process donations**; both use the same feasibility code, each with a fresh `CapacityTracker`, and neither changes the loaded input.
+- **`metrics.py`** and **`report.py`**: the required metrics and the text report.
+
+## Data Model
+
+Times are whole minutes since the simulation start (0 = 8:00 AM). Records are stored in dictionaries keyed by ID. Sets are used for accepted food types and for duplicate-ID detection, and a list keeps the ordered assignment history.
+
+| Entity | Fields |
+|---|---|
+| Donation | `donation_id`, `donor_name`, `food_type`, `quantity`, `ready_time`, `expiry_time`, `pickup_area`, `arrival_order` |
+| Recipient | `recipient_id`, `organization_name`, `accepted_food_types`, `capacity`, `closing_time`, `dropoff_area` |
+| Volunteer | `volunteer_id`, `vehicle_capacity`, `maximum_pickups`, `availability_start`, `availability_end`, `pickup_area` |
+| Assignment | `donation_id`, `recipient_id`, `volunteer_id`, `scheduled_time_start`, `scheduled_time_end`, `decision_reason`, `status` |
+
+**Feasibility rules** (a match is feasible only if all hold; the rules are in `docs/project_logic/002-scheduling-feasibility-and-metrics-rules.md`):
+
+- the recipient accepts the donation's food type;
+- the recipient has enough capacity left (one total for the whole run);
+- the volunteer's vehicle can carry the quantity (a per-trip limit);
+- the volunteer has not reached `maximum_pickups`;
+- the trip does not overlap another trip booked for that volunteer, so a new trip moves to the earliest free gap;
+- delivery arrives at least 15 minutes before the donation expires, no later than the recipient's closing time, and within the volunteer's availability window.
+
+A trip takes 15 minutes, plus 15 for each leg that crosses areas (volunteer home to pickup, pickup to recipient), so 15, 30, or 45 minutes. Any area may be matched; areas only add time.
+
+## Greedy Rule (precise)
+
+Donations are sorted once, before the run, by:
+
+1. **Earliest `expiry_time`** (the absolute deadline).
+2. **Fewest compatible recipients** (accepts the food type and has enough starting capacity), so the hardest donation to place is not crowded out.
+3. **Larger quantity.**
+4. **Earlier arrival order**, so the order is fully defined.
+
+Each donation then takes the first feasible recipient and volunteer, in input order, exactly as in FIFO.
+
+**What it optimizes locally:** at each step the donation closest to expiring gets the first pick of the remaining capacity and volunteer time, so the food most at risk of being lost is placed first.
+
+**Why it is reasonable:** food that expires soon can be lost, while food with a long shelf life can wait. On our generated datasets this raised the urgent rescue rate sharply (see the comparison below).
+
+**Where it can fail or cause starvation:** it is a local rule, not a global optimum.
+
+- A donation with a long shelf life can be pushed back repeatedly. In the `starvation` scenario the canned goods (D-1001) arrive first but are processed last, and the lone volunteer runs out of pickups before reaching it. The report names the donation that jumped ahead and why.
+- Putting small urgent donations first can use up capacity or volunteer time that a large donation needed. In `starvation`, FIFO rescues 50 units and greedy only 40.
+- It never reconsiders a placement, so it can give up total food rescued to protect the most urgent donations.
+
+## Complexity Analysis
+
+Let **D** = donations, **R** = recipients, **V** = volunteers, and **P** = the most trips one volunteer holds (at most `maximum_pickups`).
+
+- **Feasibility of one match** is constant work, plus a scan of that volunteer's booked trips for the gap search, so O(P).
+- **FIFO:** each donation tries recipient-volunteer pairs until one works, so the dominant work is O(D · R · V · P) in the worst case (when many donations match nothing).
+- **Greedy:** counting compatible recipients is O(D · R), sorting is O(D log D), then the same matching loop, so the matching term O(D · R · V · P) still dominates.
+- **Explanations for unassigned donations** add O(R · V) per unassigned donation, which does not change the bound.
+- **Space:** O(D + R + V) for the records and the assignment list, plus O(D) booked trips.
+
+**Assumptions:** P is small (bounded by each volunteer's maximum pickups), so the matching loop is effectively O(D · R · V); the first feasible pair is accepted, with no search for a best pair.
+
+**Measured (both strategies together):** the small dataset (25/6/6) and the medium dataset (100/20/15) finish instantly (about 0.06 s for medium), and the large dataset (1,000/120/90) takes about 14 seconds. The 10,000-donation `xlarge` dataset is far slower, as the D · R · V term predicts, and was not used for results.
+
+## FIFO vs. Greedy on Larger Datasets
+
+Run with `python3 main.py data/scale/<name>`. Greedy rescued more food than FIFO on every generated dataset we ran.
+
+| Dataset | Assigned (FIFO / Greedy) | Food rescued (FIFO / Greedy) | Urgent rescue rate (FIFO / Greedy) |
+|---|---|---|---|
+| small (25 donations) | 19 / 20 | 814 / 816 | 85.71% / 100% |
+| medium (100) | 61 / 61 | 2335 / 2484 | 64% / 92% |
+| large (1,000) | 342 / 359 | 14027 / 15259 | 34% / 99.2% |
+
+The gain comes mostly from the urgent donations. It is not guaranteed: on the hand-built `starvation` scenario FIFO rescued more food.
+
+## Limitations
+
+- **Educational prototype on simulated data.** It makes no claim of food-safety, medical, or operational readiness.
+- Volunteers always start each trip from their home area, not from their last drop-off, so routes are not chained.
+- Recipient capacity is one total for the whole run and never frees up.
+- Travel times are fixed constants (15 minutes plus 15 per area-crossing leg), not real distances.
+- Both strategies take the first feasible match, not the best match, and greedy never undoes a placement.
+- Invalid records are skipped and reported rather than given their own explanation in the report.
+- The matching loop grows with D · R · V, so very large datasets are slow.
+
+## Tools & Sources
+
+AI coding tools (Claude Code) were used by several team members. Every AI contribution is logged in [docs/TOOLS_AND_SOURCES.md](docs/TOOLS_AND_SOURCES.md) with who prompted it, the model, what was used, and how it was reviewed. Outside sources are listed there with their read status. The rules the team accepted are in [docs/project_logic/](docs/project_logic/). The code uses only the Python standard library.
+
+## Team Contributions
+
+Roles are listed under Team Role Statement. Each member's individual contribution statement is submitted separately, and the commit history (`git log`) shows who wrote what.
+
 ## Project Structure
 
 ```text
@@ -176,7 +285,8 @@ AlgoProj1/
 |   |-- models.py
 |   |-- loader.py
 |   |-- feasibility.py
-|   `-- metrics.py
+|   |-- metrics.py
+|   `-- report.py
 |
 |-- tests/
 |   |-- test_week1.py
@@ -184,6 +294,9 @@ AlgoProj1/
 |   |-- test_feasibility.py
 |   |-- test_greedy.py
 |   |-- test_metrics.py
+|   |-- test_volunteer_schedule.py
+|   |-- test_main.py
+|   |-- test_week2.py
 |   `-- test_compare_strategies.py
 |
 |-- compare_strategies.py
@@ -232,7 +345,7 @@ Implemented the greedy strategy and developed performance metrics to compare FIF
 
 Created a reusable comparison program and added automated tests.
 
-All 44 tests passed during local Week 2 verification.
+All 44 tests passed during local Week 2 verification; 62 pass now.
 
 ### Week 3 — Finalization
 

@@ -144,6 +144,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `rescueroute/feasibility.py` (`CapacityTracker.volunteer_trips`, optional `start`/`arrival` on `record`, gap search in `schedule`, `_busy_note` in `unassigned_reason`); `rescueroute/strategies/fifo.py` and `greedy.py` (pass `start` and `arrival` to `tracker.record`, two lines each); `data/scripts/generate_data.py` (scenarios `volunteer_busy`, `volunteer_gap_filling`, `cross_area_trip`); `tests/test_volunteer_schedule.py`; `data/README.md` (scenario table); `README.md` (Week 2 comparison table and summary numbers).
 - **Modifications:** Reviewed by Kaleb Robles (2026-10-15). Full suite (52 tests) passes. Small-dataset comparison changed: greedy now rescues 816 units (was 839), FIFO unchanged at 814. The two-line edits in the strategy files touch Dominic's and Aidan's code and need their review.
 
+### 2026-10-15: main.py CLI, report, README sections, and demo script
+- **Human requester:** Kaleb Robles
+- **Tool/model:** Claude Code (claude-sonnet-5-5)
+- **Prompt summary:** Build the `main.py` CLI specified in docs/project_logic/002 (HANDOFF item 1), fill the missing README sections (HANDOFF item 3), and write a live-demo script, because the team wants a live demo for submission.
+- **Output used:** `main.py`, `rescueroute/report.py` (report text: validation errors first, every donation's explanation in each strategy's processing order, metrics table and differences, optional `--out`), `tests/test_main.py` (10 tests), `README.md` (run instructions, architecture, data model, precise greedy rule, complexity analysis, results on larger datasets, limitations, tools and sources, team contributions, test count and structure), `docs/DEMO_SCRIPT.md` (written, but kept local and not committed). Timings and dataset results in the README come from runs of `python3 main.py` on the generated datasets.
+- **Modifications:** Pending human review. Full suite (62 tests) passes. `compare_strategies.py` was left unchanged (it still reads only `donations.csv`; `main.py` accepts CSV or JSON folders). The README text was not reviewed by Dominic or Soheil, who own the greedy rule and metrics.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.
