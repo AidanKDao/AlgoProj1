@@ -128,7 +128,7 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Tool/model:** Claude Code (claude-sonnet-5-5)
 - **Prompt summary:** Add the last required test, where FIFO and greedy give different results on the same input, with comments explaining the reasoning.
 - **Output used:** `tests/test_week2.py` (new `test_fifo_and_greedy_differ`, using the existing `fifo_vs_greedy_differ` scenario; it checks the assignments, the explanation wording, and the metrics difference), `README.md` (ticked the "10 required tests" box, test count now 44). No scenario data was changed. Also added the urgent-donation rounding rule (round up, ties by arrival order) to `docs/project_logic/002` and the Metrics line in `AGENTS.md`, and changed the requester name from `AidanDao` to `AidanKDao` across the log and file markers.
-- **Modifications:** Pending human review. All 44 tests pass. Dom (author of 002) should confirm the rounding clarification.
+- **Modifications:** Pending human review. All 44 tests pass. The rounding clarification in 002 was confirmed with Dom by AidanKDao.
 
 ## Outside sources
 
