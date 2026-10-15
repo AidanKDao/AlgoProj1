@@ -151,6 +151,49 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `main.py`, `rescueroute/report.py` (report text: validation errors first, every donation's explanation in each strategy's processing order, metrics table and differences, optional `--out`), `tests/test_main.py` (10 tests), `README.md` (run instructions, architecture, data model, precise greedy rule, complexity analysis, results on larger datasets, limitations, tools and sources, team contributions, test count and structure), `docs/DEMO_SCRIPT.md` (written, but kept local and not committed). Timings and dataset results in the README come from runs of `python3 main.py` on the generated datasets.
 - **Modifications:** Pending human review. Full suite (62 tests) passes. `compare_strategies.py` was left unchanged (it still reads only `donations.csv`; `main.py` accepts CSV or JSON folders). The README text was not reviewed by Dominic or Soheil, who own the greedy rule and metrics.
 
+
+### 2026-10-15: Retroactive log of Week 1 documentation
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Structure the project README to clearly define the RescueRoute objectives, functional requirements, team responsibilities, execution instructions, and Week 1 deliverables. Organize the documentation according to the project specifications and maintain consistency with the established repository structure.
+- **Output used:** `README.md` (team roles, setup instructions, Week 1 checklist).
+- **Modifications:** Reviewed and edited the README in VS Code, committed the documentation updates, and submitted a pull request that was merged into main.
+
+### 2026-10-15: Retroactive log of FIFO baseline implementation
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Implement a First-In, First-Out scheduling algorithm that processes food donations according to their arrival order. Integrate the existing data models, shared feasibility checks, and capacity tracking to identify valid recipient-volunteer assignments. Ensure every donation receives an explainable scheduling decision, and include comments documenting the primary algorithmic operations.
+- **Output used:** `rescueroute/strategies/fifo.py`.
+- **Modifications:** Reviewed the implementation, added explanatory comments, verified the scheduling behavior through automated tests, and committed the FIFO implementation.
+
+### 2026-10-15: Retroactive log of Week 2 performance metrics
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Develop a reusable performance evaluation module for comparing the FIFO and Greedy scheduling algorithms. Calculate total donations, successful assignments, rejected assignments, rescued food quantities, assignment rates, and food rescue percentages. Implement automated unit tests to validate metric accuracy across different donation and assignment scenarios.
+- **Output used:** `rescueroute/metrics.py`, `tests/test_metrics.py`.
+- **Modifications:** Reviewed the metric calculations, executed the automated tests, and verified the results against the generated dataset. Committed the implementation to `soheil-week2-metrics`. Additional metrics were subsequently implemented by Aidan using Claude Code and documented separately.
+
+### 2026-10-15: Retroactive log of FIFO vs Greedy comparison
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Design and implement a command-line comparison module that evaluates FIFO and Greedy under identical input conditions. Load and validate donation, recipient, and volunteer datasets, execute both scheduling strategies independently, and present performance metrics in a consistent side-by-side report. Include integration tests covering successful execution, metric output, and missing-input error handling.
+- **Output used:** `compare_strategies.py`, `tests/test_compare_strategies.py`.
+- **Modifications:** Executed both scheduling strategies using the same dataset, reviewed the output, and validated the comparison results. Added integration tests and confirmed that all 29 automated tests passed at the initial Week 2 checkpoint. Submitted the changes through PR #4.
+
+### 2026-10-15: Retroactive log of Week 2 README documentation
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Refactor the README to provide comprehensive documentation of the RescueRoute system, including project architecture, FIFO and Greedy scheduling methods, dataset generation, execution commands, testing procedures, and performance evaluation. Integrate verified comparison results, organize the project structure, and update milestone completion status to reflect Week 2 development progress.
+- **Output used:** `README.md`.
+- **Modifications:** Reviewed and updated the documentation, verified the recorded performance metrics, and committed the revised README to the Week 2 branch. Submitted the changes through PR #4, which was subsequently merged into main.
+
+### 2026-10-15: Automated test troubleshooting and dataset validation
+- **Human requester:** Soheil Douzandeh
+- **Tool/model:** ChatGPT (GPT-6)
+- **Prompt summary:** Investigate automated test failures occurring after integrating the latest repository changes. Analyze the missing donation identifier errors in volunteer scheduling tests, evaluate the relationship between generated scenario datasets and test dependencies, and determine the appropriate corrective action without modifying existing scheduling logic. Reexecute the complete test suite to verify system stability.
+- **Output used:** Diagnostic guidance, dataset regeneration commands, and automated test execution instructions. No source code modifications.
+- **Modifications:** Regenerated the simulation datasets using the existing data generator and executed the complete unittest suite. Verified that all 62 automated tests passed successfully.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.
@@ -161,3 +204,4 @@ Read status: **read** = the original page was opened and read; **summary only** 
 | [Partner Food Rescue Training Quiz (Smartsheet)](https://app.smartsheet.com/b/form/a240b7197db4417abf03108bc8948170) | 15-minute non-refrigerated transport limit (`001`) | Summary only |
 | [Grocery Rescue Program Guide (First Food Bank)](https://www.firstfoodbank.org/wp-content/uploads/2023/10/Grocery-Rescue-Program-Guide.pdf) | 2 hours above 41°F acceptance limit (`001`) | Summary only (link redirects to a 404) |
 | [Food Rescue Driver listing (idealist.org)](https://www.idealist.org/en/volunteer-opportunity/b93ffd8317f24286b966c2ad5ce958ce-food-rescue-driver-dc-metro-area-the-jj-center-inc-washington) | "Deliver immediately" driver practice (`001`) | Summary only |
+
