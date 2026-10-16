@@ -29,7 +29,7 @@ Our team is split into the following roles:
 - **Algorithm & Optimization Lead: Dominic Dionne**
   FIFO scheduler, greedy rule, priority selection, complexity analysis, and strategy comparison.
 
-- **Data & Matching Lead: Kaleb**
+- **Data & Matching Lead: Kaleb Robles**
   Input files, validation, compatibility checks, capacity rules, data structures, and test data.
 
 - **Product & Quality Lead: Soheil Douzandeh**
