@@ -208,6 +208,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** `README.md` (xlarge row in "FIFO vs. Greedy on Larger Datasets"; new measured run times in "Complexity Analysis": small 0.2 s, medium 0.3 s, large 1.3 s, xlarge 10.5 min). `RescueRoute_FIFO_Greedy_Comparison_v2.pdf` (kept outside the repo): rebuilt from the original PDF's text, adding a larger-datasets table and an explanation of the xlarge results. All numbers come from agent runs of `python main.py data/scale/<name>`.
 - **Modifications:** Pending human review.
 
+### 2026-10-15: Resolve README merge conflict with origin/main
+- **Human requester:** Dominic Dionne
+- **Tool/model:** Claude Code (claude-opus-5-5)
+- **Prompt summary:** Fix the merge conflicts from merging `origin/main` (Kaleb's README timing and Week 3 checkbox updates) into local `main`.
+- **Output used:** Merge commit `67a3a95`. The only conflict was the "Measured" paragraph in the README's Complexity Analysis; the local version with the completed xlarge run (10.5 min) was kept over the version saying xlarge was stopped after 100 seconds, because the larger-datasets table uses the xlarge results. All other changes from both sides were kept as they were. The full test suite passed after the merge.
+- **Modifications:** Pending human review.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.
