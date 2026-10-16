@@ -285,25 +285,27 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     ok_food = [r for r in recipients.values() if _food_reason(donation, r) is None]
     if not ok_food:
         return prefix + f"no recipient accepts {donation.food_type}."
+    
     ok_cap = [r for r in ok_food if _recipient_capacity_reason(donation, r, tracker) is None]
     if not ok_cap:
         return prefix + (f"no compatible recipient had remaining capacity for {donation.quantity} units "
                          f"before the donation expired.")
+    
     ok_vehicle = [v for v in volunteers.values() if _vehicle_reason(donation, v) is None]
     if not ok_vehicle:
         biggest = max(v.vehicle_capacity for v in volunteers.values())
         return prefix + (f"no volunteer had a vehicle that can carry {donation.quantity} units "
                          f"(largest vehicle holds {biggest}).")
 
-    # Find earliest possible arrival time for this donation
-    earliest_arrival = None
-    for recipient in recipients.values():
-        for volunteer in volunteers.values():
-            _, arrival = schedule(donation, volunteer, recipient, rules)
-            if earliest_arrival is None or arrival < earliest_arrival:
-                earliest_arrival = arrival
+    ok_pickups = [v for v in ok_vehicle if _pickups_reason(v, tracker, rules) is None]
+    if not ok_pickups:
+        return prefix + (f"every volunteer whose vehicle can carry {donation.quantity} units "
+                            f"has already reached their maximum number of pickups.")
 
-    # Check if the donation would be expired on arrival
+    # Find earliest possible arrival time for this donation
+    earliest_arrival = min(schedule(donation, v, r, rules)[1]
+                           for r in ok_cap for v in ok_pickups)
+    
     expired = _expired_reason(donation, earliest_arrival, rules)
     if expired:
         return prefix + expired + "."
@@ -311,5 +313,5 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     # Everything above passed on its own, so a combination or timing rule blocked it.
     # A set comprehension collects each distinct reason once; sorted() makes the order stable.
     reasons = {check_pair(donation, r, v, tracker, rules) + _busy_note(donation, r, v, tracker, rules)
-               for r in ok_cap for v in ok_vehicle}
+               for r in ok_cap for v in ok_pickups}
     return prefix + "; ".join(sorted(reasons)) + "."
