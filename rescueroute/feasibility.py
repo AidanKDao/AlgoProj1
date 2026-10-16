@@ -310,8 +310,6 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     if expired:
         return prefix + expired + "."
     
-    # Everything above passed on its own, so a combination or timing rule blocked it.
-    # A set comprehension collects each distinct reason once; sorted() makes the order stable.
     best = None
     for r in ok_cap:
         for v in ok_pickups:
