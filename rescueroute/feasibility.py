@@ -312,6 +312,19 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     
     # Everything above passed on its own, so a combination or timing rule blocked it.
     # A set comprehension collects each distinct reason once; sorted() makes the order stable.
-    reasons = {check_pair(donation, r, v, tracker, rules) + _busy_note(donation, r, v, tracker, rules)
-               for r in ok_cap for v in ok_pickups}
-    return prefix + "; ".join(sorted(reasons)) + "."
+    best = None
+    for r in ok_cap:
+        for v in ok_pickups:
+            _, arrival = schedule(donation, v, r, rules, tracker)
+            if best is None or arrival < best[0]:
+                best = (arrival, r, v)
+    _, r, v = best
+
+    reason = check_pair(donation, r, v, tracker, rules) + _busy_note(donation, r, v, tracker, rules)
+    others = len(ok_cap) * len(ok_pickups) - 1
+
+    sentence = (f"the closest option, {r.organization_name} with volunteer {v.volunteer_id}, failed because {reason}")
+
+    if others:
+        sentence += f"; the other {others} option(s) also failed"
+    return prefix + sentence + "."
