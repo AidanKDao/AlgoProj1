@@ -1,0 +1,23 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Eastside Food Pantry",
+    "accepted_food_types": [
+      "canned_goods",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 600,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-202",
+    "organization_name": "Hope Community Fridge",
+    "accepted_food_types": [
+      "bakery"
+    ],
+    "capacity": 100,
+    "closing_time": 600,
+    "dropoff_area": "east"
+  }
+]

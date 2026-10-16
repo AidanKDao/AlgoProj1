@@ -1,0 +1,24 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "bakery",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 600,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Duplicate Pantry",
+    "accepted_food_types": [
+      "produce"
+    ],
+    "capacity": 100,
+    "closing_time": 600,
+    "dropoff_area": "north"
+  }
+]

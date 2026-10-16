@@ -1,0 +1,20 @@
+[
+  {
+    "donation_id": "D-1001",
+    "donor_name": "Sunrise Bakery",
+    "food_type": "bakery",
+    "quantity": 40,
+    "ready_time": 0,
+    "expiry_time": 400,
+    "pickup_area": "north"
+  },
+  {
+    "donation_id": "D-1002",
+    "donor_name": "Golden Crust Bakery",
+    "food_type": "bakery",
+    "quantity": 40,
+    "ready_time": 0,
+    "expiry_time": 300,
+    "pickup_area": "north"
+  }
+]

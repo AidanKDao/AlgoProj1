@@ -1,0 +1,2 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Event Center Catering,prepared_meals,150,0,120,west

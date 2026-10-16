@@ -1,0 +1,4 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Downtown Deli,prepared_meals,20,60,60,central
+D-1002,Maple Cafe,prepared_meals,15,0,10,central
+D-1003,FreshMart,produce,25,0,480,central

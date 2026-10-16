@@ -1,0 +1,12 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Northside Youth Center",
+    "accepted_food_types": [
+      "bakery"
+    ],
+    "capacity": 50,
+    "closing_time": 600,
+    "dropoff_area": "north"
+  }
+]

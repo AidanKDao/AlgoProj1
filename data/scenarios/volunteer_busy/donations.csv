@@ -1,0 +1,3 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,FreshMart,produce,10,0,600,central
+D-1002,Campus Dining Hall,prepared_meals,10,0,40,central

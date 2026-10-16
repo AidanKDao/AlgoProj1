@@ -1,0 +1,1511 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "frozen",
+      "produce"
+    ],
+    "capacity": 150,
+    "closing_time": 600,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-202",
+    "organization_name": "Eastside Food Pantry",
+    "accepted_food_types": [
+      "bakery",
+      "frozen"
+    ],
+    "capacity": 130,
+    "closing_time": 420,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-203",
+    "organization_name": "Hope Community Fridge",
+    "accepted_food_types": [
+      "dairy",
+      "produce"
+    ],
+    "capacity": 80,
+    "closing_time": 360,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-204",
+    "organization_name": "Family Support Center",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "produce"
+    ],
+    "capacity": 140,
+    "closing_time": 420,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-205",
+    "organization_name": "Northside Youth Center",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 160,
+    "closing_time": 450,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-206",
+    "organization_name": "Senior Meals Program",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 300,
+    "closing_time": 480,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-207",
+    "organization_name": "Westside Pantry",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 270,
+    "closing_time": 510,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-208",
+    "organization_name": "Central Soup Kitchen",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 250,
+    "closing_time": 420,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-209",
+    "organization_name": "Harbor Outreach",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 230,
+    "closing_time": 660,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-210",
+    "organization_name": "Southside Community Fridge",
+    "accepted_food_types": [
+      "bakery",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 160,
+    "closing_time": 690,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-211",
+    "organization_name": "New Start Shelter",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 110,
+    "closing_time": 480,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-212",
+    "organization_name": "Unity Food Bank",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 270,
+    "closing_time": 720,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-213",
+    "organization_name": "Community Shelter #2",
+    "accepted_food_types": [
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 270,
+    "closing_time": 720,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-214",
+    "organization_name": "Eastside Food Pantry #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 200,
+    "closing_time": 420,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-215",
+    "organization_name": "Hope Community Fridge #2",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 110,
+    "closing_time": 600,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-216",
+    "organization_name": "Family Support Center #2",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 110,
+    "closing_time": 360,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-217",
+    "organization_name": "Northside Youth Center #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 390,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-218",
+    "organization_name": "Senior Meals Program #2",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 210,
+    "closing_time": 720,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-219",
+    "organization_name": "Westside Pantry #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods"
+    ],
+    "capacity": 130,
+    "closing_time": 480,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-220",
+    "organization_name": "Central Soup Kitchen #2",
+    "accepted_food_types": [
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 280,
+    "closing_time": 450,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-221",
+    "organization_name": "Harbor Outreach #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 270,
+    "closing_time": 690,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-222",
+    "organization_name": "Southside Community Fridge #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 190,
+    "closing_time": 720,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-223",
+    "organization_name": "New Start Shelter #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 300,
+    "closing_time": 720,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-224",
+    "organization_name": "Unity Food Bank #2",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen"
+    ],
+    "capacity": 190,
+    "closing_time": 420,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-225",
+    "organization_name": "Community Shelter #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 220,
+    "closing_time": 450,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-226",
+    "organization_name": "Eastside Food Pantry #3",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 230,
+    "closing_time": 630,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-227",
+    "organization_name": "Hope Community Fridge #3",
+    "accepted_food_types": [
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 180,
+    "closing_time": 420,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-228",
+    "organization_name": "Family Support Center #3",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "produce"
+    ],
+    "capacity": 70,
+    "closing_time": 600,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-229",
+    "organization_name": "Northside Youth Center #3",
+    "accepted_food_types": [
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 220,
+    "closing_time": 660,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-230",
+    "organization_name": "Senior Meals Program #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 260,
+    "closing_time": 510,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-231",
+    "organization_name": "Westside Pantry #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods"
+    ],
+    "capacity": 240,
+    "closing_time": 660,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-232",
+    "organization_name": "Central Soup Kitchen #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 150,
+    "closing_time": 540,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-233",
+    "organization_name": "Harbor Outreach #3",
+    "accepted_food_types": [
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 240,
+    "closing_time": 420,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-234",
+    "organization_name": "Southside Community Fridge #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "produce"
+    ],
+    "capacity": 160,
+    "closing_time": 570,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-235",
+    "organization_name": "New Start Shelter #3",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 220,
+    "closing_time": 510,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-236",
+    "organization_name": "Unity Food Bank #3",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 270,
+    "closing_time": 450,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-237",
+    "organization_name": "Community Shelter #4",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 240,
+    "closing_time": 360,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-238",
+    "organization_name": "Eastside Food Pantry #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "produce"
+    ],
+    "capacity": 210,
+    "closing_time": 600,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-239",
+    "organization_name": "Hope Community Fridge #4",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 220,
+    "closing_time": 450,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-240",
+    "organization_name": "Family Support Center #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods"
+    ],
+    "capacity": 140,
+    "closing_time": 570,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-241",
+    "organization_name": "Northside Youth Center #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 160,
+    "closing_time": 480,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-242",
+    "organization_name": "Senior Meals Program #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen"
+    ],
+    "capacity": 290,
+    "closing_time": 480,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-243",
+    "organization_name": "Westside Pantry #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "produce"
+    ],
+    "capacity": 80,
+    "closing_time": 390,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-244",
+    "organization_name": "Central Soup Kitchen #4",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 290,
+    "closing_time": 390,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-245",
+    "organization_name": "Harbor Outreach #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 170,
+    "closing_time": 720,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-246",
+    "organization_name": "Southside Community Fridge #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 170,
+    "closing_time": 540,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-247",
+    "organization_name": "New Start Shelter #4",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 170,
+    "closing_time": 540,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-248",
+    "organization_name": "Unity Food Bank #4",
+    "accepted_food_types": [
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 250,
+    "closing_time": 630,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-249",
+    "organization_name": "Community Shelter #5",
+    "accepted_food_types": [
+      "frozen",
+      "produce"
+    ],
+    "capacity": 70,
+    "closing_time": 390,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-250",
+    "organization_name": "Eastside Food Pantry #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 280,
+    "closing_time": 630,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-251",
+    "organization_name": "Hope Community Fridge #5",
+    "accepted_food_types": [
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 130,
+    "closing_time": 390,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-252",
+    "organization_name": "Family Support Center #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 300,
+    "closing_time": 420,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-253",
+    "organization_name": "Northside Youth Center #5",
+    "accepted_food_types": [
+      "canned_goods",
+      "frozen"
+    ],
+    "capacity": 240,
+    "closing_time": 420,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-254",
+    "organization_name": "Senior Meals Program #5",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 110,
+    "closing_time": 720,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-255",
+    "organization_name": "Westside Pantry #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 110,
+    "closing_time": 540,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-256",
+    "organization_name": "Central Soup Kitchen #5",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 290,
+    "closing_time": 600,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-257",
+    "organization_name": "Harbor Outreach #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 100,
+    "closing_time": 480,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-258",
+    "organization_name": "Southside Community Fridge #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 280,
+    "closing_time": 660,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-259",
+    "organization_name": "New Start Shelter #5",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 360,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-260",
+    "organization_name": "Unity Food Bank #5",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 360,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-261",
+    "organization_name": "Community Shelter #6",
+    "accepted_food_types": [
+      "canned_goods",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 510,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-262",
+    "organization_name": "Eastside Food Pantry #6",
+    "accepted_food_types": [
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 210,
+    "closing_time": 450,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-263",
+    "organization_name": "Hope Community Fridge #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 420,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-264",
+    "organization_name": "Family Support Center #6",
+    "accepted_food_types": [
+      "bakery",
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 360,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-265",
+    "organization_name": "Northside Youth Center #6",
+    "accepted_food_types": [
+      "canned_goods",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 60,
+    "closing_time": 630,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-266",
+    "organization_name": "Senior Meals Program #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 300,
+    "closing_time": 390,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-267",
+    "organization_name": "Westside Pantry #6",
+    "accepted_food_types": [
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 270,
+    "closing_time": 600,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-268",
+    "organization_name": "Central Soup Kitchen #6",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 220,
+    "closing_time": 450,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-269",
+    "organization_name": "Harbor Outreach #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "produce"
+    ],
+    "capacity": 230,
+    "closing_time": 630,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-270",
+    "organization_name": "Southside Community Fridge #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 60,
+    "closing_time": 570,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-271",
+    "organization_name": "New Start Shelter #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 100,
+    "closing_time": 390,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-272",
+    "organization_name": "Unity Food Bank #6",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 80,
+    "closing_time": 720,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-273",
+    "organization_name": "Community Shelter #7",
+    "accepted_food_types": [
+      "frozen",
+      "produce"
+    ],
+    "capacity": 180,
+    "closing_time": 600,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-274",
+    "organization_name": "Eastside Food Pantry #7",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 190,
+    "closing_time": 480,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-275",
+    "organization_name": "Hope Community Fridge #7",
+    "accepted_food_types": [
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 150,
+    "closing_time": 510,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-276",
+    "organization_name": "Family Support Center #7",
+    "accepted_food_types": [
+      "bakery",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 110,
+    "closing_time": 420,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-277",
+    "organization_name": "Northside Youth Center #7",
+    "accepted_food_types": [
+      "canned_goods",
+      "produce"
+    ],
+    "capacity": 180,
+    "closing_time": 450,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-278",
+    "organization_name": "Senior Meals Program #7",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 70,
+    "closing_time": 510,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-279",
+    "organization_name": "Westside Pantry #7",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 70,
+    "closing_time": 570,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-280",
+    "organization_name": "Central Soup Kitchen #7",
+    "accepted_food_types": [
+      "bakery",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 130,
+    "closing_time": 720,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-281",
+    "organization_name": "Harbor Outreach #7",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy"
+    ],
+    "capacity": 230,
+    "closing_time": 690,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-282",
+    "organization_name": "Southside Community Fridge #7",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 180,
+    "closing_time": 540,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-283",
+    "organization_name": "New Start Shelter #7",
+    "accepted_food_types": [
+      "bakery",
+      "prepared_meals"
+    ],
+    "capacity": 70,
+    "closing_time": 480,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-284",
+    "organization_name": "Unity Food Bank #7",
+    "accepted_food_types": [
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 130,
+    "closing_time": 600,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-285",
+    "organization_name": "Community Shelter #8",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 260,
+    "closing_time": 510,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-286",
+    "organization_name": "Eastside Food Pantry #8",
+    "accepted_food_types": [
+      "canned_goods",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 80,
+    "closing_time": 510,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-287",
+    "organization_name": "Hope Community Fridge #8",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 250,
+    "closing_time": 450,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-288",
+    "organization_name": "Family Support Center #8",
+    "accepted_food_types": [
+      "bakery",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 110,
+    "closing_time": 390,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-289",
+    "organization_name": "Northside Youth Center #8",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 720,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-290",
+    "organization_name": "Senior Meals Program #8",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 280,
+    "closing_time": 690,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-291",
+    "organization_name": "Westside Pantry #8",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 290,
+    "closing_time": 480,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-292",
+    "organization_name": "Central Soup Kitchen #8",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods"
+    ],
+    "capacity": 120,
+    "closing_time": 690,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-293",
+    "organization_name": "Harbor Outreach #8",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 720,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-294",
+    "organization_name": "Southside Community Fridge #8",
+    "accepted_food_types": [
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 70,
+    "closing_time": 570,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-295",
+    "organization_name": "New Start Shelter #8",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 160,
+    "closing_time": 600,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-296",
+    "organization_name": "Unity Food Bank #8",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 300,
+    "closing_time": 480,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-297",
+    "organization_name": "Community Shelter #9",
+    "accepted_food_types": [
+      "dairy",
+      "produce"
+    ],
+    "capacity": 240,
+    "closing_time": 570,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-298",
+    "organization_name": "Eastside Food Pantry #9",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 270,
+    "closing_time": 390,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-299",
+    "organization_name": "Hope Community Fridge #9",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 60,
+    "closing_time": 390,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-300",
+    "organization_name": "Family Support Center #9",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 120,
+    "closing_time": 420,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-301",
+    "organization_name": "Northside Youth Center #9",
+    "accepted_food_types": [
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 140,
+    "closing_time": 420,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-302",
+    "organization_name": "Senior Meals Program #9",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 660,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-303",
+    "organization_name": "Westside Pantry #9",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 510,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-304",
+    "organization_name": "Central Soup Kitchen #9",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 230,
+    "closing_time": 660,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-305",
+    "organization_name": "Harbor Outreach #9",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 60,
+    "closing_time": 510,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-306",
+    "organization_name": "Southside Community Fridge #9",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 280,
+    "closing_time": 480,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-307",
+    "organization_name": "New Start Shelter #9",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 210,
+    "closing_time": 660,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-308",
+    "organization_name": "Unity Food Bank #9",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "dairy",
+      "prepared_meals"
+    ],
+    "capacity": 80,
+    "closing_time": 360,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-309",
+    "organization_name": "Community Shelter #10",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 280,
+    "closing_time": 480,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-310",
+    "organization_name": "Eastside Food Pantry #10",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 690,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-311",
+    "organization_name": "Hope Community Fridge #10",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 230,
+    "closing_time": 690,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-312",
+    "organization_name": "Family Support Center #10",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 70,
+    "closing_time": 420,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-313",
+    "organization_name": "Northside Youth Center #10",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 220,
+    "closing_time": 690,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-314",
+    "organization_name": "Senior Meals Program #10",
+    "accepted_food_types": [
+      "dairy",
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 200,
+    "closing_time": 420,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-315",
+    "organization_name": "Westside Pantry #10",
+    "accepted_food_types": [
+      "frozen",
+      "prepared_meals"
+    ],
+    "capacity": 110,
+    "closing_time": 480,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-316",
+    "organization_name": "Central Soup Kitchen #10",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 660,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-317",
+    "organization_name": "Harbor Outreach #10",
+    "accepted_food_types": [
+      "bakery",
+      "frozen"
+    ],
+    "capacity": 250,
+    "closing_time": 540,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-318",
+    "organization_name": "Southside Community Fridge #10",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 200,
+    "closing_time": 420,
+    "dropoff_area": "east"
+  },
+  {
+    "recipient_id": "R-319",
+    "organization_name": "New Start Shelter #10",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "frozen",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 630,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-320",
+    "organization_name": "Unity Food Bank #10",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 110,
+    "closing_time": 720,
+    "dropoff_area": "east"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "volunteer_id": "V-301",
+    "vehicle_capacity": 30,
+    "maximum_pickups": 4,
+    "availability_start": 360,
+    "availability_end": 630,
+    "pickup_area": "south"
+  },
+  {
+    "volunteer_id": "V-302",
+    "vehicle_capacity": 110,
+    "maximum_pickups": 3,
+    "availability_start": 420,
+    "availability_end": 570,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-303",
+    "vehicle_capacity": 70,
+    "maximum_pickups": 2,
+    "availability_start": 0,
+    "availability_end": 210,
+    "pickup_area": "west"
+  }
+]

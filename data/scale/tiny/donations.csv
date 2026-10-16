@@ -1,0 +1,9 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Maple Cafe,produce,62,0,580,west
+D-1002,Valley Produce Wholesale,prepared_meals,7,480,550,west
+D-1003,Oak Street Market,dairy,50,410,680,east
+D-1004,Riverside Farmers Market,frozen,33,15,160,south
+D-1005,Green Leaf Grocery,dairy,62,305,590,east
+D-1006,Valley Produce Wholesale,produce,18,65,585,north
+D-1007,Corner Pantry Grocery,bakery,47,210,485,north
+D-1008,FreshMart,bakery,59,420,980,east

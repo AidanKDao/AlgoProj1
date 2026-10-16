@@ -1,0 +1,42 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 210,
+    "closing_time": 420,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-202",
+    "organization_name": "Eastside Food Pantry",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen"
+    ],
+    "capacity": 70,
+    "closing_time": 660,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-203",
+    "organization_name": "Hope Community Fridge",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 130,
+    "closing_time": 360,
+    "dropoff_area": "central"
+  }
+]

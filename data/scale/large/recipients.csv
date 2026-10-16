@@ -1,0 +1,121 @@
+recipient_id,organization_name,accepted_food_types,capacity,closing_time,dropoff_area
+R-201,Community Shelter,frozen;produce,150,600,south
+R-202,Eastside Food Pantry,bakery;frozen,130,420,central
+R-203,Hope Community Fridge,dairy;produce,80,360,central
+R-204,Family Support Center,bakery;canned_goods;produce,140,420,south
+R-205,Northside Youth Center,bakery;canned_goods;dairy;frozen,160,450,east
+R-206,Senior Meals Program,bakery;canned_goods;dairy;frozen;produce,300,480,central
+R-207,Westside Pantry,bakery;canned_goods;dairy;frozen,270,510,north
+R-208,Central Soup Kitchen,canned_goods;prepared_meals,250,420,north
+R-209,Harbor Outreach,bakery;canned_goods;frozen;prepared_meals;produce,230,660,north
+R-210,Southside Community Fridge,bakery;frozen;prepared_meals,160,690,north
+R-211,New Start Shelter,canned_goods;prepared_meals;produce,110,480,east
+R-212,Unity Food Bank,bakery;dairy;frozen;prepared_meals;produce,270,720,east
+R-213,Community Shelter #2,frozen;prepared_meals;produce,270,720,east
+R-214,Eastside Food Pantry #2,bakery;canned_goods;dairy;prepared_meals,200,420,north
+R-215,Hope Community Fridge #2,bakery;dairy;frozen;produce,110,600,west
+R-216,Family Support Center #2,bakery;dairy;frozen,110,360,north
+R-217,Northside Youth Center #2,bakery;canned_goods;frozen;produce,200,390,north
+R-218,Senior Meals Program #2,canned_goods;prepared_meals,210,720,north
+R-219,Westside Pantry #2,bakery;canned_goods,130,480,north
+R-220,Central Soup Kitchen #2,frozen;prepared_meals;produce,280,450,east
+R-221,Harbor Outreach #2,bakery;canned_goods;dairy;frozen;produce,270,690,north
+R-222,Southside Community Fridge #2,bakery;canned_goods;frozen;prepared_meals,190,720,east
+R-223,New Start Shelter #2,bakery;canned_goods;frozen;prepared_meals,300,720,south
+R-224,Unity Food Bank #2,bakery;canned_goods;frozen,190,420,south
+R-225,Community Shelter #3,bakery;canned_goods;frozen;prepared_meals;produce,220,450,east
+R-226,Eastside Food Pantry #3,canned_goods;prepared_meals,230,630,south
+R-227,Hope Community Fridge #3,dairy;frozen;prepared_meals,180,420,central
+R-228,Family Support Center #3,bakery;dairy;produce,70,600,central
+R-229,Northside Youth Center #3,prepared_meals;produce,220,660,central
+R-230,Senior Meals Program #3,bakery;canned_goods;prepared_meals;produce,260,510,north
+R-231,Westside Pantry #3,bakery;canned_goods,240,660,west
+R-232,Central Soup Kitchen #3,bakery;canned_goods;dairy;frozen;produce,150,540,south
+R-233,Harbor Outreach #3,dairy;frozen;prepared_meals,240,420,central
+R-234,Southside Community Fridge #3,bakery;canned_goods;dairy;produce,160,570,south
+R-235,New Start Shelter #3,bakery;dairy;frozen;prepared_meals;produce,220,510,central
+R-236,Unity Food Bank #3,bakery;canned_goods;dairy;prepared_meals,270,450,south
+R-237,Community Shelter #4,bakery;dairy;frozen;prepared_meals;produce,240,360,south
+R-238,Eastside Food Pantry #4,bakery;canned_goods;dairy;produce,210,600,north
+R-239,Hope Community Fridge #4,canned_goods;dairy;prepared_meals,220,450,central
+R-240,Family Support Center #4,bakery;canned_goods,140,570,east
+R-241,Northside Youth Center #4,bakery;canned_goods;prepared_meals,160,480,north
+R-242,Senior Meals Program #4,bakery;canned_goods;frozen,290,480,north
+R-243,Westside Pantry #4,bakery;canned_goods;dairy;produce,80,390,south
+R-244,Central Soup Kitchen #4,canned_goods;dairy;frozen;prepared_meals,290,390,east
+R-245,Harbor Outreach #4,bakery;canned_goods;frozen;prepared_meals;produce,170,720,west
+R-246,Southside Community Fridge #4,bakery;canned_goods;dairy;frozen;produce,170,540,north
+R-247,New Start Shelter #4,bakery;canned_goods;dairy;prepared_meals,170,540,north
+R-248,Unity Food Bank #4,dairy;prepared_meals;produce,250,630,south
+R-249,Community Shelter #5,frozen;produce,70,390,central
+R-250,Eastside Food Pantry #5,bakery;canned_goods;dairy;prepared_meals;produce,280,630,east
+R-251,Hope Community Fridge #5,dairy;prepared_meals,130,390,south
+R-252,Family Support Center #5,bakery;canned_goods;dairy;frozen;produce,300,420,south
+R-253,Northside Youth Center #5,canned_goods;frozen,240,420,south
+R-254,Senior Meals Program #5,bakery;dairy;frozen;prepared_meals;produce,110,720,south
+R-255,Westside Pantry #5,bakery;canned_goods;dairy;frozen;prepared_meals,110,540,central
+R-256,Central Soup Kitchen #5,bakery;dairy;frozen;prepared_meals;produce,290,600,central
+R-257,Harbor Outreach #5,bakery;canned_goods;dairy;frozen;produce,100,480,south
+R-258,Southside Community Fridge #5,bakery;canned_goods;frozen;prepared_meals,280,660,east
+R-259,New Start Shelter #5,canned_goods;dairy;frozen;prepared_meals;produce,50,360,west
+R-260,Unity Food Bank #5,bakery;canned_goods;produce,200,360,north
+R-261,Community Shelter #6,canned_goods;frozen;prepared_meals;produce,130,510,central
+R-262,Eastside Food Pantry #6,dairy;frozen,210,450,east
+R-263,Hope Community Fridge #6,bakery;canned_goods;dairy;produce,50,420,east
+R-264,Family Support Center #6,bakery;produce,50,360,east
+R-265,Northside Youth Center #6,canned_goods;frozen;prepared_meals,60,630,east
+R-266,Senior Meals Program #6,bakery;canned_goods;dairy;prepared_meals;produce,300,390,east
+R-267,Westside Pantry #6,prepared_meals;produce,270,600,west
+R-268,Central Soup Kitchen #6,bakery;dairy;frozen;prepared_meals;produce,220,450,west
+R-269,Harbor Outreach #6,bakery;canned_goods;produce,230,630,east
+R-270,Southside Community Fridge #6,bakery;canned_goods;dairy;frozen;prepared_meals,60,570,south
+R-271,New Start Shelter #6,bakery;canned_goods;frozen;prepared_meals,100,390,west
+R-272,Unity Food Bank #6,bakery;canned_goods;dairy;frozen;produce,80,720,north
+R-273,Community Shelter #7,frozen;produce,180,600,east
+R-274,Eastside Food Pantry #7,canned_goods;prepared_meals;produce,190,480,north
+R-275,Hope Community Fridge #7,dairy;prepared_meals,150,510,west
+R-276,Family Support Center #7,bakery;frozen;prepared_meals,110,420,central
+R-277,Northside Youth Center #7,canned_goods;produce,180,450,west
+R-278,Senior Meals Program #7,bakery;canned_goods;dairy;frozen;prepared_meals,70,510,central
+R-279,Westside Pantry #7,bakery;canned_goods;dairy;frozen;prepared_meals,70,570,east
+R-280,Central Soup Kitchen #7,bakery;frozen;prepared_meals,130,720,south
+R-281,Harbor Outreach #7,canned_goods;dairy,230,690,east
+R-282,Southside Community Fridge #7,bakery;canned_goods;dairy;frozen;prepared_meals,180,540,south
+R-283,New Start Shelter #7,bakery;prepared_meals,70,480,central
+R-284,Unity Food Bank #7,dairy;frozen,130,600,north
+R-285,Community Shelter #8,bakery;canned_goods;dairy;frozen;prepared_meals,260,510,central
+R-286,Eastside Food Pantry #8,canned_goods;frozen;produce,80,510,south
+R-287,Hope Community Fridge #8,canned_goods;dairy;frozen;prepared_meals,250,450,central
+R-288,Family Support Center #8,bakery;frozen;prepared_meals,110,390,east
+R-289,Northside Youth Center #8,canned_goods;dairy;frozen;produce,50,720,central
+R-290,Senior Meals Program #8,bakery;dairy;prepared_meals,280,690,west
+R-291,Westside Pantry #8,canned_goods;dairy;frozen,290,480,north
+R-292,Central Soup Kitchen #8,bakery;canned_goods,120,690,north
+R-293,Harbor Outreach #8,bakery;canned_goods;prepared_meals;produce,130,720,central
+R-294,Southside Community Fridge #8,dairy;frozen;prepared_meals;produce,70,570,west
+R-295,New Start Shelter #8,bakery;dairy;frozen;prepared_meals;produce,160,600,north
+R-296,Unity Food Bank #8,bakery;canned_goods;prepared_meals;produce,300,480,east
+R-297,Community Shelter #9,dairy;produce,240,570,east
+R-298,Eastside Food Pantry #9,bakery;canned_goods;dairy;frozen;produce,270,390,central
+R-299,Hope Community Fridge #9,bakery;canned_goods;dairy;prepared_meals;produce,60,390,central
+R-300,Family Support Center #9,bakery;canned_goods;prepared_meals,120,420,north
+R-301,Northside Youth Center #9,dairy;frozen,140,420,east
+R-302,Senior Meals Program #9,bakery;dairy;frozen;prepared_meals;produce,50,660,west
+R-303,Westside Pantry #9,canned_goods;dairy;frozen;produce,200,510,north
+R-304,Central Soup Kitchen #9,canned_goods;dairy;frozen;prepared_meals;produce,230,660,north
+R-305,Harbor Outreach #9,canned_goods;dairy;frozen;produce,60,510,north
+R-306,Southside Community Fridge #9,bakery;dairy;prepared_meals,280,480,west
+R-307,New Start Shelter #9,bakery;dairy;prepared_meals;produce,210,660,east
+R-308,Unity Food Bank #9,bakery;canned_goods;dairy;prepared_meals,80,360,central
+R-309,Community Shelter #10,canned_goods;dairy;frozen;prepared_meals;produce,280,480,central
+R-310,Eastside Food Pantry #10,bakery;dairy;frozen;produce,130,690,central
+R-311,Hope Community Fridge #10,bakery;canned_goods;frozen;produce,230,690,central
+R-312,Family Support Center #10,bakery;canned_goods;prepared_meals;produce,70,420,east
+R-313,Northside Youth Center #10,bakery;canned_goods;prepared_meals;produce,220,690,east
+R-314,Senior Meals Program #10,dairy;frozen;prepared_meals,200,420,north
+R-315,Westside Pantry #10,frozen;prepared_meals,110,480,east
+R-316,Central Soup Kitchen #10,canned_goods;dairy;prepared_meals;produce,130,660,south
+R-317,Harbor Outreach #10,bakery;frozen,250,540,west
+R-318,Southside Community Fridge #10,canned_goods;prepared_meals,200,420,east
+R-319,New Start Shelter #10,bakery;canned_goods;frozen;produce,130,630,central
+R-320,Unity Food Bank #10,canned_goods;dairy;frozen;prepared_meals;produce,110,720,east

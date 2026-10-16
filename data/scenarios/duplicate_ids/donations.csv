@@ -1,0 +1,4 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Campus Dining Hall,prepared_meals,30,0,90,central
+D-1001,Sunrise Bakery,bakery,20,30,400,north
+D-1002,FreshMart,produce,25,0,480,central

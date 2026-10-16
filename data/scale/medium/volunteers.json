@@ -1,0 +1,122 @@
+[
+  {
+    "volunteer_id": "V-301",
+    "vehicle_capacity": 40,
+    "maximum_pickups": 6,
+    "availability_start": 90,
+    "availability_end": 360,
+    "pickup_area": "east"
+  },
+  {
+    "volunteer_id": "V-302",
+    "vehicle_capacity": 110,
+    "maximum_pickups": 6,
+    "availability_start": 330,
+    "availability_end": 690,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-303",
+    "vehicle_capacity": 40,
+    "maximum_pickups": 6,
+    "availability_start": 360,
+    "availability_end": 540,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-304",
+    "vehicle_capacity": 50,
+    "maximum_pickups": 4,
+    "availability_start": 60,
+    "availability_end": 420,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-305",
+    "vehicle_capacity": 20,
+    "maximum_pickups": 2,
+    "availability_start": 390,
+    "availability_end": 690,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-306",
+    "vehicle_capacity": 50,
+    "maximum_pickups": 6,
+    "availability_start": 150,
+    "availability_end": 450,
+    "pickup_area": "west"
+  },
+  {
+    "volunteer_id": "V-307",
+    "vehicle_capacity": 60,
+    "maximum_pickups": 2,
+    "availability_start": 360,
+    "availability_end": 570,
+    "pickup_area": "east"
+  },
+  {
+    "volunteer_id": "V-308",
+    "vehicle_capacity": 90,
+    "maximum_pickups": 4,
+    "availability_start": 360,
+    "availability_end": 480,
+    "pickup_area": "south"
+  },
+  {
+    "volunteer_id": "V-309",
+    "vehicle_capacity": 70,
+    "maximum_pickups": 3,
+    "availability_start": 150,
+    "availability_end": 480,
+    "pickup_area": "west"
+  },
+  {
+    "volunteer_id": "V-310",
+    "vehicle_capacity": 90,
+    "maximum_pickups": 4,
+    "availability_start": 120,
+    "availability_end": 390,
+    "pickup_area": "west"
+  },
+  {
+    "volunteer_id": "V-311",
+    "vehicle_capacity": 120,
+    "maximum_pickups": 6,
+    "availability_start": 120,
+    "availability_end": 480,
+    "pickup_area": "west"
+  },
+  {
+    "volunteer_id": "V-312",
+    "vehicle_capacity": 50,
+    "maximum_pickups": 3,
+    "availability_start": 300,
+    "availability_end": 450,
+    "pickup_area": "south"
+  },
+  {
+    "volunteer_id": "V-313",
+    "vehicle_capacity": 70,
+    "maximum_pickups": 3,
+    "availability_start": 150,
+    "availability_end": 510,
+    "pickup_area": "west"
+  },
+  {
+    "volunteer_id": "V-314",
+    "vehicle_capacity": 50,
+    "maximum_pickups": 5,
+    "availability_start": 390,
+    "availability_end": 690,
+    "pickup_area": "north"
+  },
+  {
+    "volunteer_id": "V-315",
+    "vehicle_capacity": 30,
+    "maximum_pickups": 4,
+    "availability_start": 270,
+    "availability_end": 630,
+    "pickup_area": "north"
+  }
+]

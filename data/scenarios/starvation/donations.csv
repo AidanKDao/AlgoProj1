@@ -1,0 +1,6 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Corner Pantry Grocery,canned_goods,20,0,2880,central
+D-1002,Campus Dining Hall,prepared_meals,10,0,60,central
+D-1003,Campus Dining Hall,prepared_meals,10,20,80,central
+D-1004,Campus Dining Hall,prepared_meals,10,40,100,central
+D-1005,Campus Dining Hall,prepared_meals,10,60,120,central

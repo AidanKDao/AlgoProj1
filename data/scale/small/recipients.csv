@@ -1,0 +1,7 @@
+recipient_id,organization_name,accepted_food_types,capacity,closing_time,dropoff_area
+R-201,Community Shelter,dairy;frozen;prepared_meals;produce,100,480,central
+R-202,Eastside Food Pantry,bakery;canned_goods;prepared_meals;produce,150,540,south
+R-203,Hope Community Fridge,canned_goods;prepared_meals;produce,240,630,north
+R-204,Family Support Center,canned_goods;dairy;frozen;prepared_meals;produce,260,660,west
+R-205,Northside Youth Center,bakery;dairy;frozen;prepared_meals;produce,100,420,north
+R-206,Senior Meals Program,canned_goods;dairy;prepared_meals;produce,80,570,west

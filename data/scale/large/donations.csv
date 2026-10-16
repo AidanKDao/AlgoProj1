@@ -1,0 +1,1001 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Maple Cafe,produce,62,0,580,west
+D-1002,Valley Produce Wholesale,prepared_meals,7,480,550,west
+D-1003,Oak Street Market,dairy,50,410,680,east
+D-1004,Riverside Farmers Market,frozen,33,15,160,south
+D-1005,Green Leaf Grocery,dairy,62,305,590,east
+D-1006,Valley Produce Wholesale,produce,18,65,585,north
+D-1007,Corner Pantry Grocery,bakery,47,210,485,north
+D-1008,FreshMart,bakery,59,420,980,east
+D-1009,Event Center Catering,canned_goods,36,310,4455,west
+D-1010,Golden Crust Bakery,produce,25,225,840,south
+D-1011,Bright Morning Bagels,bakery,75,545,1020,north
+D-1012,Bright Morning Bagels,canned_goods,59,340,3845,south
+D-1013,Campus Dining Hall,dairy,38,545,670,central
+D-1014,Valley Produce Wholesale,frozen,56,560,665,east
+D-1015,Oak Street Market,bakery,78,105,370,north
+D-1016,Golden Crust Bakery,canned_goods,7,5,3260,north
+D-1017,Event Center Catering,produce,41,255,950,central
+D-1018,Downtown Deli,bakery,52,135,595,west
+D-1019,Oak Street Market,frozen,27,230,385,south
+D-1020,Bright Morning Bagels,produce,32,285,855,west
+D-1021,Downtown Deli,prepared_meals,77,135,295,central
+D-1022,Valley Produce Wholesale,bakery,23,205,640,west
+D-1023,Corner Pantry Grocery,dairy,30,85,225,central
+D-1024,Bright Morning Bagels,dairy,42,530,780,east
+D-1025,Sunrise Bakery,produce,48,145,660,north
+D-1026,Bright Morning Bagels,bakery,21,20,510,south
+D-1027,Valley Produce Wholesale,bakery,70,435,845,east
+D-1028,FreshMart,prepared_meals,55,285,355,south
+D-1029,Event Center Catering,canned_goods,24,60,1700,west
+D-1030,Golden Crust Bakery,canned_goods,58,275,3880,north
+D-1031,Bright Morning Bagels,canned_goods,57,410,3875,central
+D-1032,Campus Dining Hall,dairy,38,200,370,south
+D-1033,Event Center Catering,prepared_meals,27,205,355,north
+D-1034,Oak Street Market,produce,59,75,335,south
+D-1035,Event Center Catering,produce,62,565,1160,east
+D-1036,Golden Crust Bakery,dairy,13,585,880,north
+D-1037,Corner Pantry Grocery,canned_goods,66,70,4080,north
+D-1038,Harbor Catering Co.,dairy,45,515,770,west
+D-1039,Golden Crust Bakery,dairy,44,180,465,central
+D-1040,Maple Cafe,prepared_meals,45,380,535,west
+D-1041,Oak Street Market,dairy,77,240,435,north
+D-1042,Downtown Deli,canned_goods,53,30,3440,north
+D-1043,Titan Student Union Cafe,prepared_meals,21,270,365,west
+D-1044,Golden Crust Bakery,bakery,16,435,900,south
+D-1045,FreshMart,prepared_meals,70,585,755,central
+D-1046,Corner Pantry Grocery,bakery,72,220,515,north
+D-1047,FreshMart,dairy,52,200,535,east
+D-1048,Sunrise Bakery,bakery,65,235,790,south
+D-1049,Green Leaf Grocery,frozen,29,405,560,east
+D-1050,Sunrise Bakery,canned_goods,18,475,2815,west
+D-1051,Event Center Catering,canned_goods,78,305,4265,west
+D-1052,Valley Produce Wholesale,canned_goods,47,255,1760,south
+D-1053,Titan Student Union Cafe,dairy,12,300,555,east
+D-1054,Maple Cafe,produce,12,420,1030,east
+D-1055,Golden Crust Bakery,dairy,71,495,740,east
+D-1056,Event Center Catering,prepared_meals,38,25,135,west
+D-1057,FreshMart,frozen,19,365,520,west
+D-1058,Valley Produce Wholesale,frozen,39,50,240,central
+D-1059,Downtown Deli,dairy,20,560,875,west
+D-1060,Sunrise Bakery,produce,33,90,520,west
+D-1061,Oak Street Market,dairy,63,410,740,central
+D-1062,Downtown Deli,produce,55,205,600,north
+D-1063,Maple Cafe,prepared_meals,70,505,560,south
+D-1064,FreshMart,canned_goods,15,205,1655,east
+D-1065,Downtown Deli,dairy,56,365,635,east
+D-1066,Harbor Catering Co.,canned_goods,64,115,1630,south
+D-1067,Oak Street Market,prepared_meals,20,555,615,south
+D-1068,Riverside Farmers Market,prepared_meals,11,295,460,north
+D-1069,Maple Cafe,canned_goods,11,500,4665,north
+D-1070,Golden Crust Bakery,produce,60,360,655,east
+D-1071,Harbor Catering Co.,prepared_meals,43,95,250,south
+D-1072,Sunrise Bakery,produce,61,125,700,central
+D-1073,Sunrise Bakery,prepared_meals,72,40,135,central
+D-1074,Downtown Deli,dairy,16,5,185,west
+D-1075,Downtown Deli,prepared_meals,16,210,345,north
+D-1076,Golden Crust Bakery,prepared_meals,50,505,675,east
+D-1077,Oak Street Market,bakery,45,575,815,west
+D-1078,Titan Student Union Cafe,frozen,53,530,735,east
+D-1079,Downtown Deli,prepared_meals,64,345,425,west
+D-1080,Oak Street Market,prepared_meals,17,110,205,south
+D-1081,FreshMart,bakery,26,305,890,central
+D-1082,Riverside Farmers Market,bakery,56,535,860,central
+D-1083,FreshMart,bakery,22,540,990,north
+D-1084,Sunrise Bakery,frozen,45,490,730,north
+D-1085,Downtown Deli,produce,50,350,1025,south
+D-1086,Maple Cafe,produce,56,5,290,central
+D-1087,Harbor Catering Co.,dairy,44,530,885,central
+D-1088,Oak Street Market,canned_goods,71,255,4485,central
+D-1089,Maple Cafe,canned_goods,39,10,3420,north
+D-1090,Sunrise Bakery,frozen,73,40,135,south
+D-1091,Bright Morning Bagels,bakery,60,150,340,west
+D-1092,Corner Pantry Grocery,canned_goods,11,290,3005,south
+D-1093,Campus Dining Hall,prepared_meals,23,520,630,central
+D-1094,Valley Produce Wholesale,frozen,33,540,730,east
+D-1095,Maple Cafe,frozen,42,495,690,east
+D-1096,Sunrise Bakery,dairy,65,465,815,west
+D-1097,Riverside Farmers Market,canned_goods,5,240,4095,west
+D-1098,Sunrise Bakery,bakery,62,45,505,south
+D-1099,Riverside Farmers Market,prepared_meals,15,495,570,south
+D-1100,Event Center Catering,canned_goods,79,390,3685,central
+D-1101,Downtown Deli,prepared_meals,59,195,315,north
+D-1102,Golden Crust Bakery,prepared_meals,18,250,390,west
+D-1103,Maple Cafe,canned_goods,11,285,2635,west
+D-1104,Oak Street Market,bakery,74,295,860,south
+D-1105,Corner Pantry Grocery,canned_goods,55,25,3845,south
+D-1106,Campus Dining Hall,frozen,30,80,320,south
+D-1107,Corner Pantry Grocery,canned_goods,35,410,3425,central
+D-1108,Golden Crust Bakery,produce,6,560,1190,east
+D-1109,Harbor Catering Co.,canned_goods,53,40,2120,west
+D-1110,Corner Pantry Grocery,frozen,40,530,770,central
+D-1111,Sunrise Bakery,frozen,49,110,210,south
+D-1112,Harbor Catering Co.,bakery,73,50,260,west
+D-1113,Event Center Catering,bakery,30,95,360,north
+D-1114,Bright Morning Bagels,dairy,64,375,505,south
+D-1115,Valley Produce Wholesale,canned_goods,34,375,4360,south
+D-1116,Harbor Catering Co.,frozen,48,50,285,north
+D-1117,Bright Morning Bagels,canned_goods,46,515,2615,central
+D-1118,Oak Street Market,bakery,15,255,705,north
+D-1119,Corner Pantry Grocery,canned_goods,35,260,2820,central
+D-1120,Sunrise Bakery,canned_goods,69,585,2715,west
+D-1121,Harbor Catering Co.,frozen,15,560,775,south
+D-1122,Harbor Catering Co.,canned_goods,17,155,3470,west
+D-1123,Sunrise Bakery,prepared_meals,64,400,530,south
+D-1124,Bright Morning Bagels,produce,41,100,590,east
+D-1125,Valley Produce Wholesale,frozen,56,405,560,south
+D-1126,FreshMart,produce,37,50,700,east
+D-1127,Riverside Farmers Market,dairy,69,510,695,south
+D-1128,Corner Pantry Grocery,prepared_meals,69,455,565,north
+D-1129,Valley Produce Wholesale,canned_goods,27,30,3335,west
+D-1130,Green Leaf Grocery,prepared_meals,20,510,580,central
+D-1131,Riverside Farmers Market,bakery,49,180,755,central
+D-1132,Campus Dining Hall,frozen,53,570,680,central
+D-1133,Titan Student Union Cafe,produce,31,5,475,central
+D-1134,Golden Crust Bakery,prepared_meals,58,580,625,north
+D-1135,Maple Cafe,canned_goods,7,265,2520,south
+D-1136,Corner Pantry Grocery,frozen,57,240,390,east
+D-1137,Riverside Farmers Market,prepared_meals,36,400,485,central
+D-1138,Oak Street Market,dairy,47,525,880,central
+D-1139,Corner Pantry Grocery,prepared_meals,25,100,255,east
+D-1140,Oak Street Market,produce,65,460,795,west
+D-1141,FreshMart,bakery,56,390,650,central
+D-1142,FreshMart,frozen,35,300,410,north
+D-1143,Green Leaf Grocery,produce,51,560,1260,south
+D-1144,Downtown Deli,frozen,35,250,465,west
+D-1145,Maple Cafe,dairy,41,5,160,east
+D-1146,Maple Cafe,frozen,6,475,690,central
+D-1147,Titan Student Union Cafe,produce,20,430,825,east
+D-1148,Oak Street Market,produce,77,50,435,central
+D-1149,Riverside Farmers Market,frozen,21,265,470,central
+D-1150,Valley Produce Wholesale,canned_goods,48,180,2745,west
+D-1151,Downtown Deli,canned_goods,53,230,4435,west
+D-1152,FreshMart,prepared_meals,8,500,645,central
+D-1153,Valley Produce Wholesale,frozen,16,385,540,west
+D-1154,Corner Pantry Grocery,produce,32,495,870,north
+D-1155,Maple Cafe,frozen,68,315,450,central
+D-1156,Green Leaf Grocery,produce,16,200,630,east
+D-1157,Golden Crust Bakery,prepared_meals,40,555,705,east
+D-1158,Valley Produce Wholesale,dairy,79,580,860,central
+D-1159,Corner Pantry Grocery,produce,19,470,1070,east
+D-1160,Valley Produce Wholesale,dairy,19,200,515,east
+D-1161,Green Leaf Grocery,bakery,24,495,845,south
+D-1162,Harbor Catering Co.,canned_goods,40,545,2305,north
+D-1163,Harbor Catering Co.,produce,69,285,595,north
+D-1164,Event Center Catering,bakery,74,360,860,south
+D-1165,Valley Produce Wholesale,frozen,46,35,205,east
+D-1166,Harbor Catering Co.,prepared_meals,68,500,615,north
+D-1167,Maple Cafe,frozen,40,345,585,east
+D-1168,Titan Student Union Cafe,frozen,6,205,385,central
+D-1169,Campus Dining Hall,canned_goods,22,35,3655,central
+D-1170,Maple Cafe,canned_goods,34,5,2325,central
+D-1171,Green Leaf Grocery,bakery,20,225,735,central
+D-1172,Event Center Catering,dairy,31,345,635,east
+D-1173,Titan Student Union Cafe,frozen,69,245,485,west
+D-1174,FreshMart,dairy,6,480,745,central
+D-1175,Maple Cafe,prepared_meals,67,545,725,east
+D-1176,Harbor Catering Co.,prepared_meals,55,460,535,east
+D-1177,Bright Morning Bagels,produce,54,525,815,west
+D-1178,Sunrise Bakery,frozen,70,165,375,west
+D-1179,FreshMart,frozen,51,75,210,south
+D-1180,Downtown Deli,produce,24,490,1170,east
+D-1181,Sunrise Bakery,canned_goods,34,280,2585,east
+D-1182,Sunrise Bakery,dairy,68,595,805,central
+D-1183,Golden Crust Bakery,frozen,71,415,635,north
+D-1184,Riverside Farmers Market,produce,15,390,765,central
+D-1185,FreshMart,prepared_meals,29,100,205,central
+D-1186,Green Leaf Grocery,prepared_meals,44,490,655,east
+D-1187,FreshMart,dairy,46,135,475,east
+D-1188,Sunrise Bakery,produce,63,225,770,north
+D-1189,Golden Crust Bakery,canned_goods,46,70,3485,south
+D-1190,Golden Crust Bakery,produce,43,130,675,west
+D-1191,Riverside Farmers Market,canned_goods,70,45,1890,north
+D-1192,Riverside Farmers Market,dairy,9,500,635,south
+D-1193,Oak Street Market,prepared_meals,47,510,570,west
+D-1194,Harbor Catering Co.,bakery,12,105,625,south
+D-1195,Valley Produce Wholesale,produce,73,290,635,east
+D-1196,Corner Pantry Grocery,dairy,50,230,570,central
+D-1197,Harbor Catering Co.,canned_goods,10,95,2125,west
+D-1198,Titan Student Union Cafe,bakery,15,65,245,north
+D-1199,FreshMart,canned_goods,60,325,2910,central
+D-1200,Valley Produce Wholesale,dairy,65,525,785,south
+D-1201,Downtown Deli,canned_goods,70,90,2305,west
+D-1202,Riverside Farmers Market,produce,8,190,830,east
+D-1203,Sunrise Bakery,bakery,11,395,975,west
+D-1204,Riverside Farmers Market,prepared_meals,19,360,455,west
+D-1205,Titan Student Union Cafe,canned_goods,79,575,4470,north
+D-1206,Green Leaf Grocery,bakery,31,350,545,south
+D-1207,Bright Morning Bagels,dairy,17,10,330,east
+D-1208,Harbor Catering Co.,dairy,45,70,265,south
+D-1209,Event Center Catering,produce,61,65,445,north
+D-1210,Golden Crust Bakery,frozen,6,160,360,south
+D-1211,Riverside Farmers Market,canned_goods,69,15,2815,west
+D-1212,Riverside Farmers Market,produce,52,480,915,central
+D-1213,Titan Student Union Cafe,canned_goods,16,380,4585,west
+D-1214,Valley Produce Wholesale,dairy,53,170,370,north
+D-1215,Green Leaf Grocery,frozen,35,580,670,east
+D-1216,Riverside Farmers Market,produce,40,430,720,east
+D-1217,Campus Dining Hall,prepared_meals,72,375,480,east
+D-1218,Harbor Catering Co.,produce,21,300,785,east
+D-1219,Riverside Farmers Market,produce,39,200,860,west
+D-1220,Bright Morning Bagels,frozen,39,485,670,south
+D-1221,Downtown Deli,canned_goods,5,160,2765,north
+D-1222,Golden Crust Bakery,prepared_meals,35,470,620,south
+D-1223,Bright Morning Bagels,bakery,38,170,450,central
+D-1224,Sunrise Bakery,produce,72,400,650,west
+D-1225,Titan Student Union Cafe,prepared_meals,76,480,595,north
+D-1226,Event Center Catering,frozen,42,235,385,east
+D-1227,Corner Pantry Grocery,frozen,20,280,485,central
+D-1228,Golden Crust Bakery,produce,54,560,820,west
+D-1229,Green Leaf Grocery,prepared_meals,38,170,240,east
+D-1230,Bright Morning Bagels,produce,66,20,540,central
+D-1231,Harbor Catering Co.,prepared_meals,50,30,80,west
+D-1232,Corner Pantry Grocery,canned_goods,6,120,4010,east
+D-1233,Green Leaf Grocery,produce,30,150,740,south
+D-1234,Downtown Deli,bakery,45,560,900,south
+D-1235,Harbor Catering Co.,canned_goods,77,360,2675,south
+D-1236,Downtown Deli,frozen,51,560,665,west
+D-1237,Oak Street Market,bakery,72,165,665,west
+D-1238,Downtown Deli,prepared_meals,50,585,630,central
+D-1239,Sunrise Bakery,bakery,72,370,705,east
+D-1240,Titan Student Union Cafe,dairy,29,485,670,central
+D-1241,Campus Dining Hall,prepared_meals,50,510,605,central
+D-1242,Event Center Catering,frozen,53,500,690,north
+D-1243,Maple Cafe,bakery,17,505,910,south
+D-1244,Oak Street Market,frozen,62,190,320,east
+D-1245,Campus Dining Hall,dairy,45,550,730,east
+D-1246,Harbor Catering Co.,canned_goods,37,0,2940,south
+D-1247,Corner Pantry Grocery,canned_goods,19,595,2780,east
+D-1248,Riverside Farmers Market,prepared_meals,15,145,260,west
+D-1249,Corner Pantry Grocery,dairy,41,480,765,west
+D-1250,FreshMart,prepared_meals,79,575,710,south
+D-1251,Bright Morning Bagels,produce,27,470,865,central
+D-1252,Sunrise Bakery,prepared_meals,55,175,295,west
+D-1253,Valley Produce Wholesale,frozen,40,340,530,west
+D-1254,Riverside Farmers Market,produce,80,100,660,south
+D-1255,Corner Pantry Grocery,frozen,79,270,390,central
+D-1256,Downtown Deli,frozen,69,120,215,north
+D-1257,Sunrise Bakery,dairy,42,115,400,north
+D-1258,Event Center Catering,produce,68,5,360,central
+D-1259,Green Leaf Grocery,produce,46,290,635,east
+D-1260,Sunrise Bakery,frozen,44,70,235,west
+D-1261,Downtown Deli,bakery,31,475,865,north
+D-1262,Oak Street Market,canned_goods,65,425,4720,west
+D-1263,Valley Produce Wholesale,bakery,32,175,480,central
+D-1264,Bright Morning Bagels,dairy,25,440,745,south
+D-1265,Campus Dining Hall,prepared_meals,75,565,715,east
+D-1266,Green Leaf Grocery,canned_goods,22,140,2940,east
+D-1267,Bright Morning Bagels,frozen,60,160,295,central
+D-1268,Sunrise Bakery,frozen,55,185,300,west
+D-1269,Bright Morning Bagels,canned_goods,45,260,3395,north
+D-1270,Green Leaf Grocery,dairy,54,275,565,east
+D-1271,Golden Crust Bakery,prepared_meals,17,5,180,east
+D-1272,Valley Produce Wholesale,prepared_meals,60,435,480,central
+D-1273,Golden Crust Bakery,produce,14,465,1010,central
+D-1274,Campus Dining Hall,produce,80,530,915,central
+D-1275,Sunrise Bakery,canned_goods,45,495,4805,north
+D-1276,Downtown Deli,bakery,29,370,895,west
+D-1277,Corner Pantry Grocery,prepared_meals,29,545,705,north
+D-1278,Maple Cafe,canned_goods,8,400,2900,central
+D-1279,Campus Dining Hall,frozen,51,455,570,south
+D-1280,FreshMart,prepared_meals,45,215,325,north
+D-1281,Maple Cafe,bakery,42,595,1005,east
+D-1282,Riverside Farmers Market,bakery,73,120,390,west
+D-1283,FreshMart,frozen,57,140,255,south
+D-1284,Downtown Deli,produce,47,165,580,west
+D-1285,Titan Student Union Cafe,canned_goods,30,15,2105,east
+D-1286,Bright Morning Bagels,canned_goods,75,115,1705,north
+D-1287,Green Leaf Grocery,dairy,56,340,525,east
+D-1288,FreshMart,frozen,63,390,490,west
+D-1289,Riverside Farmers Market,canned_goods,64,460,2195,east
+D-1290,Downtown Deli,bakery,50,335,835,north
+D-1291,Oak Street Market,prepared_meals,25,5,160,north
+D-1292,Corner Pantry Grocery,dairy,46,255,580,south
+D-1293,FreshMart,canned_goods,67,220,4025,north
+D-1294,Golden Crust Bakery,canned_goods,20,40,4315,east
+D-1295,Campus Dining Hall,frozen,77,205,415,central
+D-1296,FreshMart,produce,30,95,730,south
+D-1297,Event Center Catering,dairy,69,175,525,east
+D-1298,Golden Crust Bakery,frozen,71,465,575,central
+D-1299,Valley Produce Wholesale,frozen,10,45,190,east
+D-1300,Downtown Deli,frozen,27,290,380,south
+D-1301,Event Center Catering,dairy,16,300,580,west
+D-1302,Bright Morning Bagels,dairy,20,395,695,west
+D-1303,Downtown Deli,canned_goods,16,220,3855,central
+D-1304,FreshMart,canned_goods,64,490,3805,south
+D-1305,Corner Pantry Grocery,bakery,21,360,610,central
+D-1306,Harbor Catering Co.,canned_goods,50,310,3175,east
+D-1307,FreshMart,frozen,20,375,515,west
+D-1308,Valley Produce Wholesale,canned_goods,55,145,2320,south
+D-1309,Oak Street Market,canned_goods,39,560,2835,west
+D-1310,Valley Produce Wholesale,dairy,23,570,870,east
+D-1311,Maple Cafe,produce,78,275,515,east
+D-1312,Downtown Deli,canned_goods,78,355,4275,central
+D-1313,Valley Produce Wholesale,bakery,75,170,610,south
+D-1314,Oak Street Market,canned_goods,26,0,2780,north
+D-1315,Corner Pantry Grocery,canned_goods,17,535,4380,east
+D-1316,Green Leaf Grocery,canned_goods,5,420,3895,west
+D-1317,Green Leaf Grocery,dairy,79,515,695,south
+D-1318,Harbor Catering Co.,dairy,10,545,770,east
+D-1319,Maple Cafe,bakery,5,570,1130,west
+D-1320,Oak Street Market,produce,30,135,535,north
+D-1321,Maple Cafe,prepared_meals,26,530,655,east
+D-1322,Harbor Catering Co.,bakery,5,65,400,north
+D-1323,Green Leaf Grocery,prepared_meals,9,535,695,south
+D-1324,Corner Pantry Grocery,canned_goods,67,290,2275,north
+D-1325,Riverside Farmers Market,prepared_meals,25,235,375,north
+D-1326,Oak Street Market,frozen,45,540,780,central
+D-1327,Oak Street Market,canned_goods,76,330,4375,west
+D-1328,Green Leaf Grocery,dairy,74,365,515,north
+D-1329,Valley Produce Wholesale,produce,11,245,900,south
+D-1330,Sunrise Bakery,frozen,10,530,690,east
+D-1331,Event Center Catering,prepared_meals,67,520,675,north
+D-1332,Titan Student Union Cafe,prepared_meals,49,480,655,south
+D-1333,Campus Dining Hall,canned_goods,18,230,4350,central
+D-1334,Maple Cafe,produce,28,535,1090,central
+D-1335,Green Leaf Grocery,produce,56,405,1075,central
+D-1336,Sunrise Bakery,produce,44,515,1035,central
+D-1337,Bright Morning Bagels,dairy,14,395,610,east
+D-1338,FreshMart,dairy,18,170,530,east
+D-1339,Valley Produce Wholesale,bakery,50,30,250,north
+D-1340,Riverside Farmers Market,frozen,65,545,765,central
+D-1341,Sunrise Bakery,bakery,32,220,595,central
+D-1342,Maple Cafe,dairy,37,90,405,central
+D-1343,Green Leaf Grocery,produce,62,95,735,central
+D-1344,Bright Morning Bagels,bakery,16,460,845,east
+D-1345,Golden Crust Bakery,dairy,41,260,500,north
+D-1346,Green Leaf Grocery,bakery,28,295,770,south
+D-1347,Bright Morning Bagels,prepared_meals,5,260,365,south
+D-1348,Event Center Catering,prepared_meals,17,100,175,south
+D-1349,Oak Street Market,prepared_meals,70,595,650,south
+D-1350,Valley Produce Wholesale,dairy,79,120,370,south
+D-1351,Downtown Deli,bakery,78,500,1100,east
+D-1352,Sunrise Bakery,prepared_meals,45,270,355,south
+D-1353,Titan Student Union Cafe,dairy,12,130,310,central
+D-1354,Maple Cafe,prepared_meals,32,485,595,central
+D-1355,Downtown Deli,produce,64,155,835,central
+D-1356,Green Leaf Grocery,produce,55,30,350,central
+D-1357,Maple Cafe,dairy,76,585,830,east
+D-1358,Oak Street Market,prepared_meals,54,150,195,central
+D-1359,Corner Pantry Grocery,produce,27,160,410,central
+D-1360,Oak Street Market,canned_goods,42,140,2520,north
+D-1361,Golden Crust Bakery,bakery,63,545,970,central
+D-1362,Titan Student Union Cafe,dairy,77,380,585,south
+D-1363,Harbor Catering Co.,dairy,72,565,885,south
+D-1364,Harbor Catering Co.,prepared_meals,62,340,385,south
+D-1365,Harbor Catering Co.,canned_goods,76,280,2510,central
+D-1366,Riverside Farmers Market,canned_goods,41,290,4035,central
+D-1367,Downtown Deli,produce,7,245,600,south
+D-1368,Campus Dining Hall,dairy,52,510,720,west
+D-1369,Valley Produce Wholesale,prepared_meals,42,355,455,central
+D-1370,Titan Student Union Cafe,prepared_meals,24,540,645,north
+D-1371,Sunrise Bakery,canned_goods,67,100,3535,east
+D-1372,Oak Street Market,canned_goods,26,570,4585,central
+D-1373,Maple Cafe,produce,7,525,960,north
+D-1374,Titan Student Union Cafe,dairy,47,530,670,central
+D-1375,Green Leaf Grocery,produce,10,430,1005,south
+D-1376,Campus Dining Hall,prepared_meals,18,315,460,north
+D-1377,Oak Street Market,frozen,18,380,620,south
+D-1378,Campus Dining Hall,canned_goods,40,110,2540,east
+D-1379,Titan Student Union Cafe,prepared_meals,66,145,280,south
+D-1380,Titan Student Union Cafe,dairy,15,70,280,west
+D-1381,Corner Pantry Grocery,canned_goods,40,480,3705,central
+D-1382,Maple Cafe,prepared_meals,29,170,280,west
+D-1383,FreshMart,canned_goods,66,215,2930,east
+D-1384,Downtown Deli,dairy,80,245,460,south
+D-1385,Campus Dining Hall,canned_goods,36,415,2290,central
+D-1386,Golden Crust Bakery,dairy,46,295,585,south
+D-1387,FreshMart,produce,6,50,685,north
+D-1388,Riverside Farmers Market,produce,65,445,870,north
+D-1389,Golden Crust Bakery,canned_goods,35,245,3585,west
+D-1390,Downtown Deli,produce,15,415,1090,east
+D-1391,Valley Produce Wholesale,prepared_meals,36,465,580,south
+D-1392,Harbor Catering Co.,bakery,37,345,705,west
+D-1393,Oak Street Market,canned_goods,57,395,4505,east
+D-1394,Event Center Catering,bakery,10,535,980,south
+D-1395,Harbor Catering Co.,frozen,14,95,200,west
+D-1396,FreshMart,dairy,27,500,695,east
+D-1397,Campus Dining Hall,bakery,61,475,970,south
+D-1398,Titan Student Union Cafe,bakery,6,470,1005,west
+D-1399,Green Leaf Grocery,canned_goods,11,0,3760,south
+D-1400,Corner Pantry Grocery,prepared_meals,50,10,100,east
+D-1401,Sunrise Bakery,dairy,43,435,635,west
+D-1402,Corner Pantry Grocery,canned_goods,15,70,2900,north
+D-1403,Valley Produce Wholesale,frozen,73,240,405,west
+D-1404,Green Leaf Grocery,dairy,14,565,725,south
+D-1405,Campus Dining Hall,produce,18,280,820,east
+D-1406,Corner Pantry Grocery,bakery,50,555,925,east
+D-1407,Bright Morning Bagels,prepared_meals,26,225,350,north
+D-1408,Green Leaf Grocery,dairy,23,225,445,south
+D-1409,Event Center Catering,canned_goods,18,385,3775,east
+D-1410,Campus Dining Hall,dairy,30,260,495,south
+D-1411,Valley Produce Wholesale,dairy,15,180,445,north
+D-1412,Campus Dining Hall,prepared_meals,61,510,660,west
+D-1413,FreshMart,frozen,19,495,730,central
+D-1414,Green Leaf Grocery,prepared_meals,42,545,680,east
+D-1415,Golden Crust Bakery,bakery,63,105,605,north
+D-1416,Oak Street Market,canned_goods,33,260,2760,east
+D-1417,Oak Street Market,prepared_meals,25,465,645,west
+D-1418,Riverside Farmers Market,dairy,68,0,320,central
+D-1419,Titan Student Union Cafe,prepared_meals,12,285,390,east
+D-1420,Campus Dining Hall,dairy,12,120,315,east
+D-1421,Riverside Farmers Market,bakery,9,125,515,north
+D-1422,FreshMart,produce,34,415,895,west
+D-1423,Downtown Deli,bakery,70,130,510,north
+D-1424,Titan Student Union Cafe,canned_goods,73,45,3670,east
+D-1425,Harbor Catering Co.,prepared_meals,28,225,305,south
+D-1426,Sunrise Bakery,produce,72,560,1090,north
+D-1427,Green Leaf Grocery,produce,10,455,1045,west
+D-1428,Bright Morning Bagels,frozen,10,465,635,north
+D-1429,Titan Student Union Cafe,prepared_meals,37,15,145,west
+D-1430,Downtown Deli,canned_goods,61,525,2940,east
+D-1431,Golden Crust Bakery,canned_goods,16,100,3075,west
+D-1432,Sunrise Bakery,canned_goods,80,465,3955,central
+D-1433,Oak Street Market,bakery,35,350,725,central
+D-1434,FreshMart,prepared_meals,40,15,65,north
+D-1435,Downtown Deli,prepared_meals,41,295,350,west
+D-1436,Oak Street Market,frozen,59,260,425,north
+D-1437,FreshMart,produce,35,430,950,east
+D-1438,Bright Morning Bagels,bakery,20,200,640,east
+D-1439,Corner Pantry Grocery,produce,16,215,495,east
+D-1440,Green Leaf Grocery,prepared_meals,65,265,410,central
+D-1441,Harbor Catering Co.,frozen,45,125,280,east
+D-1442,Downtown Deli,bakery,22,35,285,south
+D-1443,Maple Cafe,dairy,32,410,535,west
+D-1444,Campus Dining Hall,dairy,79,0,245,east
+D-1445,Green Leaf Grocery,bakery,35,10,325,central
+D-1446,Maple Cafe,frozen,70,455,570,south
+D-1447,Valley Produce Wholesale,frozen,27,160,295,north
+D-1448,Event Center Catering,produce,52,305,600,east
+D-1449,Bright Morning Bagels,bakery,29,210,465,east
+D-1450,Sunrise Bakery,prepared_meals,59,5,145,north
+D-1451,Harbor Catering Co.,canned_goods,7,405,3090,east
+D-1452,Riverside Farmers Market,canned_goods,16,345,2020,east
+D-1453,Green Leaf Grocery,dairy,30,240,600,north
+D-1454,Corner Pantry Grocery,dairy,39,480,745,east
+D-1455,Titan Student Union Cafe,frozen,24,110,295,north
+D-1456,Event Center Catering,produce,43,400,785,south
+D-1457,Sunrise Bakery,dairy,51,485,820,east
+D-1458,Corner Pantry Grocery,prepared_meals,18,135,195,south
+D-1459,Corner Pantry Grocery,produce,55,385,650,south
+D-1460,Campus Dining Hall,frozen,57,250,355,south
+D-1461,Titan Student Union Cafe,frozen,22,270,405,south
+D-1462,Downtown Deli,dairy,28,60,245,south
+D-1463,Corner Pantry Grocery,prepared_meals,61,15,190,south
+D-1464,Corner Pantry Grocery,frozen,34,370,555,south
+D-1465,Riverside Farmers Market,prepared_meals,69,200,285,north
+D-1466,Sunrise Bakery,produce,13,205,660,central
+D-1467,Oak Street Market,prepared_meals,12,375,550,west
+D-1468,Harbor Catering Co.,produce,30,410,820,east
+D-1469,FreshMart,produce,63,525,925,south
+D-1470,Green Leaf Grocery,canned_goods,36,30,1545,north
+D-1471,Valley Produce Wholesale,bakery,5,200,715,central
+D-1472,Green Leaf Grocery,prepared_meals,48,175,220,east
+D-1473,Harbor Catering Co.,prepared_meals,71,40,220,central
+D-1474,Golden Crust Bakery,dairy,69,400,720,south
+D-1475,Sunrise Bakery,dairy,31,270,490,north
+D-1476,Riverside Farmers Market,prepared_meals,74,170,300,north
+D-1477,Bright Morning Bagels,produce,19,325,725,east
+D-1478,Green Leaf Grocery,produce,54,40,430,east
+D-1479,Harbor Catering Co.,prepared_meals,33,30,120,north
+D-1480,Golden Crust Bakery,dairy,75,460,605,central
+D-1481,Bright Morning Bagels,bakery,8,365,745,south
+D-1482,Downtown Deli,produce,21,75,340,west
+D-1483,Sunrise Bakery,dairy,24,160,390,south
+D-1484,FreshMart,bakery,79,115,515,south
+D-1485,Titan Student Union Cafe,frozen,27,0,115,south
+D-1486,Oak Street Market,prepared_meals,71,190,240,east
+D-1487,Corner Pantry Grocery,dairy,32,365,675,west
+D-1488,Bright Morning Bagels,produce,54,45,615,west
+D-1489,Oak Street Market,frozen,9,540,755,south
+D-1490,Maple Cafe,produce,55,305,545,north
+D-1491,Oak Street Market,prepared_meals,20,5,150,south
+D-1492,Bright Morning Bagels,dairy,56,140,335,west
+D-1493,Riverside Farmers Market,bakery,8,185,610,west
+D-1494,Bright Morning Bagels,canned_goods,14,365,2085,south
+D-1495,Golden Crust Bakery,prepared_meals,77,515,560,north
+D-1496,Sunrise Bakery,prepared_meals,17,170,275,west
+D-1497,Maple Cafe,produce,56,170,740,north
+D-1498,Sunrise Bakery,produce,50,100,800,central
+D-1499,Bright Morning Bagels,bakery,8,595,1085,east
+D-1500,Corner Pantry Grocery,produce,50,220,900,north
+D-1501,FreshMart,produce,38,100,680,central
+D-1502,Maple Cafe,dairy,15,545,890,north
+D-1503,FreshMart,prepared_meals,64,355,405,south
+D-1504,Event Center Catering,dairy,47,200,500,west
+D-1505,Harbor Catering Co.,canned_goods,64,325,4045,north
+D-1506,Valley Produce Wholesale,frozen,65,265,355,central
+D-1507,Bright Morning Bagels,frozen,57,275,445,west
+D-1508,FreshMart,prepared_meals,44,185,320,east
+D-1509,Campus Dining Hall,frozen,62,455,605,east
+D-1510,Sunrise Bakery,dairy,22,55,220,east
+D-1511,Valley Produce Wholesale,prepared_meals,57,495,620,east
+D-1512,FreshMart,bakery,51,140,610,east
+D-1513,Valley Produce Wholesale,bakery,16,25,345,west
+D-1514,Titan Student Union Cafe,dairy,57,250,410,north
+D-1515,Event Center Catering,dairy,41,360,685,west
+D-1516,Sunrise Bakery,dairy,50,80,310,east
+D-1517,Event Center Catering,dairy,68,175,525,south
+D-1518,Golden Crust Bakery,produce,6,585,1185,east
+D-1519,Titan Student Union Cafe,produce,59,575,1120,south
+D-1520,Harbor Catering Co.,frozen,12,455,690,east
+D-1521,Campus Dining Hall,bakery,63,445,830,east
+D-1522,Corner Pantry Grocery,bakery,65,5,350,south
+D-1523,Titan Student Union Cafe,bakery,73,70,445,north
+D-1524,Valley Produce Wholesale,frozen,45,500,700,north
+D-1525,Downtown Deli,dairy,45,320,680,south
+D-1526,Valley Produce Wholesale,produce,9,35,445,south
+D-1527,Riverside Farmers Market,produce,41,115,730,east
+D-1528,Sunrise Bakery,frozen,50,530,635,south
+D-1529,Harbor Catering Co.,prepared_meals,22,500,640,east
+D-1530,FreshMart,prepared_meals,75,505,640,north
+D-1531,Riverside Farmers Market,bakery,71,420,850,south
+D-1532,Corner Pantry Grocery,dairy,51,100,270,north
+D-1533,Harbor Catering Co.,frozen,26,235,425,south
+D-1534,Oak Street Market,dairy,67,65,215,east
+D-1535,Green Leaf Grocery,prepared_meals,19,15,170,central
+D-1536,Golden Crust Bakery,prepared_meals,22,430,500,east
+D-1537,Corner Pantry Grocery,dairy,16,480,820,south
+D-1538,Valley Produce Wholesale,dairy,44,590,890,east
+D-1539,Green Leaf Grocery,produce,80,270,935,north
+D-1540,Bright Morning Bagels,frozen,72,450,615,east
+D-1541,Green Leaf Grocery,canned_goods,17,65,3430,north
+D-1542,Downtown Deli,frozen,77,70,160,north
+D-1543,Green Leaf Grocery,frozen,20,380,540,central
+D-1544,Harbor Catering Co.,bakery,62,485,1035,east
+D-1545,Bright Morning Bagels,canned_goods,38,500,4170,north
+D-1546,Downtown Deli,produce,73,160,775,east
+D-1547,Campus Dining Hall,frozen,71,325,535,west
+D-1548,FreshMart,dairy,61,340,560,south
+D-1549,Riverside Farmers Market,frozen,30,495,640,central
+D-1550,Green Leaf Grocery,dairy,34,560,820,south
+D-1551,Corner Pantry Grocery,dairy,23,215,500,east
+D-1552,Harbor Catering Co.,produce,6,480,735,north
+D-1553,Harbor Catering Co.,prepared_meals,16,280,445,south
+D-1554,Riverside Farmers Market,dairy,42,465,725,central
+D-1555,Corner Pantry Grocery,prepared_meals,41,485,565,north
+D-1556,Oak Street Market,frozen,7,305,410,central
+D-1557,Maple Cafe,dairy,51,330,455,east
+D-1558,Sunrise Bakery,bakery,12,265,455,north
+D-1559,Sunrise Bakery,produce,7,5,680,north
+D-1560,Downtown Deli,produce,12,70,635,central
+D-1561,Green Leaf Grocery,prepared_meals,6,105,270,north
+D-1562,FreshMart,bakery,20,460,745,west
+D-1563,Campus Dining Hall,prepared_meals,34,155,235,west
+D-1564,Sunrise Bakery,bakery,5,395,825,east
+D-1565,Valley Produce Wholesale,frozen,75,385,540,central
+D-1566,Harbor Catering Co.,canned_goods,34,515,2840,north
+D-1567,Harbor Catering Co.,bakery,56,495,700,central
+D-1568,Campus Dining Hall,prepared_meals,15,240,395,west
+D-1569,Corner Pantry Grocery,frozen,59,410,565,north
+D-1570,Maple Cafe,canned_goods,7,510,3325,central
+D-1571,Campus Dining Hall,frozen,64,360,575,central
+D-1572,Harbor Catering Co.,produce,24,255,560,west
+D-1573,Riverside Farmers Market,canned_goods,49,70,4240,west
+D-1574,Harbor Catering Co.,bakery,77,295,710,central
+D-1575,Event Center Catering,canned_goods,43,245,4495,west
+D-1576,Event Center Catering,prepared_meals,20,395,565,south
+D-1577,Oak Street Market,produce,24,580,1120,east
+D-1578,Riverside Farmers Market,frozen,65,40,130,west
+D-1579,Titan Student Union Cafe,prepared_meals,64,545,645,north
+D-1580,Event Center Catering,bakery,12,585,955,north
+D-1581,Titan Student Union Cafe,produce,9,565,985,south
+D-1582,Sunrise Bakery,frozen,68,200,415,north
+D-1583,Corner Pantry Grocery,canned_goods,41,255,1825,north
+D-1584,Valley Produce Wholesale,canned_goods,10,430,3215,central
+D-1585,Bright Morning Bagels,prepared_meals,72,475,590,east
+D-1586,Harbor Catering Co.,frozen,75,135,235,south
+D-1587,Golden Crust Bakery,frozen,76,15,110,central
+D-1588,Harbor Catering Co.,produce,28,105,655,east
+D-1589,Oak Street Market,canned_goods,41,75,3650,north
+D-1590,Oak Street Market,canned_goods,27,335,2515,north
+D-1591,Campus Dining Hall,frozen,71,35,265,central
+D-1592,Golden Crust Bakery,bakery,9,150,730,east
+D-1593,Oak Street Market,frozen,33,335,550,central
+D-1594,Harbor Catering Co.,dairy,7,225,485,west
+D-1595,Maple Cafe,canned_goods,14,285,3625,south
+D-1596,Harbor Catering Co.,prepared_meals,57,205,260,south
+D-1597,Oak Street Market,prepared_meals,55,140,315,south
+D-1598,Maple Cafe,prepared_meals,79,435,510,north
+D-1599,FreshMart,frozen,33,130,350,south
+D-1600,Green Leaf Grocery,prepared_meals,28,490,630,north
+D-1601,Valley Produce Wholesale,prepared_meals,35,545,605,north
+D-1602,FreshMart,canned_goods,61,580,4035,west
+D-1603,Titan Student Union Cafe,frozen,67,165,365,east
+D-1604,Green Leaf Grocery,bakery,50,205,560,west
+D-1605,Downtown Deli,canned_goods,48,535,2445,east
+D-1606,Oak Street Market,bakery,28,470,1040,east
+D-1607,Riverside Farmers Market,dairy,13,105,260,south
+D-1608,Golden Crust Bakery,dairy,48,295,485,west
+D-1609,Sunrise Bakery,canned_goods,73,5,4150,south
+D-1610,FreshMart,produce,16,115,830,south
+D-1611,Bright Morning Bagels,frozen,22,500,735,east
+D-1612,Campus Dining Hall,produce,50,165,565,south
+D-1613,Corner Pantry Grocery,frozen,21,590,745,north
+D-1614,Downtown Deli,prepared_meals,77,360,480,central
+D-1615,Campus Dining Hall,dairy,69,415,540,central
+D-1616,Sunrise Bakery,frozen,20,385,505,north
+D-1617,Riverside Farmers Market,bakery,33,65,365,north
+D-1618,Corner Pantry Grocery,canned_goods,24,575,2085,north
+D-1619,Green Leaf Grocery,frozen,43,155,290,east
+D-1620,Oak Street Market,frozen,69,0,160,south
+D-1621,Titan Student Union Cafe,frozen,21,15,165,east
+D-1622,FreshMart,produce,23,340,800,south
+D-1623,Sunrise Bakery,bakery,29,40,365,north
+D-1624,Sunrise Bakery,frozen,16,580,790,north
+D-1625,Corner Pantry Grocery,dairy,73,155,280,west
+D-1626,Riverside Farmers Market,produce,74,45,390,east
+D-1627,Bright Morning Bagels,produce,70,295,805,south
+D-1628,Green Leaf Grocery,dairy,50,380,725,east
+D-1629,Bright Morning Bagels,frozen,23,520,620,south
+D-1630,Golden Crust Bakery,prepared_meals,11,365,495,west
+D-1631,Golden Crust Bakery,frozen,49,355,465,central
+D-1632,FreshMart,dairy,20,350,475,north
+D-1633,Harbor Catering Co.,prepared_meals,18,430,610,west
+D-1634,Event Center Catering,dairy,33,10,155,west
+D-1635,Campus Dining Hall,prepared_meals,17,345,415,north
+D-1636,Oak Street Market,bakery,18,410,700,south
+D-1637,Sunrise Bakery,produce,15,505,890,east
+D-1638,FreshMart,produce,53,290,840,north
+D-1639,Downtown Deli,frozen,67,85,310,east
+D-1640,Campus Dining Hall,prepared_meals,50,525,620,north
+D-1641,Golden Crust Bakery,frozen,40,125,360,central
+D-1642,Sunrise Bakery,canned_goods,36,185,3480,north
+D-1643,Harbor Catering Co.,prepared_meals,55,540,605,north
+D-1644,Valley Produce Wholesale,produce,60,35,475,north
+D-1645,Event Center Catering,dairy,51,40,345,south
+D-1646,Green Leaf Grocery,dairy,40,345,515,central
+D-1647,Golden Crust Bakery,canned_goods,20,305,2945,east
+D-1648,Bright Morning Bagels,bakery,73,165,625,north
+D-1649,Corner Pantry Grocery,prepared_meals,50,355,535,central
+D-1650,Valley Produce Wholesale,prepared_meals,7,365,535,south
+D-1651,Valley Produce Wholesale,prepared_meals,58,320,370,east
+D-1652,Maple Cafe,dairy,50,325,605,east
+D-1653,Riverside Farmers Market,produce,67,335,950,north
+D-1654,FreshMart,frozen,53,575,780,south
+D-1655,Oak Street Market,prepared_meals,63,10,145,north
+D-1656,Bright Morning Bagels,bakery,70,560,1125,south
+D-1657,Campus Dining Hall,dairy,28,460,640,east
+D-1658,Bright Morning Bagels,bakery,28,550,1000,east
+D-1659,Golden Crust Bakery,canned_goods,21,205,3210,west
+D-1660,Oak Street Market,dairy,64,240,450,central
+D-1661,Downtown Deli,canned_goods,43,520,2130,east
+D-1662,Bright Morning Bagels,produce,68,375,925,north
+D-1663,Valley Produce Wholesale,dairy,69,10,290,north
+D-1664,Titan Student Union Cafe,dairy,19,320,535,central
+D-1665,Corner Pantry Grocery,bakery,65,30,555,central
+D-1666,Green Leaf Grocery,prepared_meals,18,175,230,north
+D-1667,Green Leaf Grocery,canned_goods,50,310,4550,south
+D-1668,Riverside Farmers Market,canned_goods,36,260,2505,north
+D-1669,Harbor Catering Co.,prepared_meals,75,345,520,west
+D-1670,Green Leaf Grocery,prepared_meals,68,250,315,south
+D-1671,Green Leaf Grocery,produce,45,250,850,south
+D-1672,Campus Dining Hall,dairy,36,390,535,east
+D-1673,Golden Crust Bakery,dairy,48,155,350,east
+D-1674,Riverside Farmers Market,frozen,7,490,695,central
+D-1675,Riverside Farmers Market,dairy,29,175,375,south
+D-1676,Maple Cafe,dairy,26,415,640,east
+D-1677,Campus Dining Hall,dairy,59,400,595,east
+D-1678,Riverside Farmers Market,prepared_meals,32,125,265,north
+D-1679,Golden Crust Bakery,frozen,8,90,230,south
+D-1680,Downtown Deli,frozen,78,560,715,west
+D-1681,Downtown Deli,canned_goods,10,65,3830,north
+D-1682,Corner Pantry Grocery,prepared_meals,51,570,740,central
+D-1683,Titan Student Union Cafe,prepared_meals,55,530,685,central
+D-1684,Oak Street Market,prepared_meals,48,190,240,north
+D-1685,Bright Morning Bagels,canned_goods,78,255,2350,north
+D-1686,Riverside Farmers Market,canned_goods,18,565,3170,central
+D-1687,Downtown Deli,dairy,37,395,715,south
+D-1688,Harbor Catering Co.,dairy,80,525,740,east
+D-1689,Event Center Catering,produce,30,325,675,north
+D-1690,Harbor Catering Co.,bakery,75,475,885,central
+D-1691,Green Leaf Grocery,dairy,53,330,660,west
+D-1692,Green Leaf Grocery,produce,53,170,560,north
+D-1693,Corner Pantry Grocery,dairy,31,500,725,south
+D-1694,Sunrise Bakery,frozen,39,155,280,west
+D-1695,Sunrise Bakery,produce,78,20,340,west
+D-1696,Bright Morning Bagels,prepared_meals,17,165,320,west
+D-1697,Green Leaf Grocery,bakery,58,260,595,south
+D-1698,Riverside Farmers Market,dairy,74,410,540,north
+D-1699,Oak Street Market,frozen,28,465,650,central
+D-1700,Corner Pantry Grocery,dairy,31,350,560,south
+D-1701,FreshMart,dairy,27,565,725,north
+D-1702,Bright Morning Bagels,dairy,28,555,745,north
+D-1703,Bright Morning Bagels,bakery,76,40,550,east
+D-1704,Golden Crust Bakery,canned_goods,50,40,3880,central
+D-1705,Valley Produce Wholesale,dairy,47,190,320,south
+D-1706,FreshMart,produce,39,125,840,west
+D-1707,Green Leaf Grocery,produce,27,470,1040,east
+D-1708,Event Center Catering,bakery,56,85,490,east
+D-1709,Sunrise Bakery,frozen,57,405,620,west
+D-1710,FreshMart,bakery,66,145,495,west
+D-1711,FreshMart,dairy,24,505,770,central
+D-1712,Valley Produce Wholesale,dairy,18,455,625,east
+D-1713,Sunrise Bakery,bakery,49,85,635,central
+D-1714,Green Leaf Grocery,prepared_meals,57,120,250,north
+D-1715,FreshMart,prepared_meals,15,235,315,north
+D-1716,Downtown Deli,bakery,47,145,640,north
+D-1717,Maple Cafe,bakery,53,285,505,north
+D-1718,Oak Street Market,canned_goods,70,5,3715,south
+D-1719,FreshMart,dairy,41,175,440,east
+D-1720,Valley Produce Wholesale,produce,75,70,500,north
+D-1721,Green Leaf Grocery,canned_goods,27,325,2190,central
+D-1722,Golden Crust Bakery,frozen,21,390,505,south
+D-1723,Valley Produce Wholesale,dairy,45,435,685,north
+D-1724,Campus Dining Hall,prepared_meals,53,530,645,south
+D-1725,Bright Morning Bagels,frozen,66,570,775,east
+D-1726,Sunrise Bakery,canned_goods,58,55,2910,west
+D-1727,Harbor Catering Co.,bakery,36,590,990,north
+D-1728,FreshMart,dairy,6,505,685,north
+D-1729,Titan Student Union Cafe,bakery,36,70,470,east
+D-1730,Bright Morning Bagels,canned_goods,46,290,2965,east
+D-1731,Bright Morning Bagels,canned_goods,43,25,1575,north
+D-1732,Harbor Catering Co.,prepared_meals,27,60,210,west
+D-1733,Oak Street Market,canned_goods,10,330,2580,north
+D-1734,Harbor Catering Co.,canned_goods,40,560,4060,north
+D-1735,Oak Street Market,frozen,24,205,365,north
+D-1736,Oak Street Market,prepared_meals,77,60,215,south
+D-1737,Harbor Catering Co.,frozen,62,75,165,north
+D-1738,FreshMart,bakery,64,435,615,east
+D-1739,Golden Crust Bakery,prepared_meals,47,280,415,west
+D-1740,Riverside Farmers Market,frozen,25,45,235,central
+D-1741,Sunrise Bakery,dairy,55,545,870,central
+D-1742,Harbor Catering Co.,produce,62,245,745,central
+D-1743,Corner Pantry Grocery,prepared_meals,80,500,620,east
+D-1744,Golden Crust Bakery,produce,47,590,1000,central
+D-1745,Campus Dining Hall,bakery,25,385,810,east
+D-1746,Downtown Deli,produce,29,145,760,north
+D-1747,Corner Pantry Grocery,frozen,70,330,495,east
+D-1748,Titan Student Union Cafe,canned_goods,33,370,2130,west
+D-1749,Maple Cafe,frozen,46,420,555,north
+D-1750,Riverside Farmers Market,produce,77,580,895,central
+D-1751,Campus Dining Hall,prepared_meals,63,45,90,central
+D-1752,FreshMart,produce,10,515,920,central
+D-1753,Harbor Catering Co.,frozen,79,595,720,south
+D-1754,Riverside Farmers Market,produce,51,520,1120,south
+D-1755,Event Center Catering,bakery,41,0,525,south
+D-1756,Campus Dining Hall,frozen,9,145,295,south
+D-1757,Oak Street Market,prepared_meals,62,30,105,west
+D-1758,Riverside Farmers Market,bakery,80,360,735,west
+D-1759,FreshMart,prepared_meals,26,510,575,south
+D-1760,Campus Dining Hall,frozen,27,430,555,central
+D-1761,Maple Cafe,produce,37,545,845,central
+D-1762,Titan Student Union Cafe,frozen,47,490,685,east
+D-1763,Campus Dining Hall,canned_goods,62,255,4055,central
+D-1764,FreshMart,frozen,61,240,340,east
+D-1765,Golden Crust Bakery,prepared_meals,79,15,170,west
+D-1766,Sunrise Bakery,frozen,50,445,670,west
+D-1767,Riverside Farmers Market,dairy,47,570,875,north
+D-1768,Maple Cafe,prepared_meals,30,395,560,north
+D-1769,Green Leaf Grocery,canned_goods,74,475,3340,east
+D-1770,Riverside Farmers Market,prepared_meals,61,305,450,east
+D-1771,Maple Cafe,bakery,27,35,320,north
+D-1772,Campus Dining Hall,bakery,65,195,565,central
+D-1773,Event Center Catering,prepared_meals,80,115,270,west
+D-1774,FreshMart,produce,48,390,1100,west
+D-1775,Riverside Farmers Market,produce,33,100,570,east
+D-1776,Sunrise Bakery,bakery,71,140,570,west
+D-1777,Campus Dining Hall,canned_goods,38,270,4575,north
+D-1778,Downtown Deli,frozen,40,300,465,central
+D-1779,Event Center Catering,frozen,36,570,765,central
+D-1780,Titan Student Union Cafe,prepared_meals,7,145,200,west
+D-1781,FreshMart,frozen,6,375,555,central
+D-1782,Valley Produce Wholesale,frozen,53,450,605,west
+D-1783,Harbor Catering Co.,produce,19,145,510,south
+D-1784,Green Leaf Grocery,canned_goods,38,580,3180,west
+D-1785,Green Leaf Grocery,frozen,63,515,655,south
+D-1786,Corner Pantry Grocery,canned_goods,70,350,3375,north
+D-1787,Bright Morning Bagels,prepared_meals,30,235,360,west
+D-1788,Bright Morning Bagels,dairy,58,55,305,west
+D-1789,Riverside Farmers Market,bakery,55,495,1085,south
+D-1790,Corner Pantry Grocery,bakery,49,485,1080,north
+D-1791,Riverside Farmers Market,prepared_meals,72,345,445,south
+D-1792,Maple Cafe,frozen,19,560,705,east
+D-1793,Valley Produce Wholesale,frozen,79,300,445,central
+D-1794,Event Center Catering,canned_goods,48,365,4150,east
+D-1795,Corner Pantry Grocery,bakery,59,45,615,west
+D-1796,Golden Crust Bakery,frozen,46,520,710,central
+D-1797,FreshMart,prepared_meals,65,10,130,west
+D-1798,Corner Pantry Grocery,canned_goods,68,165,4245,central
+D-1799,Sunrise Bakery,bakery,28,280,545,east
+D-1800,FreshMart,canned_goods,38,25,1875,east
+D-1801,Event Center Catering,prepared_meals,55,485,640,south
+D-1802,Green Leaf Grocery,canned_goods,77,195,2840,central
+D-1803,Campus Dining Hall,bakery,76,100,480,west
+D-1804,Valley Produce Wholesale,dairy,77,425,560,central
+D-1805,Sunrise Bakery,canned_goods,65,525,3795,central
+D-1806,Golden Crust Bakery,frozen,48,5,125,north
+D-1807,Titan Student Union Cafe,canned_goods,21,565,2575,east
+D-1808,Maple Cafe,bakery,66,70,455,west
+D-1809,Golden Crust Bakery,frozen,40,210,380,west
+D-1810,Harbor Catering Co.,dairy,29,535,730,central
+D-1811,Corner Pantry Grocery,frozen,27,135,310,central
+D-1812,Golden Crust Bakery,prepared_meals,77,125,275,east
+D-1813,Harbor Catering Co.,bakery,17,490,855,north
+D-1814,Campus Dining Hall,frozen,38,20,125,south
+D-1815,Golden Crust Bakery,prepared_meals,48,455,575,north
+D-1816,Bright Morning Bagels,prepared_meals,49,590,715,central
+D-1817,Corner Pantry Grocery,bakery,25,170,600,east
+D-1818,Sunrise Bakery,bakery,61,400,950,east
+D-1819,Bright Morning Bagels,bakery,6,400,590,central
+D-1820,Event Center Catering,prepared_meals,26,10,55,north
+D-1821,Maple Cafe,produce,44,265,520,east
+D-1822,Green Leaf Grocery,canned_goods,8,415,2405,north
+D-1823,Corner Pantry Grocery,prepared_meals,54,385,525,central
+D-1824,Green Leaf Grocery,canned_goods,26,75,1710,south
+D-1825,Sunrise Bakery,bakery,21,435,670,north
+D-1826,Harbor Catering Co.,canned_goods,10,495,3290,south
+D-1827,Sunrise Bakery,bakery,48,145,325,west
+D-1828,Harbor Catering Co.,dairy,60,90,230,east
+D-1829,Sunrise Bakery,dairy,59,290,615,north
+D-1830,Downtown Deli,produce,16,200,510,central
+D-1831,Bright Morning Bagels,frozen,21,225,460,south
+D-1832,Maple Cafe,bakery,22,25,435,north
+D-1833,Oak Street Market,dairy,60,240,485,south
+D-1834,Titan Student Union Cafe,prepared_meals,64,450,600,east
+D-1835,Bright Morning Bagels,bakery,43,430,785,south
+D-1836,Harbor Catering Co.,bakery,39,65,460,south
+D-1837,Oak Street Market,bakery,67,380,645,west
+D-1838,Titan Student Union Cafe,frozen,13,345,545,south
+D-1839,Green Leaf Grocery,dairy,60,180,485,north
+D-1840,Riverside Farmers Market,prepared_meals,46,220,355,north
+D-1841,Riverside Farmers Market,frozen,62,115,260,central
+D-1842,Oak Street Market,bakery,16,100,400,south
+D-1843,Downtown Deli,frozen,29,250,360,north
+D-1844,Riverside Farmers Market,frozen,28,135,300,north
+D-1845,Titan Student Union Cafe,frozen,5,425,540,west
+D-1846,Maple Cafe,dairy,59,20,255,central
+D-1847,Corner Pantry Grocery,produce,32,205,460,central
+D-1848,Bright Morning Bagels,bakery,58,360,770,south
+D-1849,Titan Student Union Cafe,produce,15,35,455,south
+D-1850,Riverside Farmers Market,prepared_meals,72,405,520,east
+D-1851,Harbor Catering Co.,bakery,51,430,825,west
+D-1852,Corner Pantry Grocery,canned_goods,69,15,3390,central
+D-1853,Oak Street Market,bakery,36,65,345,south
+D-1854,Valley Produce Wholesale,frozen,62,440,575,central
+D-1855,Corner Pantry Grocery,canned_goods,21,295,2555,south
+D-1856,Bright Morning Bagels,bakery,54,405,640,east
+D-1857,Campus Dining Hall,canned_goods,15,10,2555,central
+D-1858,Bright Morning Bagels,dairy,78,85,240,west
+D-1859,Riverside Farmers Market,produce,29,165,470,east
+D-1860,Riverside Farmers Market,dairy,24,565,835,east
+D-1861,Maple Cafe,produce,8,80,515,east
+D-1862,FreshMart,produce,54,530,1020,south
+D-1863,FreshMart,produce,56,445,695,central
+D-1864,Corner Pantry Grocery,bakery,78,260,815,east
+D-1865,FreshMart,bakery,80,395,750,west
+D-1866,Harbor Catering Co.,produce,36,0,440,east
+D-1867,Green Leaf Grocery,produce,24,250,675,north
+D-1868,Downtown Deli,bakery,50,275,455,central
+D-1869,Bright Morning Bagels,bakery,53,550,800,east
+D-1870,Valley Produce Wholesale,dairy,71,445,730,north
+D-1871,Green Leaf Grocery,produce,78,70,470,east
+D-1872,Green Leaf Grocery,produce,79,390,980,west
+D-1873,Riverside Farmers Market,bakery,56,180,655,east
+D-1874,Corner Pantry Grocery,dairy,62,460,715,west
+D-1875,Golden Crust Bakery,produce,18,290,665,west
+D-1876,Corner Pantry Grocery,canned_goods,44,315,2700,east
+D-1877,Oak Street Market,produce,80,410,1075,central
+D-1878,Maple Cafe,prepared_meals,75,300,440,central
+D-1879,Harbor Catering Co.,dairy,43,390,530,north
+D-1880,Corner Pantry Grocery,bakery,60,320,795,central
+D-1881,Riverside Farmers Market,frozen,33,95,265,north
+D-1882,Bright Morning Bagels,bakery,66,180,465,south
+D-1883,Bright Morning Bagels,canned_goods,76,370,3120,central
+D-1884,Downtown Deli,produce,38,365,675,east
+D-1885,Green Leaf Grocery,frozen,33,290,405,south
+D-1886,Green Leaf Grocery,produce,41,75,380,south
+D-1887,Oak Street Market,canned_goods,62,425,3380,west
+D-1888,Oak Street Market,canned_goods,11,380,2900,east
+D-1889,Oak Street Market,prepared_meals,55,485,655,north
+D-1890,Harbor Catering Co.,dairy,53,365,725,west
+D-1891,Harbor Catering Co.,canned_goods,8,135,2300,west
+D-1892,Event Center Catering,bakery,80,490,1070,south
+D-1893,Downtown Deli,canned_goods,39,375,4540,south
+D-1894,Harbor Catering Co.,frozen,58,435,585,north
+D-1895,Harbor Catering Co.,canned_goods,56,385,2755,west
+D-1896,Titan Student Union Cafe,dairy,16,590,810,central
+D-1897,Titan Student Union Cafe,prepared_meals,73,185,360,central
+D-1898,Maple Cafe,produce,25,40,615,east
+D-1899,Titan Student Union Cafe,bakery,25,180,575,central
+D-1900,Oak Street Market,prepared_meals,74,265,355,south
+D-1901,Sunrise Bakery,prepared_meals,15,115,160,north
+D-1902,Bright Morning Bagels,frozen,23,330,515,south
+D-1903,Harbor Catering Co.,frozen,15,445,625,north
+D-1904,Downtown Deli,canned_goods,5,360,4580,north
+D-1905,Sunrise Bakery,produce,7,70,380,south
+D-1906,Event Center Catering,dairy,57,220,545,north
+D-1907,Harbor Catering Co.,frozen,57,400,610,east
+D-1908,Green Leaf Grocery,canned_goods,56,525,2165,north
+D-1909,Riverside Farmers Market,frozen,19,520,725,west
+D-1910,Golden Crust Bakery,produce,23,60,610,central
+D-1911,Golden Crust Bakery,bakery,25,5,240,east
+D-1912,Event Center Catering,produce,63,40,460,south
+D-1913,Campus Dining Hall,produce,65,270,890,south
+D-1914,Riverside Farmers Market,produce,51,590,890,central
+D-1915,Oak Street Market,prepared_meals,43,340,390,north
+D-1916,Event Center Catering,prepared_meals,41,165,315,north
+D-1917,Bright Morning Bagels,produce,25,365,690,west
+D-1918,FreshMart,bakery,58,355,550,east
+D-1919,Green Leaf Grocery,produce,40,505,970,north
+D-1920,Downtown Deli,dairy,8,380,500,central
+D-1921,Green Leaf Grocery,produce,47,65,345,east
+D-1922,Sunrise Bakery,canned_goods,66,525,3110,west
+D-1923,Golden Crust Bakery,canned_goods,39,215,2170,south
+D-1924,Event Center Catering,canned_goods,50,525,4755,south
+D-1925,Campus Dining Hall,prepared_meals,21,20,155,south
+D-1926,Harbor Catering Co.,prepared_meals,66,160,315,west
+D-1927,Green Leaf Grocery,prepared_meals,45,115,265,west
+D-1928,Maple Cafe,prepared_meals,30,70,220,north
+D-1929,Golden Crust Bakery,frozen,35,520,705,central
+D-1930,Valley Produce Wholesale,bakery,41,270,670,west
+D-1931,Harbor Catering Co.,bakery,49,145,360,north
+D-1932,Sunrise Bakery,bakery,15,400,825,east
+D-1933,FreshMart,canned_goods,48,10,1645,south
+D-1934,Valley Produce Wholesale,bakery,5,525,770,east
+D-1935,FreshMart,bakery,17,420,635,west
+D-1936,Harbor Catering Co.,bakery,21,505,1055,west
+D-1937,Valley Produce Wholesale,bakery,48,355,610,south
+D-1938,Harbor Catering Co.,frozen,31,510,655,east
+D-1939,Campus Dining Hall,frozen,58,405,635,south
+D-1940,Valley Produce Wholesale,prepared_meals,74,235,290,central
+D-1941,FreshMart,canned_goods,9,265,4260,west
+D-1942,Sunrise Bakery,produce,16,530,815,south
+D-1943,Bright Morning Bagels,prepared_meals,31,505,670,east
+D-1944,Riverside Farmers Market,produce,34,165,635,west
+D-1945,Bright Morning Bagels,produce,32,550,1145,central
+D-1946,Riverside Farmers Market,frozen,31,435,525,west
+D-1947,Maple Cafe,bakery,42,510,990,north
+D-1948,Campus Dining Hall,frozen,46,555,745,west
+D-1949,FreshMart,prepared_meals,5,135,310,north
+D-1950,Valley Produce Wholesale,frozen,70,60,185,north
+D-1951,Green Leaf Grocery,produce,25,35,550,central
+D-1952,Sunrise Bakery,frozen,42,490,625,west
+D-1953,Golden Crust Bakery,frozen,15,400,540,south
+D-1954,Green Leaf Grocery,frozen,61,395,555,east
+D-1955,Sunrise Bakery,produce,76,385,990,central
+D-1956,Golden Crust Bakery,bakery,7,225,650,west
+D-1957,Riverside Farmers Market,canned_goods,22,120,4155,central
+D-1958,Maple Cafe,canned_goods,35,415,4340,north
+D-1959,Golden Crust Bakery,dairy,76,495,650,central
+D-1960,Harbor Catering Co.,canned_goods,47,530,4380,north
+D-1961,Golden Crust Bakery,bakery,40,195,540,north
+D-1962,Harbor Catering Co.,canned_goods,12,585,4645,east
+D-1963,Campus Dining Hall,prepared_meals,74,245,360,central
+D-1964,Golden Crust Bakery,frozen,31,125,260,north
+D-1965,Harbor Catering Co.,frozen,70,365,525,south
+D-1966,Titan Student Union Cafe,canned_goods,50,210,1970,central
+D-1967,Green Leaf Grocery,dairy,35,310,450,south
+D-1968,Event Center Catering,frozen,75,30,180,north
+D-1969,Bright Morning Bagels,dairy,62,220,405,central
+D-1970,Green Leaf Grocery,dairy,11,525,835,south
+D-1971,Titan Student Union Cafe,prepared_meals,73,425,585,central
+D-1972,FreshMart,bakery,7,205,405,north
+D-1973,Green Leaf Grocery,dairy,71,205,475,east
+D-1974,Riverside Farmers Market,produce,61,430,845,west
+D-1975,Valley Produce Wholesale,frozen,77,65,260,east
+D-1976,Corner Pantry Grocery,prepared_meals,60,455,565,east
+D-1977,Green Leaf Grocery,prepared_meals,22,255,370,central
+D-1978,Titan Student Union Cafe,dairy,20,235,375,north
+D-1979,Downtown Deli,dairy,17,70,355,central
+D-1980,Bright Morning Bagels,dairy,10,130,340,central
+D-1981,Green Leaf Grocery,prepared_meals,30,270,315,north
+D-1982,Downtown Deli,prepared_meals,77,40,130,east
+D-1983,FreshMart,canned_goods,74,450,2745,north
+D-1984,FreshMart,dairy,71,85,425,central
+D-1985,Valley Produce Wholesale,produce,13,350,800,south
+D-1986,Bright Morning Bagels,bakery,62,230,595,south
+D-1987,Golden Crust Bakery,produce,73,420,840,east
+D-1988,FreshMart,produce,71,405,1080,east
+D-1989,FreshMart,canned_goods,56,570,3655,west
+D-1990,Golden Crust Bakery,prepared_meals,38,190,370,south
+D-1991,FreshMart,produce,36,240,820,east
+D-1992,Bright Morning Bagels,frozen,16,305,470,north
+D-1993,Corner Pantry Grocery,bakery,42,405,750,central
+D-1994,Bright Morning Bagels,prepared_meals,52,205,370,north
+D-1995,Campus Dining Hall,canned_goods,60,590,4835,central
+D-1996,Golden Crust Bakery,canned_goods,30,270,2220,west
+D-1997,Bright Morning Bagels,produce,74,400,980,south
+D-1998,Riverside Farmers Market,dairy,65,425,560,east
+D-1999,Sunrise Bakery,canned_goods,46,575,2060,west
+D-2000,Green Leaf Grocery,canned_goods,31,245,2045,south

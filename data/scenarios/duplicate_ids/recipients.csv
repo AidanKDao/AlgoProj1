@@ -1,0 +1,3 @@
+recipient_id,organization_name,accepted_food_types,capacity,closing_time,dropoff_area
+R-201,Community Shelter,bakery;prepared_meals;produce,200,600,central
+R-201,Duplicate Pantry,produce,100,600,north

@@ -1,0 +1,29 @@
+[
+  {
+    "donation_id": "D-1001",
+    "donor_name": "Downtown Deli",
+    "food_type": "prepared_meals",
+    "quantity": 20,
+    "ready_time": 60,
+    "expiry_time": 60,
+    "pickup_area": "central"
+  },
+  {
+    "donation_id": "D-1002",
+    "donor_name": "Maple Cafe",
+    "food_type": "prepared_meals",
+    "quantity": 15,
+    "ready_time": 0,
+    "expiry_time": 10,
+    "pickup_area": "central"
+  },
+  {
+    "donation_id": "D-1003",
+    "donor_name": "FreshMart",
+    "food_type": "produce",
+    "quantity": 25,
+    "ready_time": 0,
+    "expiry_time": 480,
+    "pickup_area": "central"
+  }
+]

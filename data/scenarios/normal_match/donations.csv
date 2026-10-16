@@ -1,0 +1,2 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Campus Dining Hall,prepared_meals,30,0,90,central

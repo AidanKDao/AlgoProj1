@@ -1,0 +1,23 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 30,
+    "closing_time": 600,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-202",
+    "organization_name": "Eastside Food Pantry",
+    "accepted_food_types": [
+      "produce"
+    ],
+    "capacity": 50,
+    "closing_time": 600,
+    "dropoff_area": "central"
+  }
+]

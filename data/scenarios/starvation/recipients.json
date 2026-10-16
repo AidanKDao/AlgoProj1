@@ -1,0 +1,13 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Central Soup Kitchen",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals"
+    ],
+    "capacity": 200,
+    "closing_time": 720,
+    "dropoff_area": "central"
+  }
+]

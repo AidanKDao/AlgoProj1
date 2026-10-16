@@ -1,0 +1,20 @@
+[
+  {
+    "donation_id": "D-1001",
+    "donor_name": "FreshMart",
+    "food_type": "produce",
+    "quantity": 30,
+    "ready_time": 0,
+    "expiry_time": 600,
+    "pickup_area": "central"
+  },
+  {
+    "donation_id": "D-1002",
+    "donor_name": "Campus Dining Hall",
+    "food_type": "prepared_meals",
+    "quantity": 30,
+    "ready_time": 0,
+    "expiry_time": 90,
+    "pickup_area": "central"
+  }
+]

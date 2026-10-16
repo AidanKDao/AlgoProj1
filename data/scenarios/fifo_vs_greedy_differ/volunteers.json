@@ -1,0 +1,18 @@
+[
+  {
+    "volunteer_id": "V-301",
+    "vehicle_capacity": 40,
+    "maximum_pickups": 1,
+    "availability_start": 0,
+    "availability_end": 480,
+    "pickup_area": "central"
+  },
+  {
+    "volunteer_id": "V-302",
+    "vehicle_capacity": 40,
+    "maximum_pickups": 1,
+    "availability_start": 0,
+    "availability_end": 480,
+    "pickup_area": "central"
+  }
+]

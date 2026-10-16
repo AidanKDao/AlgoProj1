@@ -201,6 +201,13 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Output used:** Diagnostic guidance, dataset regeneration commands, and automated test execution instructions. No source code modifications.
 - **Modifications:** Regenerated the simulation datasets using the existing data generator and executed the complete unittest suite. Verified that all 62 automated tests passed successfully.
 
+### 2026-10-15: xlarge results in README and comparison report
+- **Human requester:** Dominic Dionne
+- **Tool/model:** Claude Code (claude-opus-5-5)
+- **Prompt summary:** Run `main.py` on the 10,000-donation `xlarge` dataset in the background, then update the README and the team's FIFO-vs-greedy comparison PDF with the new results.
+- **Output used:** `README.md` (xlarge row in "FIFO vs. Greedy on Larger Datasets"; new measured run times in "Complexity Analysis": small 0.2 s, medium 0.3 s, large 1.3 s, xlarge 10.5 min). `RescueRoute_FIFO_Greedy_Comparison_v2.pdf` (kept outside the repo): rebuilt from the original PDF's text, adding a larger-datasets table and an explanation of the xlarge results. All numbers come from agent runs of `python main.py data/scale/<name>`.
+- **Modifications:** Pending human review.
+
 ## Outside sources
 
 Read status: **read** = the original page was opened and read; **summary only** = only a search-result summary was seen, the original was not retrieved.

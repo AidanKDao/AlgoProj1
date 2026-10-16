@@ -233,7 +233,7 @@ Let **D** = donations, **R** = recipients, **V** = volunteers, and **P** = the m
 
 **Assumptions:** P is small (bounded by each volunteer's maximum pickups), so the matching loop is effectively O(D · R · V); the first feasible pair is accepted, with no search for a best pair.
 
-**Measured (both strategies together):** the small dataset (25/6/6) and the medium dataset (100/20/15) finish instantly (about 0.06 s for medium), and the large dataset (1,000/120/90) takes about 14 seconds. The 10,000-donation `xlarge` dataset is far slower, as the D · R · V term predicts, and was not used for results.
+**Measured (both strategies together, full `main.py` run):** the small dataset (25/6/6) takes about 0.2 s, medium (100/20/15) about 0.3 s, large (1,000/120/90) about 1.3 s, and xlarge (10,000/1,000/700) about 10.5 minutes. The jump from large to xlarge (about 500 times slower for 10 times the donations) matches the D · R · V term, since R and V also grow about 8 times. Large dropped from about 14 s to 1.3 s after the feasibility check was changed to try cheap checks first and to stop building every failure reason for unassigned donations.
 
 ## FIFO vs. Greedy on Larger Datasets
 
@@ -244,6 +244,7 @@ Run with `python3 main.py data/scale/<name>`. Greedy rescued more food than FIFO
 | small (25 donations) | 19 / 20 | 814 / 816 | 85.71% / 100% |
 | medium (100) | 61 / 61 | 2335 / 2484 | 64% / 92% |
 | large (1,000) | 342 / 359 | 14027 / 15259 | 34% / 99.2% |
+| xlarge (10,000) | 2646 / 2759 | 110967 / 117167 | 26.52% / 82.28% |
 
 The gain comes mostly from the urgent donations. It is not guaranteed: on the hand-built `starvation` scenario FIFO rescued more food.
 

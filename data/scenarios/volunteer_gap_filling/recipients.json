@@ -1,0 +1,13 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "bakery",
+      "produce"
+    ],
+    "capacity": 200,
+    "closing_time": 720,
+    "dropoff_area": "central"
+  }
+]

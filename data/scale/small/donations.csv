@@ -1,0 +1,26 @@
+donation_id,donor_name,food_type,quantity,ready_time,expiry_time,pickup_area
+D-1001,Maple Cafe,produce,62,0,580,west
+D-1002,Valley Produce Wholesale,prepared_meals,7,480,550,west
+D-1003,Oak Street Market,dairy,50,410,680,east
+D-1004,Riverside Farmers Market,frozen,33,15,160,south
+D-1005,Green Leaf Grocery,dairy,62,305,590,east
+D-1006,Valley Produce Wholesale,produce,18,65,585,north
+D-1007,Corner Pantry Grocery,bakery,47,210,485,north
+D-1008,FreshMart,bakery,59,420,980,east
+D-1009,Event Center Catering,canned_goods,36,310,4455,west
+D-1010,Golden Crust Bakery,produce,25,225,840,south
+D-1011,Bright Morning Bagels,bakery,75,545,1020,north
+D-1012,Bright Morning Bagels,canned_goods,59,340,3845,south
+D-1013,Campus Dining Hall,dairy,38,545,670,central
+D-1014,Valley Produce Wholesale,frozen,56,560,665,east
+D-1015,Oak Street Market,bakery,78,105,370,north
+D-1016,Golden Crust Bakery,canned_goods,7,5,3260,north
+D-1017,Event Center Catering,produce,41,255,950,central
+D-1018,Downtown Deli,bakery,52,135,595,west
+D-1019,Oak Street Market,frozen,27,230,385,south
+D-1020,Bright Morning Bagels,produce,32,285,855,west
+D-1021,Downtown Deli,prepared_meals,77,135,295,central
+D-1022,Valley Produce Wholesale,bakery,23,205,640,west
+D-1023,Corner Pantry Grocery,dairy,30,85,225,central
+D-1024,Bright Morning Bagels,dairy,42,530,780,east
+D-1025,Sunrise Bakery,produce,48,145,660,north

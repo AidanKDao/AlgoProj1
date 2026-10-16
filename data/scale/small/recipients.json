@@ -1,0 +1,81 @@
+[
+  {
+    "recipient_id": "R-201",
+    "organization_name": "Community Shelter",
+    "accepted_food_types": [
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 100,
+    "closing_time": 480,
+    "dropoff_area": "central"
+  },
+  {
+    "recipient_id": "R-202",
+    "organization_name": "Eastside Food Pantry",
+    "accepted_food_types": [
+      "bakery",
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 150,
+    "closing_time": 540,
+    "dropoff_area": "south"
+  },
+  {
+    "recipient_id": "R-203",
+    "organization_name": "Hope Community Fridge",
+    "accepted_food_types": [
+      "canned_goods",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 240,
+    "closing_time": 630,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-204",
+    "organization_name": "Family Support Center",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 260,
+    "closing_time": 660,
+    "dropoff_area": "west"
+  },
+  {
+    "recipient_id": "R-205",
+    "organization_name": "Northside Youth Center",
+    "accepted_food_types": [
+      "bakery",
+      "dairy",
+      "frozen",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 100,
+    "closing_time": 420,
+    "dropoff_area": "north"
+  },
+  {
+    "recipient_id": "R-206",
+    "organization_name": "Senior Meals Program",
+    "accepted_food_types": [
+      "canned_goods",
+      "dairy",
+      "prepared_meals",
+      "produce"
+    ],
+    "capacity": 80,
+    "closing_time": 570,
+    "dropoff_area": "west"
+  }
+]
