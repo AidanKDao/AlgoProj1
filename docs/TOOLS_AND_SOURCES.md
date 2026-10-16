@@ -213,7 +213,7 @@ Log of AI tool use and outside sources, as required by course policy. One entry 
 - **Tool/model:** Claude Code (claude-opus-5-5)
 - **Prompt summary:** Fix the merge conflicts from merging `origin/main` (Kaleb's README timing and Week 3 checkbox updates) into local `main`.
 - **Output used:** Merge commit `67a3a95`. The only conflict was the "Measured" paragraph in the README's Complexity Analysis; the local version with the completed xlarge run (10.5 min) was kept over the version saying xlarge was stopped after 100 seconds, because the larger-datasets table uses the xlarge results. All other changes from both sides were kept as they were. The full test suite passed after the merge.
-- **Modifications:** Pending human review.
+- **Modifications:** Reviewed and approved by Dominic Dionne.
 
 ## Outside sources
 
