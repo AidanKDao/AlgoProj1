@@ -228,7 +228,20 @@ def find_match(donation, recipients, volunteers, tracker, rules):
     # Two nested loops: every recipient, and for each one every volunteer, in input order.
     # The first pair that passes check_pair wins, which is the "first feasible" FIFO rule.
     for recipient in recipients.values():
+        if donation.food_type not in recipient.accepted_food_types:
+            continue  # skip this recipient if they don't accept the food type
+
+        if donation.quantity > tracker.recipient_remaining[recipient.recipient_id]:
+            continue  # skip this recipient if they don't have enough remaining capacity
+
         for volunteer in volunteers.values():
+            if donation.quantity > volunteer.vehicle_capacity:
+                continue  # skip this volunteer if their vehicle can't carry the quantity
+
+            if rules.enforce_maximum_pickups:
+                if volunteer.maximum_pickups <= tracker.volunteer_pickups[volunteer.volunteer_id]:
+                    continue  # skip this volunteer if they have reached their maximum pickups
+
             if check_pair(donation, recipient, volunteer, tracker, rules) is None:
                 start, arrival = schedule(donation, volunteer, recipient, rules, tracker)
                 return recipient, volunteer, start, arrival
@@ -266,22 +279,6 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
     if not volunteers:
         return prefix + "there are no volunteers."
 
-    # Find earliest possible arrival time for this donation
-    #
-    # TODO: could move expired check below food and capcity checks and 
-    # loop over only recipients and volunteers that pass those checks.
-    earliest_arrival = None
-    for recipient in recipients.values():
-        for volunteer in volunteers.values():
-            _, arrival = schedule(donation, volunteer, recipient, rules)
-            if earliest_arrival is None or arrival < earliest_arrival:
-                earliest_arrival = arrival
-
-    # Check if the donation would be expired on arrival
-    expired = _expired_reason(donation, earliest_arrival, rules)
-    if expired:
-        return prefix + expired + "."
-
     # Narrow the recipients and volunteers one requirement at a time. Each list holds the
     # candidates that still pass; the first time a list is empty, that requirement is the
     # reason, which gives a specific message instead of a vague "no match".
@@ -298,6 +295,19 @@ def unassigned_reason(donation, recipients, volunteers, tracker, rules) -> str:
         return prefix + (f"no volunteer had a vehicle that can carry {donation.quantity} units "
                          f"(largest vehicle holds {biggest}).")
 
+    # Find earliest possible arrival time for this donation
+    earliest_arrival = None
+    for recipient in recipients.values():
+        for volunteer in volunteers.values():
+            _, arrival = schedule(donation, volunteer, recipient, rules)
+            if earliest_arrival is None or arrival < earliest_arrival:
+                earliest_arrival = arrival
+
+    # Check if the donation would be expired on arrival
+    expired = _expired_reason(donation, earliest_arrival, rules)
+    if expired:
+        return prefix + expired + "."
+    
     # Everything above passed on its own, so a combination or timing rule blocked it.
     # A set comprehension collects each distinct reason once; sorted() makes the order stable.
     reasons = {check_pair(donation, r, v, tracker, rules) + _busy_note(donation, r, v, tracker, rules)
