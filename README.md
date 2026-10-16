@@ -326,13 +326,13 @@ AlgoProj1/
 
 ## Week 3 Checkpoints
 
-- [ ] Polish code
-- [ ] Finalize tests
-- [ ] Finalize documentation
-- [ ] Demo materials
-- [ ] Prepare presentation (live or video demo)
-- [ ] Final report
-- [ ] Contribution statements
+- [x] Polish code
+- [x] Finalize tests
+- [x] Finalize documentation
+- [x] Demo materials
+- [x] Prepare presentation (live or video demo)
+- [x] Final report
+- [x] Contribution statements
 
 ## Current Progress
 
