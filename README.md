@@ -35,7 +35,8 @@ Our team is split into the following roles:
 - **Product & Quality Lead: Soheil Douzandeh**
   Explainable output, performance metrics, automated tests, README documentation, demo materials, and CLI improvements.
 
-- **4th Team Role:** Pending confirmation.
+- **Documentation and Processing Lead: Aidan Dao**
+  README and project documentation, Tools & Sources log, input processing and report generation, limitations write-up, and setup instructions.
 
 All team members contribute to testing, debugging, code review, and project documentation.
 
