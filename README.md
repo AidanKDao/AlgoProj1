@@ -233,7 +233,7 @@ Let **D** = donations, **R** = recipients, **V** = volunteers, and **P** = the m
 
 **Assumptions:** P is small (bounded by each volunteer's maximum pickups), so the matching loop is effectively O(D · R · V); the first feasible pair is accepted, with no search for a best pair.
 
-**Measured (both strategies together):** the small dataset (25/6/6) and the medium dataset (100/20/15) finish instantly (about 0.06 s for medium), and the large dataset (1,000/120/90) takes about 14 seconds. The 10,000-donation `xlarge` dataset is far slower, as the D · R · V term predicts, and was not used for results.
+**Measured (both strategies together):** the small dataset (25/6/6) and the medium dataset (100/20/15) finish instantly, and the large dataset (1,000/120/90) takes under a second. The 10,000-donation `xlarge` dataset (10,000/1,000/700) was still running after 100 seconds when we stopped it, so it was not used for results. The jump from large to `xlarge` is what the D · R · V term predicts.
 
 ## FIFO vs. Greedy on Larger Datasets
 
@@ -325,13 +325,13 @@ AlgoProj1/
 
 ## Week 3 Checkpoints
 
-- [ ] Polish code
-- [ ] Finalize tests
-- [ ] Finalize documentation
-- [ ] Demo materials
-- [ ] Prepare presentation (live or video demo)
-- [ ] Final report
-- [ ] Contribution statements
+- [x] Polish code
+- [x] Finalize tests
+- [x] Finalize documentation
+- [x] Demo materials
+- [x] Prepare presentation (live or video demo)
+- [x] Final report
+- [x] Contribution statements
 
 ## Current Progress
 
